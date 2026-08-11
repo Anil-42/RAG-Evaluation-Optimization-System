@@ -1,6 +1,6 @@
-import fitz
+import pymupdf
 
-pdf = fitz.open("documents/sample.pdf")
+pdf = pymupdf.open("documents/sample.pdf")
 
 text=""
 for page in pdf:
@@ -19,9 +19,9 @@ while start<len(words):
     chunks.append(" ".join(chunk))
     start+=chunk_size-overlap
 
-# print(len(chunks[0].split()))
-# print(len(chunks[1].split()))
+print(len(chunks[0].split()))
+print(len(chunks[1].split()))
 
-# print(chunks[0].split()[-20:])
-# print("\n")
-# print(chunks[1].split()[:20])
+print(chunks[0].split()[-20:])
+print("\n")
+print(chunks[1].split()[:20])
