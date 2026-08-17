@@ -1,4 +1,4 @@
-# import torch
+import json
 from extract_text import extract_text;
 from chunking import chunk_text;
 from embedding import get_embeddings,get_similarities;
@@ -16,48 +16,46 @@ def main():
     # print(len(embeddings[0]))
 
     # question = "what is the purpose of plain english?"
-    question = input("Enter your question: ")
+    # question = input("Enter your question: ")
 
-    retrieved_chunks, retrieved_scores = retrieve(question, chunks, embeddings, k=3)
-    print(retrieved_chunks)
-    print(retrieved_scores)
+    with open("questions.json", "r", encoding="utf-8") as file:
+            questions = json.load(file)
 
-    context = "\n".join(retrieved_chunks)
+    results = []
 
-    prompt = f"""
-    Context: {context}
+    for question in questions:
+        question_text = question["question"]
 
-    Question: {question}
+        retrieved_chunks, retrieved_scores = retrieve(question_text, chunks, embeddings, k=3)
+        # print(retrieved_chunks)
+        # print(retrieved_scores)
 
-    Answer the question using only the information provided in the context.
-    Do not add information that is not present in the context.
-    If the answer cannot be found in the context, say that the information is not available in the provided context.
-    """
+        context = "\n".join(retrieved_chunks)
 
-    # prompt = f"""
-    # You are an accurate, factual assistant. Your task is to answer the user's question strictly based on the provided context.
+        prompt = f"""
+        Context: {context}
 
-    # ### Instructions:
-    # 1. Read the provided Context carefully.
-    # 2. Step-by-step, analyze whether the Context contains enough facts to directly answer the Question.
-    # 3. Formulate a clear, direct answer using ONLY the facts explicitly mentioned in the Context.
-    # 4. Do NOT assume, extrapolate, or bring in outside knowledge.
-    # 5. If the answer is partially available, state what is known from the context and what is missing.
-    # 6. If the Context does not contain the answer, reply EXACTLY: "The requested information is not available in the provided context."
+        Question: {question_text}
 
-    # <context>
-    # {context}
-    # </context>
+        Answer the question using only the information provided in the context.
+        Do not add information that is not present in the context.
+        If the answer cannot be found in the context, say that the information is not available in the provided context.
+        """
 
-    # <question>
-    # {question}
-    # </question>
 
-    # Answer:
-    # """
+        response = ollama_query(prompt)
+        results.append({
+             "question" : question_text,
+             "ground_truth" : question["answer"],
+             "answer" : response,
+             "retrieved_chunks" : retrieved_chunks,
+             "retrieved_scores" : retrieved_scores
+        })
 
-    response = ollama_query(prompt)
-    print(response)
+    print(results[0])
+
+    with open("result.json", "w", encoding="utf-8") as file:
+        json.dump(results, file, indent=4, ensure_ascii=False)
 
 
 

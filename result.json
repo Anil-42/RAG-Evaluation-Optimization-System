@@ -1,0 +1,77 @@
+[
+    {
+        "question": "What is the purpose of plain English?",
+        "ground_truth": "Using plain English assures the orderly and clear presentation of complex information so that investors have the best possible chance of understanding it.",
+        "answer": "The purpose of plain English is not explicitly stated in the context. However, it can be inferred that plain English is used to create documents that are easy to understand, and the handbook's purpose is to provide practical tips on how to create such documents.",
+        "retrieved_chunks": [
+            "Using plain English assures the orderly and clear presentation of complex information so that investors have the best possible chance of understanding it. Plain English means analyzing and deciding what information investors need to make informed decisions, before words, sentences, or paragraphs are considered. A plain English document uses words economically and at a level the audience can understand. Its sentence structure is tight. Its tone is welcoming and direct. Its design is visually appealing. A plain English document is easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This",
+            "33-7497 (January 28, 1998) for information on plain English principles. • a plain english handbook 67 68 a plain english handbook Appendix B Plain English Examples This appendix contains “before” and “after” examples from participants in the Division of Corporation Finance’s plain English pilot. The Division’s staff added marginal notes to show how aspects of the plain English rules apply to specific documents. These annotated examples are excerpted from the booklet, Before & After Plain English Examples and Sample Analyses, prepared by the Division of Corporation Finance. Although we revised the presentation and wording of the marginal notes in this",
+            "easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This handbook gives you practical tips on how to create plain English documents. All of these were born of experience. They come from experts and those who have already written or rewritten their docu­ ments in plain English. As with all the advice in this handbook, feel free to tailor these tips to your schedule, your document, and your budget. Not all of the tips will apply to everyone or to every document. Pick and choose the ones that make sense"
+        ],
+        "retrieved_scores": [
+            0.6544946432113647,
+            0.5549397468566895,
+            0.5195039510726929
+        ]
+    },
+    {
+        "question": "What are the characteristics of a plain English document?",
+        "ground_truth": "A plain English document uses words economically and at a level the audience can understand. Its sentence structure is tight, its tone is welcoming and direct, and its design is visually appealing. It is easy to read and looks like it is meant to be read.",
+        "answer": "The characteristics of a plain English document are:\n\n1. Easy to read\n2. Looks like it's meant to be read\n3. Uses words economically\n4. Has a welcoming and direct tone\n5. Has a tight sentence structure\n6. Is visually appealing",
+        "retrieved_chunks": [
+            "Using plain English assures the orderly and clear presentation of complex information so that investors have the best possible chance of understanding it. Plain English means analyzing and deciding what information investors need to make informed decisions, before words, sentences, or paragraphs are considered. A plain English document uses words economically and at a level the audience can understand. Its sentence structure is tight. Its tone is welcoming and direct. Its design is visually appealing. A plain English document is easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This",
+            "easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This handbook gives you practical tips on how to create plain English documents. All of these were born of experience. They come from experts and those who have already written or rewritten their docu­ ments in plain English. As with all the advice in this handbook, feel free to tailor these tips to your schedule, your document, and your budget. Not all of the tips will apply to everyone or to every document. Pick and choose the ones that make sense",
+            "once it is at the printer, making text changes can be tedious and expensive. If you don’t have a design professional, fear not. You can apply many of the simple concepts discussed in this chapter to produce a readable, visually appealing document. While the field of design extends broadly, this chapter covers five basic design elements and how they contribute to creating a plain English document: • hierarchy or distinguishing levels of information • typography • layout • graphics • color 38 a plain english handbook Hierarchy Much like an outline, a document’s hierarchy shows how you’ve orga­ nized the"
+        ],
+        "retrieved_scores": [
+            0.7330740690231323,
+            0.7121186852455139,
+            0.669822096824646
+        ]
+    },
+    {
+        "question": "What is the purpose of this handbook?",
+        "ground_truth": "This handbook gives practical tips on how to create plain English documents.",
+        "answer": "The purpose of this handbook is to provide practical tips on how to create plain English documents.",
+        "retrieved_chunks": [
+            "• Does the document highlight information that is important to investors? • Is any important information missing? • Does the document include information that is not legally required and will not help investors make informed decisions? 4 For time-saving tips on how to outline and reorganize your document, read Chapter 8 on page 55. a plain english handbook 11 “Writers must therefore constantly ask: What am I trying to say? Surprisingly often they don’t know. They must look at what they have written and ask: Have I said it?” William Zinsser On Writing Well Meet to resolve questions Meet with",
+            "easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This handbook gives you practical tips on how to create plain English documents. All of these were born of experience. They come from experts and those who have already written or rewritten their docu­ ments in plain English. As with all the advice in this handbook, feel free to tailor these tips to your schedule, your document, and your budget. Not all of the tips will apply to everyone or to every document. Pick and choose the ones that make sense",
+            "handbook will prove useful to you in drafting and creating plain English documents. Although we have drawn the sugges­ tions in the handbook from those who have written plain English documents and from experts in the field, we realize that much more will be learned along the way that can benefit all of us. We would appreciate receiving your suggestions on how we can improve this handbook. We would also like to collect as many examples of “befores” and their plain English “afters” as possible, as well as any tips that helped you save time and energy. Please forward your"
+        ],
+        "retrieved_scores": [
+            0.4982183575630188,
+            0.4863397777080536,
+            0.48302727937698364
+        ]
+    },
+    {
+        "question": "What are some benefits of using plain English?",
+        "ground_truth": "Investors are more likely to understand what they are buying and make informed judgments about whether they should hold or sell their investments. Brokers and investment advisers can make better recommendations when they can understand these documents quickly and easily. Companies that communicate successfully with their investors form stronger relationships and save the costs of explaining legalese and dealing with confused clients.",
+        "answer": "The benefits of using plain English are:\n\n1. Investors will be more likely to understand what they are buying.\n2. Investors will make informed judgments about whether they should hold or sell their investments.\n3. Brokers and investment advisers can make better recommendations to their clients.\n4. Companies can form stronger relationships with their investors.\n5. Companies save the costs of explaining legalese and dealing with confused investors.",
+        "retrieved_chunks": [
+            "Using plain English assures the orderly and clear presentation of complex information so that investors have the best possible chance of understanding it. Plain English means analyzing and deciding what information investors need to make informed decisions, before words, sentences, or paragraphs are considered. A plain English document uses words economically and at a level the audience can understand. Its sentence structure is tight. Its tone is welcoming and direct. Its design is visually appealing. A plain English document is easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This",
+            "33-7497 (January 28, 1998) for information on plain English principles. • a plain english handbook 67 68 a plain english handbook Appendix B Plain English Examples This appendix contains “before” and “after” examples from participants in the Division of Corporation Finance’s plain English pilot. The Division’s staff added marginal notes to show how aspects of the plain English rules apply to specific documents. These annotated examples are excerpted from the booklet, Before & After Plain English Examples and Sample Analyses, prepared by the Division of Corporation Finance. Although we revised the presentation and wording of the marginal notes in this",
+            "summary, and risk factors in plain English. The benefits of plain English abound. Investors will be more likely to understand what they are buying and to make informed judgments about whether they should hold or sell their investments. Brokers and investment advisers can make better recommendations to their clients if they can read and understand these documents quickly and easily. by Arthur Levitt Chairman, U.S. Securities and Exchange Commission a plain english handbook 3 Companies that communicate successfully with their investors form stronger relationships with them. These companies save the costs of explaining legalese and dealing with confused and sometimes"
+        ],
+        "retrieved_scores": [
+            0.567306637763977,
+            0.5156464576721191,
+            0.5059940814971924
+        ]
+    },
+    {
+        "question": "What does the handbook suggest about tailoring its tips to different documents?",
+        "ground_truth": "Not all of the tips will apply to everyone or to every document. The handbook suggests choosing the tips that make sense for your schedule, your document, and your budget.",
+        "answer": "The handbook suggests that not all of the tips will apply to every document, and therefore, users should \"Pick and choose the ones that make sense\" for their specific document.",
+        "retrieved_chunks": [
+            "all of the tips will apply to everyone or to every document. Pick and choose the ones that make sense for you. Some of our tips cover very basic mechanical issues, like how to photo­ copy your working draft. We’ve included them because they were learned the hard way and have saved people time, money, and aggrava­ tion. You’ll see them listed in Chapter 8, titled “Time-Saving Tips.” This handbook is by no means the last word on plain English. We expect to change it and add more tips as we learn more about writing securities documents in plain English.",
+            "to group like information together. a plain english handbook 55 8 When you start to reorder your document by moving pages or parts of pages, write on the page or section: • where it appeared in the original document (the page number and paragraph, if applicable); and • a number or letter to indicate its place in the new draft. It’s a good idea to keep the notes and questions you wrote in the mar­ gins distinct from your cross-reference marks by writing them in a dif­ ferent color. Use colored pencils, since it’s likely you’ll move sections around more",
+            "easy to read and looks like it’s meant to be read. a plain english handbook 5 This handbook’s purpose This handbook gives you practical tips on how to create plain English documents. All of these were born of experience. They come from experts and those who have already written or rewritten their docu­ ments in plain English. As with all the advice in this handbook, feel free to tailor these tips to your schedule, your document, and your budget. Not all of the tips will apply to everyone or to every document. Pick and choose the ones that make sense"
+        ],
+        "retrieved_scores": [
+            0.6990167498588562,
+            0.5533344149589539,
+            0.5501704812049866
+        ]
+    }
+]
