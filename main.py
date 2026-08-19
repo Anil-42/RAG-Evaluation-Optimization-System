@@ -4,6 +4,7 @@ from chunking import chunk_text;
 from embedding import get_embeddings,get_similarities;
 from retrieve import retrieve;
 from ollama_test import ollama_query
+from retrieval_analysis import retrieval_check
 
 def main():
     pdf_path = "documents/sample.pdf"
@@ -29,6 +30,10 @@ def main():
         retrieved_chunks, retrieved_scores = retrieve(question_text, chunks, embeddings, k=3)
         # print(retrieved_chunks)
         # print(retrieved_scores)
+
+        evidence = question["evidence"]
+        retrieved_analysis = retrieval_check(retrieved_chunks,evidence)
+        print(retrieved_analysis)
 
         context = "\n".join(retrieved_chunks)
 
