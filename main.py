@@ -4,7 +4,9 @@ from chunking import chunk_text;
 from embedding import get_embeddings,get_similarities;
 from retrieve import retrieve;
 from ollama_test import ollama_query
+from evaluation import evidence_coverage
 from retrieval_analysis import retrieval_check
+
 
 def main():
     pdf_path = "documents/sample.pdf"
@@ -22,6 +24,7 @@ def main():
     with open("questions.json", "r", encoding="utf-8") as file:
             questions = json.load(file)
 
+    # check if evidence_points load properly # print(questions[0]["evidence_points"])
     results = []
 
     for question in questions:
@@ -31,36 +34,51 @@ def main():
         # print(retrieved_chunks)
         # print(retrieved_scores)
 
-        evidence = question["evidence"]
-        retrieved_analysis = retrieval_check(retrieved_chunks,evidence)
-        print(retrieved_analysis)
+        evidence_points = question["evidence_points"]
+        
+        evaluation_result = evidence_coverage(retrieved_chunks,evidence_points)
+        print(evaluation_result)
 
-        context = "\n".join(retrieved_chunks)
+        # evidence = question["evidence"]
+        # retrieved_analysis = retrieval_check(retrieved_chunks,evidence)
+        # check retrieved_analysis # print(retrieved_analysis) 
 
-        prompt = f"""
-        Context: {context}
+# --------------------------------------------
+            # print("EVIDENCE:")
+            # print(evidence)
 
-        Question: {question_text}
+            # print("\nRETRIEVED_CHUNKS")
+            # for chunk in retrieved_chunks:
+            #     print(chunk)
+            #     print("-"*50)
+# --------------------------------------------
 
-        Answer the question using only the information provided in the context.
-        Do not add information that is not present in the context.
-        If the answer cannot be found in the context, say that the information is not available in the provided context.
-        """
+    #     context = "\n".join(retrieved_chunks)
+
+    #     prompt = f"""
+    #     Context: {context}
+
+    #     Question: {question_text}
+
+    #     Answer the question using only the information provided in the context.
+    #     Do not add information that is not present in the context.
+    #     If the answer cannot be found in the context, say that the information is not available in the provided context.
+    #     """
 
 
-        response = ollama_query(prompt)
-        results.append({
-             "question" : question_text,
-             "ground_truth" : question["answer"],
-             "answer" : response,
-             "retrieved_chunks" : retrieved_chunks,
-             "retrieved_scores" : retrieved_scores
-        })
+    #     response = ollama_query(prompt)
+    #     results.append({
+    #          "question" : question_text,
+    #          "ground_truth" : question["answer"],
+    #          "answer" : response,
+    #          "retrieved_chunks" : retrieved_chunks,
+    #          "retrieved_scores" : retrieved_scores
+    #     })
 
-    print(results[0])
+    # # print(results[0])
 
-    with open("result.json", "w", encoding="utf-8") as file:
-        json.dump(results, file, indent=4, ensure_ascii=False)
+    # with open("result.json", "w", encoding="utf-8") as file:
+    #     json.dump(results, file, indent=4, ensure_ascii=False)
 
 
 
