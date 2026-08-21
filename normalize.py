@@ -1,13 +1,8 @@
+import re
 
 def normalize(text):
-    return "".join(text.lower().split())
+    text=text.lower()
+    text=re.sub(r'[^a-z0-9\s]', '', text)#normalize using regex expressiosn to remove all special characters other than numbers and alpahabets
+    text="".join(text.split())
+    return text
 
-# txt1 = ["Hello, World!", "This is a test.", "Normalize this text."]
-# txt2 = "hello world !"
-
-# normalized_txt1 = [normalize(t) for t in txt1]
-# normalized_txt2 = normalize(txt2)
-
-# for each in normalized_txt1:
-#     if each == normalized_txt2:
-#         print("Match found:", each)

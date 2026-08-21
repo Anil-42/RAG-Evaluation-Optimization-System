@@ -39,4 +39,5 @@ so instead of giving entire evidence we break it into points
 ]
 convert top 3 chunsk into single txt and check how many evidence_points are present in txt.
 
-how do we choose importatnt points?
+normalize evidence_points and chunk using regex expression to remove all sepecial characters.
+then compare and find count of found, total, coverage=found/total
