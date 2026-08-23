@@ -22,6 +22,7 @@ Baseline RAG observations:
 ---
 
 EVALUATE CORRECTNESS OF ANSWER USING EVIDENCE:
+
 when we use an evidence to evaluate correctness of answer we just compare if evidence exist in retrieved chunk or not.
 But, the evidence may exist in multiple chunks.
 ex:
@@ -41,3 +42,21 @@ convert top 3 chunsk into single txt and check how many evidence_points are pres
 
 normalize evidence_points and chunk using regex expression to remove all sepecial characters.
 then compare and find count of found, total, coverage=found/total
+
+using this calsulate average_coverage, and pass_rate
+
+<!-- -------------------------------------------------------------------------------------------------- -->
+
+SEMANTIC CHUNKING:
+
+    In our normal chunking we use a fixed size(100 in our case), This method does not care about meaning.
+        for example: in our case we had "...dealing with confused and sometimes" int one chunk and its remaining "angry investors." was missing, which led to incomplete sentence and meaning.
+
+    To over come this we use SEMANTIC CHUNKING. in semantic chunking we "keep related sentence together and create a new chunk when topic/meaning changes.
+    A simple approach to do this is:
+            1.Split the document into sentences.
+            2.Embed each sentence.
+            3.Compare neighboring sentence embeddings.
+            4.If similarity drops below a threshold → create a new chunk.
+            5.Otherwise → continue adding sentences.
+    we are using this instead of advanced method directly to first check if this improve our retrieval metric compared with 100-word fixed.chunks

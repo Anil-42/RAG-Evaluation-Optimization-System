@@ -1,0 +1,13 @@
+[
+  {
+    "Chunk size": "100 words",
+    "Overlap": "20 words",
+    "Top-K": "3",
+    "Retrieval": "Vector similarity",
+    "Evaluation": "Evidence Coverage",
+    "Threshold": "50%",
+
+    "Average Coverage": "92%",
+    "Pass Rate": "100%"
+  }
+]

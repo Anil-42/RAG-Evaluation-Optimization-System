@@ -7,6 +7,8 @@ from ollama_test import ollama_query
 from evaluation import evidence_coverage
 from retrieval_analysis import retrieval_check
 
+from semantic_chunking import split_sentences
+
 
 def main():
     pdf_path = "documents/sample.pdf"
@@ -65,8 +67,21 @@ def main():
              "evidence_total" : total,
              "evidence_coverage" : coverage
         })
+# ---------------------Average coverage---------------------------
+    total_coverage = sum(
+         result["evidence_coverage"] for result in results
+    )
+    average_coverage = total_coverage/len(results)
+    print(f"Average evidence coverge: {average_coverage:.2%}")
 
-    # print(results[0])
+# -----------------------Pass Rate---------------------------------
+    passed = sum(
+        1 for result in results
+        if result["evidence_coverage"] >=0.5        
+    )
+    pass_rate = passed/len(results)
+    print(f"Retrieval pass rate: {pass_rate:.2%}")
+# -----------------------------------------------------------------
 
     with open("result.json", "w", encoding="utf-8") as file:
         json.dump(results, file, indent=4, ensure_ascii=False)
