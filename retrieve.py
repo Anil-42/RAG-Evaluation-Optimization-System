@@ -10,8 +10,6 @@ def retrieve(question, chunks, embeddings, k=3):
     k=min(k, len(chunks))
 
     values, indices = torch.topk(similarity,k)
-    # print(values)
-    # print(indices)
 
 #[[0.8952, 0.7413, 0.6120]], [[18, 191, 19]] this is how values will be stored and we indices[o],values[0] to get elements of first row.
 #zip pairs indices and values. index, score is unpacking.

@@ -59,4 +59,4 @@ SEMANTIC CHUNKING:
             3.Compare neighboring sentence embeddings.
             4.If similarity drops below a threshold → create a new chunk.
             5.Otherwise → continue adding sentences.
-    we are using this instead of advanced method directly to first check if this improve our retrieval metric compared with 100-word fixed.chunks
+    we are using this instead of advanced method directly to first check if this improve our retrieval metric compared with 100-word fixed chunks.

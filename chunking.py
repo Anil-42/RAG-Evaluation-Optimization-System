@@ -13,12 +13,5 @@ def chunk_text(text):
         chunks.append(" ".join(chunk))
         start+=chunk_size-overlap
 
-    # print(len(chunks[0].split()))
-    # print(len(chunks[1].split()))
-
-    # print(chunks[0].split()[-20:])
-    # print("\n")
-    # print(chunks[1].split()[:20])
-
     return chunks
 
