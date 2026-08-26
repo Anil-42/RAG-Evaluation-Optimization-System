@@ -1,13 +1,13 @@
 import torch
 from embedding import get_embeddings,get_similarities;
 
-def retrieve(question, chunks, embeddings, k=3):
+def retrieve(question, chunks, embeddings):
 
     question_embedding = get_embeddings(question)
     similarity = get_similarities(question_embedding, embeddings)
     # print(similarity.shape)
 
-    k=min(k, len(chunks))
+    k=len(chunks)
 
     values, indices = torch.topk(similarity,k)
 
@@ -15,12 +15,12 @@ def retrieve(question, chunks, embeddings, k=3):
 #zip pairs indices and values. index, score is unpacking.
 #.item() function converts a single-element PyTorch tensor into a normal Python number.
 
-    retrieved_chunks = []
+    # retrieved_chunks = []
     retrieved_scores = []
     for index, score in zip(indices[0],values[0]): 
-        retrieved_chunks.append(chunks[index.item()])
+        # retrieved_chunks.append(chunks[index.item()])
         retrieved_scores.append(score.item())
 
-    return retrieved_chunks, retrieved_scores
+    return retrieved_scores
 
 

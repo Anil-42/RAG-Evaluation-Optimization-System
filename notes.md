@@ -68,12 +68,56 @@ SEMANTIC CHUNKING:
 
 <!-- ------------------------------------------------------------------------------------------------------- -->
 
-HYBRID CHUNKING:
+HYBRID Retrieval:
 
     in hybrid retrieval we will combine two signals:
         1.Semantic similarity — finds text with similar meaning.
         2.Keyword matching — finds text containing important words from the question.
 
     1.Why can keyword/BM25 search find something that vector search misses?
+    ans:It checks whether the query's important words occur in the documents/chunks.
+        example:
+            What is the purpose of this handbook?
+            Chunk A:
+            This handbook reflects their substantial contributions...
+            Chunk B:
+            This handbook's purpose is to provide practical tips...
+            Keyword/BM25 can recognize that "handbook" and "purpose" are strong query terms and that Chunk B contains them.
+        So, BM25 focuses on matching important words/terms between the query and the chunk.
+
     2.Why can vector search find something that keyword search misses?
+    ans:Vector search works on similarity of the meaning represented by the embeddings.
+        example:
+            Question:What are the advantages of plain English?
+            Chunk:
+            Investors are more likely to understand what they are buying and make informed judgments...
+            The word "advantages" might not appear anywhere in the chunk.
+            But the embedding model can recognize that.
+        Vector search is good at finding relevant information even when the exact query words aren't present.
+
     3.Why would combining them potentially be better than either one alone?
+    ans:Combining both would give us a better result than just using vectpor chunking as it checks for both vector similarity
+        and keywords.
+        example:
+            Question:What are the benefits of plain English?
+            BM25 might find:
+            "The benefits of plain English abound..."
+            because benefits and plain English match directly.
+
+            Vector search might find:
+            "Investors are more likely to understand what they are buying..."
+            because benefits is semantically related to the outcomes described there.
+        Hybrid search gets signals from both.
+
+    "Bm25 does not need embeddings, instead it tokenizes them."
+        Vector retrieval:question → embedding → similarity → top K
+        BM25:question → tokenize → BM25 scores → top K
+
+    $ calculate bm25_score and vector_score to find hybrid_score
+    $ normalize these scores so it will be in the range of [0-1]: (score - minval) / (maxval - minval)
+    $ find hybrid_score:
+            hybrid_scores = [
+            alpha * vector_score + (1 - alpha) * bm25_score
+            for vector_score, bm25_score
+            in zip(normalized_vector, normalized_bm25)
+            ]

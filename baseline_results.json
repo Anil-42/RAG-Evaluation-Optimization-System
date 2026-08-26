@@ -25,5 +25,32 @@
     "Average Chunk Size": "97.5 words",
     "Average Coverage": "68%",
     "Pass Rate": "60%"
+  },
+  {
+    "Chunk size": "100 words",
+    "Overlap": "20 words",
+    "Top-K": "3",
+    "Score normalization": "Min-Max",
+    "Retrieval": "Hybrid",
+    "Evaluation": "Evidence Coverage",
+    "Vector weight": "70%",
+    "BM25 weight": "30%",
+    "Average Coverage": "52%",
+    "Pass Rate": "60%",
+
+    "Vector weigh": "90%",
+    "BM25 weigh": "10%",
+    "Average Coverag": "40%",
+    "Pass Rat": "40%",
+
+    "Vector weig": "50%",
+    "BM25 weig": "50%",
+    "Average Covera": "58.67%",
+    "Pass Ra": "60%",
+
+    "Vector wei": "30%",
+    "BM25 wei": "70%",
+    "Average Cover": "0%",
+    "Pass R": "0%"
   }
 ]
