@@ -1,13 +1,29 @@
 [
   {
+    "chunking": "Batch",
+    "Threshold": "50%",
     "Chunk size": "100 words",
     "Overlap": "20 words",
     "Top-K": "3",
     "Retrieval": "Vector similarity",
     "Evaluation": "Evidence Coverage",
-    "Threshold": "50%",
 
     "Average Coverage": "92%",
     "Pass Rate": "100%"
+  },
+  {
+    "Chunking": "Semantic",
+    "Threshold": "0.222",
+    "Min Chunk Size": "20 words",
+    "Max Chunk Size": "200 words",
+    "Top-K": "3",
+    "Retrieval": "Vector similarity",
+    "Evaluation": "Evidence Coverage",
+    "Pass Threshold": "50%",
+
+    "Chunks": 169,
+    "Average Chunk Size": "97.5 words",
+    "Average Coverage": "68%",
+    "Pass Rate": "60%"
   }
 ]

@@ -60,3 +60,20 @@ SEMANTIC CHUNKING:
             4.If similarity drops below a threshold → create a new chunk.
             5.Otherwise → continue adding sentences.
     we are using this instead of advanced method directly to first check if this improve our retrieval metric compared with 100-word fixed chunks.
+
+    Semantic chunking has a disavantage here,
+    we improved semantic chunking from basic chunking to moifying it as "min chunk size to 20 and limiting max chunk size to 200"
+    this made our result a little better than normal semantic chunking, but its still not better than batch chunking.
+    Therefore we go with hybrid chunking.
+
+<!-- ------------------------------------------------------------------------------------------------------- -->
+
+HYBRID CHUNKING:
+
+    in hybrid retrieval we will combine two signals:
+        1.Semantic similarity — finds text with similar meaning.
+        2.Keyword matching — finds text containing important words from the question.
+
+    1.Why can keyword/BM25 search find something that vector search misses?
+    2.Why can vector search find something that keyword search misses?
+    3.Why would combining them potentially be better than either one alone?

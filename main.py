@@ -10,6 +10,9 @@ from retrieval_analysis import retrieval_check
 from semantic_chunking import split_sentences
 from semantic_chunking import semantic_chunking
 
+# # -------testing-------------
+# from find_rank_testing import rank
+
 
 def main():
     pdf_path = "documents/sample.pdf"
@@ -23,6 +26,7 @@ def main():
     # 2. Semantic Chunking (using static threshold or dynamic percentile)
     threshold = 0.474
     semantic_chunks = semantic_chunking(sentences, sentence_embeddings, threshold)
+
 
 # ------------------------------testing---------------------------------------------
     # chunk_sizes = [
@@ -52,6 +56,7 @@ def main():
     # 4. Load evaluation dataset
     with open("questions.json", "r", encoding="utf-8") as file:
             questions = json.load(file)
+
 
     results = []
 
@@ -91,39 +96,27 @@ def main():
              "evidence_coverage" : coverage
         })
 
-# ---------------------------------testing-------------------------------------
-    for i,result in enumerate(results):
-         print("question:",i)
-         print("evidence coverage:",result["evidence_coverage"])
-         if result["evidence_coverage"]<1.0:
-              print("total evidence:",result["evidence_total"])
-              print("evidence found:",result["evidence_found"])
-              print("retrieved chunks:",result["retrieved_chunks"])
-         print("-"*80)
-#------------------------------------------------------------------------------
 
 
-# # ---------------------Average coverage---------------------------
-#     total_coverage = sum(
-#          result["evidence_coverage"] for result in results
-#     )
-#     average_coverage = total_coverage/len(results)
-#     print(f"Average evidence coverge: {average_coverage:.2%}")
+# ---------------------Average coverage---------------------------
+    total_coverage = sum(
+         result["evidence_coverage"] for result in results
+    )
+    average_coverage = total_coverage/len(results)
+    print(f"Average evidence coverge: {average_coverage:.2%}")
 
-# # -----------------------Pass Rate---------------------------------
-#     passed = sum(
-#         1 for result in results
-#         if result["evidence_coverage"] >=0.5        
-#     )
-#     pass_rate = passed/len(results)
-#     print(f"Retrieval pass rate: {pass_rate:.2%}")
-# # -----------------------------------------------------------------
+# -----------------------Pass Rate---------------------------------
+    passed = sum(
+        1 for result in results
+        if result["evidence_coverage"] >=0.5        
+    )
+    pass_rate = passed/len(results)
+    print(f"Retrieval pass rate: {pass_rate:.2%}")
+# -----------------------------------------------------------------
 
     # Optional: Save results to disk
     # with open("result.json", "w", encoding="utf-8") as file:
     #     json.dump(results, file, indent=4, ensure_ascii=False)
-
-
 
 
 if __name__ == "__main__":
