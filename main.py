@@ -8,11 +8,10 @@ from ollama_test import ollama_query
 from evaluation import evidence_coverage
 from retrieval_analysis import retrieval_check
 
-# from semantic_chunking import split_sentences
-# from semantic_chunking import semantic_chunking
 
 from bm25_scores import bm25_scores
 from hybrid_retrieve import normalize_scores
+from reranker import rerank
 
 
 def main():
@@ -21,14 +20,7 @@ def main():
 
     # chunking
     chunks = chunk_text(text)
-# #--------------------------------semantic chunking---------------------------------
-    # 1. Split text into sentences and embed them
-    # sentences = split_sentences(text)
-    # sentence_embeddings = get_embeddings(sentences)
-    # 2. Semantic Chunking (using static threshold or dynamic percentile)
-    # threshold = 0.474
-    # semantic_chunks = semantic_chunking(sentences, sentence_embeddings, threshold)
-# #-----------------------------------------------------------------------------------
+
 
     # 3. Embed chunks for retrieval
     embeddings = get_embeddings(chunks)
@@ -39,6 +31,7 @@ def main():
 
 
     results = []
+    alpha = 0.7
 
     # 5. RAG Pipeline & Evaluation Loop
     for question in questions:
@@ -55,7 +48,7 @@ def main():
         normalized_bm25 = normalize_scores(vector_score_values)
         normalized_vector = normalize_scores(bm25_score_values)
 
-        alpha = 0.7
+        
 
         hybrid_scores = [
             alpha * vector_score + (1 - alpha) * bm25_score
@@ -63,27 +56,24 @@ def main():
             in zip(normalized_vector, normalized_bm25)
         ]
 
-        k = 3
+        candidate_k = 10
 
-        top_indices = np.argsort(hybrid_scores)[-k:][::-1]
-
+        candidate_indices = np.argsort(hybrid_scores)[-candidate_k:][::-1]
         # 3. Extract chunks and scores
-        retrieved_chunks = [chunks[i] for i in top_indices]
-        retrieved_scores = [hybrid_scores[i] for i in top_indices]
+        hybrid_chunks = [chunks[i] for i in candidate_indices]
+        hybrid_scores = [hybrid_scores[i] for i in candidate_indices]
 
-        # print("Top K chunks:")
 
-        # for rank, (index, chunk, score) in enumerate(
-        #     zip(top_indices, retrieved_chunks, retrieved_scores), start=1
-        # ):
-        #     print(f"Rank {rank} | Chunk {index} | Score {score}")
-        #     print(chunk)
-        #     print("-" * 80)
+        reranked = rerank(question_text, hybrid_chunks, k=3)
+
+
+        final_chunks = [chunk for chunk, score in reranked]
+        final_scores = [score for chunk, score in reranked]
 
         # Evaluate evidence coverage
-        found, total, coverage = evidence_coverage(retrieved_chunks,evidence_points) 
+        found, total, coverage = evidence_coverage(final_chunks,evidence_points) 
 
-        context = "\n".join(retrieved_chunks)
+        context = "\n".join(final_chunks)
 
         prompt = f"""
         Context: {context}
@@ -101,13 +91,14 @@ def main():
              "question" : question_text,
              "ground_truth" : question["answer"],
              "answer" : response,
-             "retrieved_chunks" : retrieved_chunks,
-             "retrieved_scores" : retrieved_scores,
+             "retrieved_chunks" : final_chunks,
+             "retrieved_scores" : final_scores,
              "evidence_found" : found,
              "evidence_total" : total,
              "evidence_coverage" : coverage
         })
 
+    print("alpha:",alpha)
 
 # ---------------------Average coverage---------------------------
     total_coverage = sum(

@@ -121,3 +121,50 @@ HYBRID Retrieval:
             for vector_score, bm25_score
             in zip(normalized_vector, normalized_bm25)
             ]
+        --------------reranking-----------------
+    vector + BM25 -> 78% coverage which is lower than batch chunking.
+    so now we intoduce "reranking"
+            Question
+            ↓
+            Initial Retrieval
+            (BM25 + Vector / Hybrid)
+            ↓
+            Retrieve more candidates
+            (e.g. Top-10)
+            ↓
+            Re-ranker
+            ↓
+            Re-ranked candidates
+            ↓
+            Final Top-3
+            ↓
+            LLM
+
+    to rerank we use cross-encoder.
+    difference between hybrid similaity scorer and cross encoder is that,
+        $ similarity wiil embedd questions and chunks then checks for similarity and gives a score.
+            Question → vector
+            Chunk    → vector
+                ↓
+            similarity score
+        $ but, cross-encoder gets both question and chunk together cross encodes it and gives a score.
+            Question + Chunk
+                ↓
+            Cross-Encoder
+                ↓
+            Relevance score
+
+    ----------------conclusion of retrieval------------------
+        1. Fixed-size + Vector is already very strong on this dataset.
+        Your baseline achieved 92% / 100%.
+
+        2. Semantic chunking did not perform better.
+        Your tested thresholds produced lower retrieval performance, so there's no reason to choose semantic chunking simply because it sounds more advanced.
+
+        3. Hybrid retrieval alone was worse than the vector baseline.
+        Your best hybrid configuration was α = 0.7, giving 78.67% / 80%.
+
+        4. Hybrid + re-ranking recovered the baseline performance.
+        With α = 0.7, Top-10 candidates and final Top-3 re-ranked chunks, you reached 92% / 100%.
+
+    "On the current 5-question evaluation dataset, hybrid retrieval followed by cross-encoder re-ranking achieved 92% average evidence coverage and a 100% retrieval pass rate, matching the fixed-size vector-search baseline."
