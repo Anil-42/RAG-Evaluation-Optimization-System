@@ -53,5 +53,476 @@
       "Feel free to tailor these tips to your schedule, your document, and your budget.",
       "Pick and choose the ones that make sense for you."
     ]
+  },
+
+  {
+    "question": "Does plain English mean removing complex information?",
+    "answer": "No. Plain English does not mean deleting complex information; it means presenting complex information clearly.",
+    "source": "a plain english handbook",
+    "evidence": "It does not mean deleting complex information to make the document easier to understand. For investors to make informed decisions, disclosure documents must impart complex information. Using plain English assures the orderly and clear presentation of complex information.",
+    "evidence_points": [
+      "Plain English does not mean deleting complex information.",
+      "Disclosure documents still need to provide complex information.",
+      "The complex information should be presented clearly."
+    ]
+  },
+
+  {
+    "question": "Who authored the preface to the handbook?",
+    "answer": "Warren E. Buffett authored the preface.",
+    "source": "a plain english handbook",
+    "evidence": "Preface by Warren E. Buffett",
+    "evidence_points": ["Warren E. Buffett wrote the preface."]
+  },
+
+  {
+    "question": "Who wrote the introduction to the handbook?",
+    "answer": "Arthur Levitt, Chairman of the U.S. Securities and Exchange Commission, wrote the introduction.",
+    "source": "a plain english handbook",
+    "evidence": "by Arthur Levitt Chairman, U.S. Securities and Exchange Commission",
+    "evidence_points": [
+      "Arthur Levitt wrote the introduction.",
+      "Arthur Levitt was Chairman of the U.S. Securities and Exchange Commission."
+    ]
+  },
+
+  {
+    "question": "Why does the handbook say investors need plain English disclosure documents?",
+    "answer": "Because many investors are neither lawyers, accountants, nor investment bankers, disclosure documents need to be written in language they can understand.",
+    "source": "a plain english handbook",
+    "evidence": "Because many investors are neither lawyers, accountants, nor investment bankers, we need to start writing disclosure documents in a language investors can understand: plain English.",
+    "evidence_points": [
+      "Many investors are not lawyers, accountants, or investment bankers.",
+      "Disclosure documents therefore need to use language investors can understand."
+    ]
+  },
+
+  {
+    "question": "What should companies avoid replacing everyday language with?",
+    "answer": "Companies should replace legalese and jargon with everyday words that communicate complex information clearly.",
+    "source": "a plain english handbook",
+    "evidence": "The legalese and jargon of the past must give way to everyday words that communicate complex information clearly.",
+    "evidence_points": [
+      "Legalese and jargon should be replaced.",
+      "Everyday words should be used to communicate complex information clearly."
+    ]
+  },
+
+  {
+    "question": "What questions should be asked when creating a profile of investors?",
+    "answer": "The handbook recommends considering investors' demographics, familiarity with investments and financial terminology, understanding of investment concepts, how they will initially read the document, how they will use it later, and what information they will look for.",
+    "source": "a plain english handbook",
+    "evidence": "What are their demographics—age, income, level of education, and job experience? How familiar are they with investments and financial terminology? What investment concepts can you safely assume they understand? How will they read the document for the first time? How will they use the document while they own the security? What information will they be looking for later?",
+    "evidence_points": [
+      "Consider investors' demographics.",
+      "Assess familiarity with investments and financial terminology.",
+      "Determine which investment concepts they understand.",
+      "Consider how they will first read the document.",
+      "Consider how they will use the document later.",
+      "Consider what information they will look for later."
+    ]
+  },
+
+  {
+    "question": "Why should a writer know the audience before writing a document?",
+    "answer": "Knowing the audience helps the writer determine what information and terminology the readers can understand and how the document should be organized.",
+    "source": "a plain english handbook",
+    "evidence": "To write understandable documents, you need to gauge the financial sophistication of your investors.",
+    "evidence_points": [
+      "Writers should determine the financial sophistication of their investors.",
+      "Understanding the audience helps writers create understandable documents."
+    ]
+  },
+
+  {
+    "question": "What principles of good organization does the handbook recommend?",
+    "answer": "Present the big picture before details, use descriptive headers and subheaders, group related information, adapt organization to the audience's expertise, and review the flow from beginning to end.",
+    "source": "a plain english handbook",
+    "evidence": "First, present the big picture before the details. Second, use descriptive headers and subheaders. Third, always group related information together. Fourth, your audience's degree of investment expertise will affect how you organize the document. Fifth, review your document by taking a good look at the flow of information from beginning to end.",
+    "evidence_points": [
+      "Present the big picture before the details.",
+      "Use descriptive headers and subheaders.",
+      "Group related information together.",
+      "Adapt organization to the audience's investment expertise.",
+      "Review the flow of information from beginning to end."
+    ]
+  },
+
+  {
+    "question": "What physical process does the handbook recommend for reorganizing an existing document?",
+    "answer": "It recommends enlarging the document on ledger paper, noting the main and supporting points, putting the pages on a wall, physically rearranging them, recording their original locations, and creating a reordered master copy.",
+    "source": "a plain english handbook",
+    "evidence": "Photocopy the document, single sided, on 11'x17' paper (ledger paper) to 120% of its original size. In the margin of each paragraph, jot down the main and supporting points. Tape or tack the pages of your document to the wall. Physically move the pages into the order that makes the most sense.",
+    "evidence_points": [
+      "Photocopy the document on ledger paper at 120% of its original size.",
+      "Write the main and supporting points in the margins.",
+      "Put the pages on a wall.",
+      "Physically move pages into a logical order."
+    ]
+  },
+
+  {
+    "question": "What are common problems found in disclosure documents?",
+    "answer": "Common problems include long sentences, passive voice, weak verbs, superfluous words, legal and financial jargon, defined terms, abstract words, unnecessary details, and unreadable design and layout.",
+    "source": "a plain english handbook",
+    "evidence": "Common problems: Long sentences, Passive voice, Weak verbs, Superfluous words, Legal and financial jargon, Numerous defined terms, Abstract words, Unnecessary details, Unreadable design and layout.",
+    "evidence_points": [
+      "Long sentences are a common problem.",
+      "Passive voice and weak verbs are common problems.",
+      "Superfluous words and jargon create problems.",
+      "Numerous defined terms can make documents difficult.",
+      "Abstract words and unnecessary details create problems.",
+      "Unreadable design and layout create problems."
+    ]
+  },
+
+  {
+    "question": "Why does the handbook recommend using active voice?",
+    "answer": "Active voice makes writing clearer and more direct by identifying who performs the action.",
+    "source": "a plain english handbook",
+    "evidence": "The quickest fix lies in using the active voice with strong verbs.",
+    "evidence_points": [
+      "The handbook recommends active voice as a quick way to improve writing.",
+      "Active voice is used together with strong verbs."
+    ]
+  },
+
+  {
+    "question": "What is a hidden verb?",
+    "answer": "A hidden verb is a strong verb hidden inside a nominalization, which is a noun derived from a verb.",
+    "source": "a plain english handbook",
+    "evidence": "In these sentences, the strong verb lies hidden in a nominalization, a noun derived from a verb that usually ends in -tion.",
+    "evidence_points": [
+      "A hidden verb is a strong verb hidden in a nominalization.",
+      "A nominalization is a noun derived from a verb."
+    ]
+  },
+
+  {
+    "question": "Why should writers replace hidden verbs?",
+    "answer": "Replacing hidden verbs with direct verbs makes sentences shorter and more vigorous.",
+    "source": "a plain english handbook",
+    "evidence": "The quickest fix lies in using the active voice with strong verbs.",
+    "evidence_points": [
+      "The handbook recommends using strong verbs.",
+      "Using strong verbs helps improve sentence writing."
+    ]
+  },
+
+  {
+    "question": "Why does the handbook recommend personal pronouns?",
+    "answer": "Personal pronouns clarify what applies to the reader and the company, allow writers to speak directly to readers, help avoid abstractions, keep sentences short, and avoid gender-specific pronouns.",
+    "source": "a plain english handbook",
+    "evidence": "First, personal pronouns aid your reader's comprehension because they clarify what applies to your reader and what applies to you. Second, they allow you to 'speak' directly to your reader. Third, they help you to avoid abstractions. Fourth, they keep your sentences short. Fifth, first- and second-person pronouns aren't gender-specific.",
+    "evidence_points": [
+      "Personal pronouns clarify what applies to the reader and the writer.",
+      "They allow the writer to speak directly to the reader.",
+      "They help avoid abstractions.",
+      "They help keep sentences short.",
+      "They avoid the gender-specific pronoun problem."
+    ]
+  },
+
+  {
+    "question": "Why should writers omit superfluous words?",
+    "answer": "Removing unnecessary words is one of the easiest ways to improve a disclosure document.",
+    "source": "a plain english handbook",
+    "evidence": "Omitting superfluous words is one of the easiest ways to improve your disclosure document.",
+    "evidence_points": [
+      "Superfluous words should be removed.",
+      "Removing them can improve a disclosure document."
+    ]
+  },
+
+  {
+    "question": "What is shotgunning in writing?",
+    "answer": "Shotgunning is using a blast or long list of words in the hope that at least one conveys the intended meaning.",
+    "source": "a plain english handbook",
+    "evidence": "Another source of superfluous words is 'shotgunning': letting loose a blast of words hoping at least one conveys your intended meaning.",
+    "evidence_points": [
+      "Shotgunning involves using a blast of words.",
+      "The writer hopes that at least one word conveys the intended meaning."
+    ]
+  },
+
+  {
+    "question": "Why should shotgunning be avoided?",
+    "answer": "It should be avoided because a long list of words can usually be replaced by a single precise word or phrase.",
+    "source": "a plain english handbook",
+    "evidence": "The simplest solution here is to replace your laundry list of adjectives with a single word or phrase.",
+    "evidence_points": [
+      "Long lists of adjectives can be replaced.",
+      "A single precise word or phrase is preferred."
+    ]
+  },
+
+  {
+    "question": "Why are positive sentences preferred over negative sentences?",
+    "answer": "Positive sentences are shorter and easier to understand than negative sentences.",
+    "source": "a plain english handbook",
+    "evidence": "Positive sentences are shorter and easier to understand than their negative counterparts.",
+    "evidence_points": [
+      "Positive sentences are shorter.",
+      "Positive sentences are easier to understand."
+    ]
+  },
+
+  {
+    "question": "What is the natural word order of English speakers?",
+    "answer": "The natural word order is subject-verb-object.",
+    "source": "a plain english handbook",
+    "evidence": "The natural word order of English speakers is subject-verb-object.",
+    "evidence_points": ["English naturally uses subject-verb-object order."]
+  },
+
+  {
+    "question": "Why should writers keep the subject, verb, and object close together?",
+    "answer": "Keeping the subject, verb, and object close together helps readers understand sentences more easily.",
+    "source": "a plain english handbook",
+    "evidence": "The natural word order of English speakers is subject-verb-object.",
+    "evidence_points": [
+      "The handbook recommends maintaining subject-verb-object order."
+    ]
+  },
+
+  {
+    "question": "What rules of thumb are given for writing if-then statements?",
+    "answer": "Use the if-first structure for one if and one then; use the if first and tabulate multiple thens; use the then first and tabulate multiple ifs; and break down or tabulate cases involving multiple ifs and multiple thens.",
+    "source": "a plain english handbook",
+    "evidence": "One 'if,' one 'then'... One 'if,' multiple 'thens'... Multiple 'ifs,' one 'then'... Multiples 'ifs' and 'thens'...",
+    "evidence_points": [
+      "Start with if when there is one if and one then.",
+      "Start with if and tabulate the thens when there is one if and multiple thens.",
+      "Start with then and tabulate the ifs when there are multiple ifs and one then.",
+      "Break down the information or use a table when there are multiple ifs and thens."
+    ]
+  },
+
+  {
+    "question": "What are the five basic design elements discussed in the handbook?",
+    "answer": "The five elements are hierarchy, typography, layout, graphics, and color.",
+    "source": "a plain english handbook",
+    "evidence": "This chapter covers five basic design elements: hierarchy or distinguishing levels of information, typography, layout, graphics, color.",
+    "evidence_points": [
+      "Hierarchy distinguishes levels of information.",
+      "Typography is a basic design element.",
+      "Layout is a basic design element.",
+      "Graphics are a basic design element.",
+      "Color is a basic design element."
+    ]
+  },
+
+  {
+    "question": "What are the two varieties of typefaces mentioned in the handbook?",
+    "answer": "The two varieties are serif and sans serif.",
+    "source": "a plain english handbook",
+    "evidence": "Typefaces come in two varieties: serif and sans serif.",
+    "evidence_points": [
+      "One typeface variety is serif.",
+      "The other typeface variety is sans serif."
+    ]
+  },
+
+  {
+    "question": "What type size is generally recommended for readable text?",
+    "answer": "10pt to 12pt is generally the most common and legible size, while 12pt or larger should be considered for elderly audiences.",
+    "source": "a plain english handbook",
+    "evidence": "Generally, type in 10pt-12pt is most common... If you have special concerns about legibility, especially for an elderly audience, you should consider using 12pt or larger.",
+    "evidence_points": [
+      "10pt to 12pt is generally common and legible.",
+      "12pt or larger should be considered for elderly audiences."
+    ]
+  },
+
+  {
+    "question": "What text alignment is easiest to read according to the handbook?",
+    "answer": "Left justified, ragged right text is the easiest to read.",
+    "source": "a plain english handbook",
+    "evidence": "Research shows that the easiest text to read is left justified, ragged right text.",
+    "evidence_points": [
+      "Left justified, ragged right text is the easiest to read."
+    ]
+  },
+
+  {
+    "question": "What is a comfortable line length for most readers?",
+    "answer": "A comfortable line length is 32 to 64 characters.",
+    "source": "a plain english handbook",
+    "evidence": "A comfortable line length for most readers is 32 to 64 characters.",
+    "evidence_points": [
+      "The recommended comfortable line length is 32 to 64 characters."
+    ]
+  },
+
+  {
+    "question": "Why is fully justified text harder to read?",
+    "answer": "Fully justified text creates variable spacing between words, causing the reader's eye to stop and readjust.",
+    "source": "a plain english handbook",
+    "evidence": "When you fully justify text, the spacing between words fluctuates from line to line, causing the eye to stop and constantly readjust to the variable spacing on each line.",
+    "evidence_points": [
+      "Fully justified text creates fluctuating spaces between words.",
+      "The variable spacing causes the eye to constantly readjust."
+    ]
+  },
+
+  {
+    "question": "How can white space improve a document?",
+    "answer": "White space enhances readability, emphasizes important points, and makes the document look lighter.",
+    "source": "a plain english handbook",
+    "evidence": "Generous use of white space on the page enhances readability, helps to emphasize important points, and lightens the overall look of the document.",
+    "evidence_points": [
+      "White space enhances readability.",
+      "White space emphasizes important points.",
+      "White space lightens the overall appearance."
+    ]
+  },
+
+  {
+    "question": "How can writers emphasize information without using all capital letters?",
+    "answer": "They can use different typeface sizes or weights, extra white space, bold type, shading, rules, boxes, or sidebars.",
+    "source": "a plain english handbook",
+    "evidence": "To highlight information and maintain readability, use a different size or weight of your typeface. Try using extra white space, bold type, shading, rules, boxes, or sidebars in the margins to make information stand out.",
+    "evidence_points": [
+      "Use a different typeface size or weight.",
+      "Use extra white space.",
+      "Use bold type or shading.",
+      "Use rules, boxes, or sidebars."
+    ]
+  },
+
+  {
+    "question": "Why do all-uppercase sentences make reading difficult?",
+    "answer": "Capital letters make word shapes disappear because they have similar height, volume, and width, forcing readers to slow down and study individual letters.",
+    "source": "a plain english handbook",
+    "evidence": "All uppercase sentences usually bring the reader to a standstill because the shapes of words disappear, causing the reader to slow down and study each letter.",
+    "evidence_points": [
+      "All-uppercase text causes word shapes to disappear.",
+      "Readers slow down and study individual letters."
+    ]
+  },
+
+  {
+    "question": "What is the recommended approach to using typefaces in a document?",
+    "answer": "The handbook recommends using no more than two typefaces.",
+    "source": "a plain english handbook",
+    "evidence": "As a general rule, do not use more than two typefaces.",
+    "evidence_points": [
+      "A document should generally use no more than two typefaces."
+    ]
+  },
+
+  {
+    "question": "Why should writers avoid creating new acronyms for a document?",
+    "answer": "New document-specific acronyms force readers to memorize a new vocabulary while trying to understand complicated concepts.",
+    "source": "a plain english handbook",
+    "evidence": "Don't create new jargon that's unique to your document in the form of acronyms or other words. It's asking too much of your readers to memorize a new vocabulary while they are trying to understand complicated concepts.",
+    "evidence_points": [
+      "Document-specific acronyms create new jargon.",
+      "They force readers to memorize a new vocabulary.",
+      "This makes understanding complicated concepts harder."
+    ]
+  },
+
+  {
+    "question": "How do readers cope with highly abstract information?",
+    "answer": "Readers often create mental scenarios or hypothetical situations involving people performing actions to make abstract concepts understandable.",
+    "source": "a plain english handbook",
+    "evidence": "Readers faced with complex written information frequently resorted to creating 'scenarios' in an effort to understand the text. That is, they often made an abstract concept understandable by using it in a hypothetical situation in which people performed actions.",
+    "evidence_points": [
+      "Readers create mental scenarios to understand complex information.",
+      "They may turn abstract concepts into hypothetical situations involving human actions."
+    ]
+  },
+
+  {
+    "question": "Who authored The Visual Display of Quantitative Information?",
+    "answer": "Edward R. Tufte authored The Visual Display of Quantitative Information.",
+    "source": "a plain english handbook",
+    "evidence": "The best known work, The Visual Display of Quantitative Information, by Edward R. Tufte, provides practical advice on creating graphics.",
+    "evidence_points": [
+      "Edward R. Tufte wrote The Visual Display of Quantitative Information."
+    ]
+  },
+
+  {
+    "question": "What principles define graphical excellence according to Edward Tufte?",
+    "answer": "Graphical excellence gives viewers many ideas in a short time with little ink and space, while accurately representing the data.",
+    "source": "a plain english handbook",
+    "evidence": "Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space. And graphical excellence requires telling the truth about data.",
+    "evidence_points": [
+      "Graphical excellence communicates many ideas in a short time.",
+      "It uses little ink and space.",
+      "It requires truthful representation of data."
+    ]
+  },
+
+  {
+    "question": "Why should graphics avoid a non-zero baseline?",
+    "answer": "A non-zero baseline can distort differences by destroying correct proportions and can mislead readers about the magnitude of change.",
+    "source": "a plain english handbook",
+    "evidence": "Generally, you should avoid graphics that start at a non-zero baseline, because they distort differences by destroying correct proportions. A non-zero baseline can mislead the reader as to the magnitude of change.",
+    "evidence_points": [
+      "Non-zero baselines can destroy correct visual proportions.",
+      "They can mislead readers about the magnitude of differences."
+    ]
+  },
+
+  {
+    "question": "Why should pie charts be avoided when they contain too many slices?",
+    "answer": "Readers have difficulty accurately comparing irregular pie slices, especially when there are more than five or six slices.",
+    "source": "a plain english handbook",
+    "evidence": "Pie charts can be useful in illustrating parts of a whole, but not when you divide the pie into more than 5 or 6 slices. Most readers find it difficult to draw accurate comparisons between pie slices because the slices form irregular shapes.",
+    "evidence_points": [
+      "Pie charts become difficult to use when divided into more than five or six slices.",
+      "Irregular slice shapes make accurate comparisons difficult."
+    ]
+  },
+
+  {
+    "question": "What is the major limitation of readability formulas?",
+    "answer": "Readability formulas do not take the content of the document into account and cannot determine whether the information was conveyed clearly.",
+    "source": "a plain english handbook",
+    "evidence": "No formula takes into account the content of the document being evaluated. In other words, no formula can tell you if you have conveyed the information clearly.",
+    "evidence_points": [
+      "Readability formulas do not consider the content of the document.",
+      "They cannot determine whether information has been conveyed clearly."
+    ]
+  },
+
+  {
+    "question": "Why should computerized style checkers not be treated as the final test of writing quality?",
+    "answer": "They mainly measure mechanical features such as syllables and words and cannot determine whether the content communicates clearly; human readers provide the final test.",
+    "source": "a plain english handbook",
+    "evidence": "For the most part, they count the numbers of syllables and words... The final test of whether any piece of writing meets its goal of communicating information comes when humans read it.",
+    "evidence_points": [
+      "Style checkers mainly measure mechanical features such as syllables and words.",
+      "They cannot determine whether the content is communicated clearly.",
+      "Human readers provide the final test of communication."
+    ]
+  },
+
+  {
+    "question": "How should a document's cover page function?",
+    "answer": "It should serve as an inviting introduction that gives investors key facts without presenting everything at once.",
+    "source": "a plain english handbook",
+    "evidence": "A cover page should be an introduction, an inviting entryway into your document, giving investors some key facts about your offering, but not telling everything all at once.",
+    "evidence_points": [
+      "The cover page should be an inviting introduction.",
+      "It should provide key facts about the offering.",
+      "It should not attempt to tell everything at once."
+    ]
+  },
+
+  {
+    "question": "How can marketing personnel and focus groups help develop a plain English document?",
+    "answer": "Marketing personnel can provide demographic and survey information about investors and terminology they understand, while focus groups test how representative readers interact with the document and reveal confusing sections.",
+    "source": "a plain english handbook",
+    "evidence": "A marketing person who may have market survey research or polls on your investors. Also, the marketing department is usually attuned to the terminology that your investors can readily understand. You can evaluate your document by testing it with a focus group. Experts call this 'audience-centered' testing because it focuses on the interaction between a particular document and a representative sample of its readers. Based on the test results, you can isolate the parts that cause the most confusion and fix them.",
+    "evidence_points": [
+      "Marketing can provide survey or poll information about investors.",
+      "Marketing can provide information about terminology investors understand.",
+      "Focus groups test interaction between the document and representative readers.",
+      "Focus groups can identify confusing parts that need revision."
+    ]
   }
 ]
