@@ -168,3 +168,26 @@ HYBRID Retrieval:
         With α = 0.7, Top-10 candidates and final Top-3 re-ranked chunks, you reached 92% / 100%.
 
     "On the current 5-question evaluation dataset, hybrid retrieval followed by cross-encoder re-ranking achieved 92% average evidence coverage and a 100% retrieval pass rate, matching the fixed-size vector-search baseline."
+
+<!-- ------------------------------------------------------ -->
+
+fixedsize and hybrid retrieval worked well for 5 questions, but when data set size became large(40-50) it failed in most cases. Therefore we must evaluate that first
+
+We are using data sets for testing rag than blindly writing the code without evaluating it and implementing it directly.
+
+after modifying the data set it worked much better.
+Method: fixed_vector
+Average evidence coverage: 69.20%
+Retrieval pass rate: 73.91%
+-------------------------------------------
+Method: hybrid_rerank
+Average evidence coverage: 73.55%
+Retrieval pass rate: 78.26%
+But there are few cases where vector has 100% but in hybrid/reranking 0%, and
+in few cases vector 0% and hybrid 100%
+
+difference between vector and hybrid reranking is:
+73.55 − 69.20 = 4.35 percentage points
+
+Don't say:"Hybrid + reranking is better because 73.55% > 69.20%."
+That's partially true, but incomplete.

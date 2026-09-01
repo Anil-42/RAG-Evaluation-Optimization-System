@@ -7,6 +7,13 @@ def retrieve(question, chunks, embeddings):
     similarity = get_similarities(question_embedding, embeddings)
     # print(similarity.shape)
 
+
+    # change according to retrieval method
+    
+    # fixedsize retrieval
+    # k=min(3,len(chunks))
+
+    # hybrid retrieval
     k=len(chunks)
 
     values, indices = torch.topk(similarity,k)
@@ -15,12 +22,20 @@ def retrieve(question, chunks, embeddings):
 #zip pairs indices and values. index, score is unpacking.
 #.item() function converts a single-element PyTorch tensor into a normal Python number.
 
-    # retrieved_chunks = []
+    # for fixedsize retrieval
+    retrieved_chunks = []
+
     retrieved_scores = []
     for index, score in zip(indices[0],values[0]): 
+        # for fixedsize and semantic retrieval
         # retrieved_chunks.append(chunks[index.item()])
+        
         retrieved_scores.append(score.item())
 
+    # for fixedsize and semantic retrieval
+    # return retrieved_chunks, retrieved_scores
+
+    # for hybrid retrieval
     return retrieved_scores
 
 
