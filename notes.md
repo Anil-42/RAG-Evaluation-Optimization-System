@@ -179,7 +179,9 @@ after modifying the data set it worked much better.
 Method: fixed_vector
 Average evidence coverage: 69.20%
 Retrieval pass rate: 73.91%
--------------------------------------------
+
+---
+
 Method: hybrid_rerank
 Average evidence coverage: 73.55%
 Retrieval pass rate: 78.26%
@@ -191,3 +193,16 @@ difference between vector and hybrid reranking is:
 
 Don't say:"Hybrid + reranking is better because 73.55% > 69.20%."
 That's partially true, but incomplete.
+
+TORCH.TOPK() gives values, indices in DECSENDING order. for hybridretrieval it must be in the same order as chunks, As thats how BM25 retrieves
+so for hybrid we sort based on indices to restore original order of chunks after torch.topk().
+
+<!-- After solvibg above problem -->
+
+    Method: hybrid
+    Average evidence coverage: 82.25%
+    Retrieval pass rate: 86.96%
+
+    Method: hybrid_rerank
+    Average evidence coverage: 84.78%
+    Retrieval pass rate: 89.13%

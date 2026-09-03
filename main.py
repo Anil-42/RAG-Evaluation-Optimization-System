@@ -16,7 +16,7 @@ def main():
     # SELECT EXPERIMENT
     # ============================================================
 
-    method = "hybrid"  # Change this to select the retrieval method
+    method = "hybrid_rerank"  # Change this to select the retrieval method
 
     # Available methods:
     #
