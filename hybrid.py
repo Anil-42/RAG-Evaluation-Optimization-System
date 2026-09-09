@@ -4,7 +4,7 @@ from chunking import chunk_text
 from embedding import get_embeddings
 from retrieve import retrieve
 from bm25_scores import bm25_scores
-from hybrid_retrieve import normalize_scores
+from normalize_scores import normalize_scores
 
 
 def hybrid_retrieve_chunks(text, question_text):
@@ -76,9 +76,26 @@ def hybrid_retrieve_chunks(text, question_text):
         for i in candidate_indices
     ]
 
-    hybrid_scores = [
+    hybrid_score = [
         hybrid_scores[i]
         for i in candidate_indices
     ]
 
-    return hybrid_chunks, hybrid_scores
+
+# -------------------------------testing--------------------------
+    # print("Hybrid retrieval top 10 candidates:")
+    # print(question_text)
+    # for rank, index in enumerate(candidate_indices[:10], start=1):
+    #     print("Rank:", rank)
+    #     print("chunk index:", index)
+    #     print("hybrid score:", hybrid_scores[index])
+    #     print("-"*50)
+    # print("\nHybrid Reranking retrieval top 10 candidates:")
+
+
+    # chunks_index = [chunks.index(chunks[i]) for i in candidate_indices]
+
+    # return hybrid_chunks, hybrid_score, chunks_index, chunks
+# ----------------------------------------------------------------
+
+    return hybrid_chunks, hybrid_score

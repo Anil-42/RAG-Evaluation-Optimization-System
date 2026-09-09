@@ -8,17 +8,19 @@ def retrieve(question, chunks, embeddings):
     # print(similarity.shape)
 
 
-    # change according to retrieval method
+    # ----------------change according to retrieval method-------------------
     
     # fixedsize retrieval
     # k=min(3,len(chunks))
 
     # hybrid retrieval
     k=len(chunks)
+    # -----------------------------------------------------------------------
+
+    values, indices = torch.topk(similarity,k)
 
     # gives values, indices in sorted order. for hybridretrieval it must be in the same order as chunks.
     # so for hybrid we sort based on indices to restore original order of chunks as coded below.
-    values, indices = torch.topk(similarity,k)
 
     # --------------------for hybrid retrieval------------------------------
     # 1. Zip the indices and values together as native Python types
@@ -34,8 +36,8 @@ def retrieve(question, chunks, embeddings):
 
     #------------------------ for fixedsize and semantic retrieval--------
     # for index, score in zip(indices[0],values[0]): 
-        # retrieved_chunks.append(chunks[index.item()])
-        # retrieved_scores.append(score.item())
+    #     retrieved_chunks.append(chunks[index.item()])
+    #     retrieved_scores.append(score.item())
     # --------------------------------------------------------------------
 
     # ------------------------ for hybrid retrieval---------------------- 

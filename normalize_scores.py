@@ -1,5 +1,4 @@
 
-
 def normalize_scores(scores):
     maxval=max(scores)
     minval=min(scores)

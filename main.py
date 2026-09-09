@@ -10,13 +10,16 @@ from hybrid import hybrid_retrieve_chunks
 from hybrid_rerank import hybrid_rerank_retrieve
 
 
+from chunking import chunk_text
+from normalize import normalize
+
 def main():
 
     # ============================================================
     # SELECT EXPERIMENT
     # ============================================================
 
-    method = "hybrid_rerank"  # Change this to select the retrieval method
+    method = "hybrid"  # Change this to select the retrieval method
 
     # Available methods:
     #
@@ -24,6 +27,7 @@ def main():
     # "semantic_vector"
     # "hybrid"
     # "hybrid_rerank"
+
 
 
     # ============================================================
@@ -49,7 +53,6 @@ def main():
 
 
     results = []
-
 
     # ============================================================
     # 3. RAG EVALUATION LOOP
@@ -97,7 +100,7 @@ def main():
 
         elif method == "hybrid":
 
-            retrieved_chunks, retrieved_scores = (
+            retreved_chunks, retreved_scores = (
                 hybrid_retrieve_chunks(
                     text,
                     question_text
@@ -109,9 +112,9 @@ def main():
             # For pure hybrid experiment,
             # select top 3 before evaluation.
 
-            retrieved_chunks = retrieved_chunks[:3]
+            retrieved_chunks = retreved_chunks[:3]
 
-            retrieved_scores = retrieved_scores[:3]
+            retrieved_scores = retreved_scores[:3]
 
 
         elif method == "hybrid_rerank":
@@ -129,7 +132,19 @@ def main():
             raise ValueError(
                 "Unknown retrieval method"
             )
-
+    #  ---------------------------testing--------------------------------
+        
+        # chunks = chunk_text(text)
+        # for rank, (chunk, score) in enumerate(
+        #     zip(retrieved_chunks, retrieved_scores),
+        #     start=1
+        # ):
+        #     print("\nRank:", rank)
+        #     print("Score:", score)
+        #     print("chunk_index:", chunks.index(chunk))
+        #     print("Chunk:", chunk)
+        #     print("-" * 50)
+    # -------------------------------------------------------------
 
         # ========================================================
         # EVALUATION
@@ -191,22 +206,33 @@ def main():
             "evidence_coverage": coverage
 
         })
+# -----------------------------------testing-------------------------------------
+        # if(coverage < 1.0):
+        #     chunks = chunk_text(text)
+        #     print("\nQUESTION:", question_text)
+        #     print("Evidence Coverage:", coverage)
+        #     print("Evidence points:", evidence_points)
+        #     print("10 chunk Indices:", [chunks.index(chunk) for chunk in retreved_chunks])
+        #     print("10 retrieved chunks:", retreved_chunks)
+        #     print("10 chunk Scores:", retreved_scores)
+        #     print("-" * 50)
 
+# -------------------------------------------------------------------------------
 
     # ============================================================
     # 4. PRINT INDIVIDUAL RESULTS
     # ============================================================
 
-    for result in results:
+    # for result in results:
 
-        print(result["question"])
+    #     print(result["question"])
 
-        print(
-            f"Evidence coverage: "
-            f"{result['evidence_coverage']:.2%}"
-        )
+    #     print(
+    #         f"Evidence coverage: "
+    #         f"{result['evidence_coverage']:.2%}"
+    #     )
 
-        print("-" * 50)
+    #     print("-" * 50)
 
 
     # ============================================================
@@ -253,6 +279,18 @@ def main():
         f"{pass_rate:.2%}"
     )
 
+# ------------------------------to print questions with evidence coverage less than 0.5 --------------------------
+    # for result in results:
+    #     if result["evidence_coverage"] < 1.0:
+    #         print(result["question"])
+    
+    #         print(
+    #             f"Evidence coverage: "
+    #             f"{result['evidence_coverage']:.2%}"
+    #         )
+    
+    #         print("-" * 50)
+# -----------------------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
     main()

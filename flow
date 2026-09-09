@@ -1,0 +1,33 @@
+PRE
+    Query rewriting
+    Query normalization
+    Multi-query expansion
+    Query decomposition
+    Named-entity extraction
+    Query routing
+RETRIEVAL / MID
+    Fixed-size chunking baseline
+    Semantic chunking (already implemented)
+    Vector search
+    BM25/lexical search
+    Hybrid search
+    Score normalization/weighting
+    Knowledge-graph retrieval / Neo4j (advanced)
+    Cross-encoder reranking
+POST
+    Context filtering
+    Information-density filtering
+    Context ordering
+    Context compression
+    Evidence-aware generation
+EVALUATION
+    Frozen evaluation dataset
+    Evidence coverage
+    Retrieval pass rate
+    Recall@K
+    Top-K comparison
+    Failure analysis
+    Retrieval-vs-generation diagnosis
+    Regression testing
+    Automated evaluation / CI
+    Final experiment report

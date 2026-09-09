@@ -1,0 +1,166 @@
+Who can work on a plain English project according to the handbook?
+Evidence coverage: 0.00% - 0
+
+Why should writers consider how investors will read a document?
+Evidence coverage: 0.00% - 0
+
+Why should writers replace abstract terms with concrete terms?
+Evidence coverage: 0.00% - 0
+
+Why should writers use short sentences?
+Evidence coverage: 0.00% - 0
+
+Why should writers avoid using the word 'respectively'?
+Evidence coverage: 50.00% - 0
+
+[
+    {
+    "question": "Who can work on a plain English project according to the handbook?",
+    "answer": "A plain English project can be handled by a team or by one person working alone.",
+    "source": "a plain english handbook",
+    "evidence": "Many of you routinely select a team to think and talk about how to write a document from scratch or rewrite an existing document. Or you may do it on your own. In that case, rest assured that one person can do it alone.",
+    "evidence_points": [
+      "Many of you routinely select a team to think and talk about how to write a document from scratch or rewrite an existing document.",
+      "Or you may do it on your own.",
+      "In that case, rest assured that one person can do it alone."
+    ]
+  },
+  {
+    "question": "Why should writers consider how investors will read a document?",
+    "answer": "Writers should consider whether investors will read the document straight through or skip around to sections that interest them.",
+    "source": "a plain english handbook",
+    "evidence": "How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?",
+    "evidence_points": [
+      "How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?"
+    ]
+  },
+    {
+    "question": "Why should writers replace abstract terms with concrete terms?",
+    "answer": "Concrete terms help readers form clearer mental images and therefore make concepts and situations easier to understand.",
+    "source": "a plain english handbook",
+    "evidence": "And yet, it’s far easier to comprehend a concept or a situation when your mind can form images. You can make complex information more understandable by giving your readers an example using one investor.",
+    "evidence_points": [
+      "And yet, it’s far easier to comprehend a concept or a situation when your mind can form images.",
+      "You can make complex information more understandable by giving your readers an example using one investor."
+    ]
+  },
+ {
+    "question": "Why should writers use short sentences?",
+    "answer": "Long and complex sentences are harder for readers to understand, especially when they contain jargon and legalese.",
+    "source": "a plain english handbook",
+    "evidence": "The longer and more complex a sentence, the harder it is for readers to understand any single portion of it.",
+    "evidence_points": [
+      "The longer and more complex a sentence, the harder it is for readers to understand any single portion of it."
+    ]
+  },
+  {
+    "question": "Why should writers avoid using the word 'respectively'?",
+    "answer": "Using 'respectively' forces readers to go back and match items with the corresponding information, requiring more time and sometimes requiring them to read the sentence twice.",
+    "source": "a plain english handbook",
+    "evidence": "Whenever you use “respectively,” you force your reader to go back and match up what belongs to what. You may be saving words by using “respectively,” but your reader has to use more time and read your words twice to understand what you’ve written.",
+    "evidence_points": [
+      "Whenever you use “respectively,” you force your reader to go back and match up what belongs to what.",
+      "You may be saving words by using “respectively,” but your reader has to use more time and read your words twice to understand what you’ve written."
+    ]
+  }
+]
+
+
+1)
+    question: "Who can work on a plain English project according to the handbook?"
+    index: 22
+    Chunk: Getting Started Assemble the team or move ahead on your own As with a lot of things in life, it’s the preparation that often determines the success or failure of an effort to write documents in plain English. Many of you routinely select a team to think and talk about how to write a document from scratch or rewrite an existing document. Or you may do it on your own. In that case, rest assured that one person can do it alone. The list below describes the types of people who have participated in successful plain English teams. We’re not
+    hybrid:
+        Rank: 5
+        score: 0.8227211299198504
+    reranking:
+        Rank: 9
+        score: -0.7983915
+
+2)
+    question: "Why should writers consider how investors will read a document?"
+    index: 30
+    Chunk: level of education, and job experience? • How familiar are they with investments and financial terminology? • What investment concepts can you safely assume they understand? • How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them? • Will they read your document and your competitors’ side by side? • How will they use the document while they own the security? What information will they be looking for later, and is it easy to find? a plain english handbook 9 3 “One must consider also
+    hybrid:
+        Rank: 6
+        score: 0.7862390243592257
+    reranking:
+        Rank: 9
+        score: 1.7470853
+
+3)
+    question: "Why should writers replace abstract terms with concrete terms?"
+    index: 66
+    chunk: far easier to comprehend a concept or a situation when your mind can form images. In a study conducted at Carnegie-Mellon University, a cognitive psychol ogist and an English professor discovered that readers faced with com plex written information frequently resorted to creating “scenarios” in an effort to understand the text. That is, they often made an abstract concept understandable by using it in a hypothetical situation in which people performed actions. You can make complex information more understandable by giving your readers an example using one investor. This technique explains why “question and answer” formats often succeed when a    hybrid:
+    hybrid:    
+        Rank: 9
+        score: 0.5494609144450514
+    reranking:
+        Rank: 7
+        score: -6.385897
+
+4)
+    question: "Why should writers use short sentences?"
+    index: 79
+    chunk: many few not often rarely not the same different not … unless only if not … except only if not … until only when a plain english handbook 27 “There’s not much to be said about the period except that most writers don’t reach it soon enough.” William Zinsser On Writing Well Use short sentences No one likes to read a sentence that’s two pages long. And yet, lengthy, information-packed sentences choke many prospectuses today. To complicate matters further, these sentences are filled with jargon and legalese. The longer and more complex a sentence, the harder it is for readers
+    hybrid:
+        Rank: 1
+        score: 0.9466901302715487
+    reranking:
+        Rank: 1
+        score: 4.8052497
+
+5)
+    question: "Why should writers avoid using the word 'respectively'?"
+    index: 107
+    chunk: what it means? before The Senior Notes and the guarantee (the “Guarantee”) of the Senior Notes by Island Holdings will constitute unsecured senior obligations of the Issuer and Island Holdings, respectively. after The senior notes are an unsecured senior obligation of the issuer, while the guarantee of the senior notes is an unsecured senior obligation of Island Holdings. Whenever you use “respectively,” you force your reader to go back and match up what belongs to what. You may be saving words by using “respectively,” but your reader has to use more time and read your words twice to understand what
+    hybrid:
+        Rank: 1
+        score: 0.9383364501602736
+    reranking:
+        Rank: 4
+        score: -0.9603453
+
+
+
+
+
+Method: fixed_vector
+Average evidence coverage: 69.20%
+Retrieval pass rate: 73.91%
+What does the handbook say about removing complex information?
+Evidence coverage: 0.00%
+--------------------------------------------------
+Who can work on a plain English project according to the handbook?
+Evidence coverage: 0.00%
+--------------------------------------------------
+Why is knowing the audience important when writing a disclosure document?
+Evidence coverage: 0.00%
+--------------------------------------------------
+What should writers determine about the financial sophistication of investors?
+Evidence coverage: 0.00%
+--------------------------------------------------
+What should writers consider about investors' familiarity with financial terminology?
+Evidence coverage: 0.00%
+--------------------------------------------------
+Why should writers consider how investors will read a document?
+Evidence coverage: 0.00%
+--------------------------------------------------
+What is the first principle of good document organization?
+Evidence coverage: 0.00%
+--------------------------------------------------
+Why are active-voice sentences easier for readers to understand?
+Evidence coverage: 0.00%
+--------------------------------------------------
+Why should writers replace abstract terms with concrete terms?
+Evidence coverage: 0.00%
+--------------------------------------------------
+What does the handbook mean by omitting superfluous words?
+Evidence coverage: 0.00%
+--------------------------------------------------
+What is shotgunning in writing?
+Evidence coverage: 0.00%
+--------------------------------------------------
+Why should writers use short sentences?
+Evidence coverage: 0.00%
+--------------------------------------------------

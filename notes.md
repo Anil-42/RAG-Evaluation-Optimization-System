@@ -206,3 +206,33 @@ so for hybrid we sort based on indices to restore original order of chunks after
     Method: hybrid_rerank
     Average evidence coverage: 84.78%
     Retrieval pass rate: 89.13%
+
+hybrid -> hybrid reranking
+Evidence coverage: +2.53 percentage points
+Pass rate: +2.17 percentage points
+Failures: 6 → 5
+
+Even after reanking there might be a possibility where the ans chunk is in top 10 but the reranker fails to get it to top 3.
+five failure cases show that reranking isn't universally better. For example, it can push a relevant chunk downward, as we saw with chunk 22.
+
+- in one case the chunk is in top 1 in case of both hybrid and reranking but its evidence coverage is 0.
+  this happens because, while normalizing the evidence we remove every space and special characters,
+  Evidence:
+  The longer and more complex a sentence
+  normalized:
+  thelongerandmorecomplexasentence
+
+      this is not wrong but it makes substring matching somewhat fragile.
+
+- and one more thing is
+  if normalize(point) in normalized_chunks:
+  here we have a case in which a point contiunes from one chunk to next chunk
+  But it requires the entire evidence point to exist inside one retrieved chunk.
+  - There are two possible approaches to rectify this:
+    - Change your evaluation dataset's evidence_points so that each evidence point corresponds to text that can actually occur within a chunk.
+
+    but this is not efficient way as we cannot do it for al the questions manually.
+    - Make evidence_coverage() capable of recognizing evidence that is split across chunks.
+
+    for this we introduce another design decision: how much of an evidence point must be retrieved to count as covered?
+    That's something we should define carefully because this metric is the foundation of your experiment.

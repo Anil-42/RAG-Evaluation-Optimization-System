@@ -1,7 +1,7 @@
 from normalize import normalize
 
 def evidence_coverage(retrieved_chunks,evidence_points):
-    normalized_chunks = "".join(normalize(t) for t in retrieved_chunks)
+    normalized_chunks = " ".join(normalize(t) for t in retrieved_chunks)
 
     count=0
     total=len(evidence_points)
