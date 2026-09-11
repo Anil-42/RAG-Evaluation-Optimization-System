@@ -236,3 +236,39 @@ five failure cases show that reranking isn't universally better. For example, it
 
     for this we introduce another design decision: how much of an evidence point must be retrieved to count as covered?
     That's something we should define carefully because this metric is the foundation of your experiment.
+
+---
+
+HYBRID + RERANKING + NEIGHBOUR EXPANSION
+
+The problem we have is if chunk 79 is present in top 10 but the evidence point continues in chunk 80 its neighbour then the retrieval fails.
+
+Our next optimization hypothesis
+
+We now have a measurable hypothesis:
+If we add neighboring chunks around retrieved candidates before reranking, Top-3 evidence coverage should improve.
+This is called neighbor-aware retrieval / context expansion.
+
+Current:
+
+Hybrid
+↓
+Top 10 chunks
+↓
+Reranker
+↓
+Top 3
+
+Proposed experiment:
+
+Hybrid
+↓
+Top 10 chunks
+↓
+Add neighboring chunks
+↓
+Expanded candidate pool
+↓
+Reranker
+↓
+Top 3

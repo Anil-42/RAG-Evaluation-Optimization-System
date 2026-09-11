@@ -19,7 +19,7 @@ def main():
     # SELECT EXPERIMENT
     # ============================================================
 
-    method = "hybrid"  # Change this to select the retrieval method
+    method = "hybrid_rerank"  # Change this to select the retrieval method
 
     # Available methods:
     #
@@ -28,7 +28,8 @@ def main():
     # "hybrid"
     # "hybrid_rerank"
 
-
+    # Number of top chunks to retrieve for hybrid_rerank method
+    k=10
 
     # ============================================================
     # 1. DOCUMENT EXTRACTION
@@ -38,6 +39,10 @@ def main():
 
     text = extract_text(pdf_path)
 
+    # chunks = chunk_text(text)
+    # for i in range(64,79):
+    #     print(f"\nChunk {i}:\n{chunks[i]}")
+          
 
     # ============================================================
     # 2. LOAD EVALUATION DATASET
@@ -111,11 +116,11 @@ def main():
             #
             # For pure hybrid experiment,
             # select top 3 before evaluation.
-
+            
             retrieved_chunks = retreved_chunks[:3]
 
             retrieved_scores = retreved_scores[:3]
-
+    
 
         elif method == "hybrid_rerank":
 
@@ -126,6 +131,8 @@ def main():
                 )
             )
 
+            retrieved_chunks = retrieved_chunks[:k]
+            retrieved_scores = retrieved_scores[:k]
 
         else:
 
@@ -207,15 +214,22 @@ def main():
 
         })
 # -----------------------------------testing-------------------------------------
-        # if(coverage < 1.0):
-        #     chunks = chunk_text(text)
-        #     print("\nQUESTION:", question_text)
-        #     print("Evidence Coverage:", coverage)
-        #     print("Evidence points:", evidence_points)
-        #     print("10 chunk Indices:", [chunks.index(chunk) for chunk in retreved_chunks])
-        #     print("10 retrieved chunks:", retreved_chunks)
-        #     print("10 chunk Scores:", retreved_scores)
-        #     print("-" * 50)
+#         if(coverage < 0.5):
+#         chunks = chunk_text(text)
+#         print("\nQUESTION:", question_text)
+#         print("Evidence Coverage:", coverage)
+#         print("Evidence points:", evidence_points)
+#         print("10 chunk Indices:", [chunks.index(chunk) for chunk in retrieved_chunks])
+#         print("10 retrieved chunks:", retrieved_chunks)
+#         print("10 chunk Scores:", retrieved_scores)
+
+#         print("top1 chunk index:", chunks.index(retrieved_chunks[0]))
+#         print("top1 chunk:", retrieved_chunks[0])
+#         print("previous chunk index:", chunks.index(retrieved_chunks[0])-1)
+#         print("previous chunk:", chunks[chunks.index(retrieved_chunks[0])-1])
+#         print("next chunk index:", chunks.index(retrieved_chunks[0])+1)
+#         print("next chunk:", chunks[chunks.index(retrieved_chunks[0])+1])
+#         print("-" * 50)
 
 # -------------------------------------------------------------------------------
 
@@ -280,16 +294,16 @@ def main():
     )
 
 # ------------------------------to print questions with evidence coverage less than 0.5 --------------------------
-    # for result in results:
-    #     if result["evidence_coverage"] < 1.0:
-    #         print(result["question"])
+#     for result in results:
+#         if result["evidence_coverage"] < 1.0:
+#             print(result["question"])
     
-    #         print(
-    #             f"Evidence coverage: "
-    #             f"{result['evidence_coverage']:.2%}"
-    #         )
+#             print(
+#                 f"Evidence coverage: "
+#                 f"{result['evidence_coverage']:.2%}"
+#             )
     
-    #         print("-" * 50)
+#             print("-" * 50)
 # -----------------------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":

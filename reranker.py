@@ -3,7 +3,7 @@ from sentence_transformers import CrossEncoder
 
 model = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 
-def rerank(question, hybrid_chunks, k=1):
+def rerank(question, hybrid_chunks, k=10):
     pairs = [[question, chunk] for chunk in hybrid_chunks]
 
     scores = model.predict(pairs)

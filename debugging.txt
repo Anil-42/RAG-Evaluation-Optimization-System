@@ -164,3 +164,28 @@ Evidence coverage: 0.00%
 Why should writers use short sentences?
 Evidence coverage: 0.00%
 --------------------------------------------------
+
+
+
+Recall@1
+Method: hybrid_rerank
+Average evidence coverage: 62.86%
+Retrieval pass rate: 69.57%
+
+Recall@3
+Method: hybrid_rerank
+Average evidence coverage: 84.78%
+Retrieval pass rate: 89.13%
+
+Recall@5
+Method: hybrid_rerank
+Average evidence coverage: 88.77%
+Retrieval pass rate: 91.30%
+
+
+    for i in range(22, 24+1):
+        print(f"\nChunk {i}:\n{chunks[i]}")
+    for i in range(68, 72+1):
+        print(f"\nChunk {i}:\n{chunks[i]}")
+    for i in range(105, 109+1):
+        print(f"\nChunk {i}:\n{chunks[i]}")
