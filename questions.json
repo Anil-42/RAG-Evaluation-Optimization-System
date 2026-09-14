@@ -9,5 +9,36 @@
       "Or you may do it on your own.",
       "In that case, rest assured that one person can do it alone."
     ]
+  },
+  {
+    "question": "What is the purpose of a summary in a disclosure document?",
+    "answer": "A summary should orient the reader by highlighting the most important points that are presented in greater detail in the prospectus.",
+    "source": "a plain english handbook",
+    "evidence": "A summary should orient the reader, highlighting the most important points that are presented in greater detail in the prospectus.",
+    "evidence_points": [
+      "A summary should orient the reader, highlighting the most important points that are presented in greater detail in the prospectus."
+    ]
+  },
+  {
+    "question": "Why should documents use descriptive headers and subheaders?",
+    "answer": "Descriptive headers and subheaders break information into manageable sections and tell readers what the upcoming sections will cover.",
+    "source": "a plain english handbook",
+    "evidence": "Second, use descriptive headers and subheaders to break your document up into manageable sections. Prospectuses impart a lot of information. If you present the information in bite-sized pieces, it’s easier to digest. Make sure your headings tell the reader what the upcoming sections will cover.",
+    "evidence_points": [
+      "Second, use descriptive headers and subheaders to break your document up into manageable sections.",
+      "If you present the information in bite-sized pieces, it’s easier to digest.",
+      "Make sure your headings tell the reader what the upcoming sections will cover."
+    ]
+  },
+  {
+    "question": "Should the passive voice always be avoided?",
+    "answer": "No. The passive voice may make sense when the person or thing performing the action is less important than another subject, but it should be used sparingly.",
+    "source": "a plain english handbook",
+    "evidence": "The passive voice may make sense when the person or thing performing the action is of secondary importance to another subject that should play the starring role in sentence. Use the passive voice only when you have a very good reason for doing so. When in doubt, choose the active voice.",
+    "evidence_points": [
+      "The passive voice may make sense when the person or thing performing the action is of secondary importance to another subject that should play the starring role in sentence.",
+      "Use the passive voice only when you have a very good reason for doing so.",
+      "When in doubt, choose the active voice."
+    ]
   }
 ]

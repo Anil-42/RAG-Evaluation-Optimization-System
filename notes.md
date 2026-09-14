@@ -269,6 +269,6 @@ Add neighboring chunks
 ↓
 Expanded candidate pool
 ↓
-Reranker
+Reranker all expanded candidates
 ↓
-Top 3
+Take Top 3

@@ -81,6 +81,11 @@ def hybrid_retrieve_chunks(text, question_text):
         for i in candidate_indices
     ]
 
+    hybrid_indices = [
+    int(i)
+    for i in candidate_indices
+]
+
 
 # -------------------------------testing--------------------------
     # print(question_text)
@@ -98,4 +103,5 @@ def hybrid_retrieve_chunks(text, question_text):
     # return hybrid_chunks, hybrid_score, chunks_index, chunks
 # ----------------------------------------------------------------
 
-    return hybrid_chunks, hybrid_score
+    return hybrid_chunks, hybrid_score, hybrid_indices, chunks
+    # return hybrid_chunks, hybrid_score
