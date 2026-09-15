@@ -272,3 +272,27 @@ Expanded candidate pool
 Reranker all expanded candidates
 ↓
 Take Top 3
+
+As the above experiment didnt produce much of difference than hybrid + reranking.
+
+instead of merging and then reranking we rerank top 3 first and then we merge their neighbors.
+
+PDF
+↓
+100-word chunks + 20 overlap
+↓
+Vector + BM25
+↓
+Hybrid
+↓
+Top 10 candidates
+↓
+Cross-encoder reranking
+↓
+Top 3
+↓
+Add immediate neighbors
+↓
+Evidence Coverage
+
+this produced 95% evidence coverage

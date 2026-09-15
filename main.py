@@ -69,7 +69,8 @@ def main():
 
         evidence_points = question["evidence_points"]
 
-        
+        print("\nQuestion:",question_text)
+        print("\nEvidence Points:",evidence_points)
 
         # ========================================================
         # RETRIEVAL METHOD
@@ -83,16 +84,7 @@ def main():
                     question_text
                 )
             )
-            # # --------------------------------------------
-            # print("\nQUESTION:", question_text)
 
-            # for i, (chunk, score) in enumerate(
-            #     zip(retrieved_chunks, retrieved_scores)
-            # ):
-            #     print("\nRank:", i + 1)
-            #     print("Score:", score)
-            #     print("Chunk:", chunk)
-            # # --------------------------------------------
 
         elif method == "semantic_vector":
 
@@ -131,7 +123,7 @@ def main():
                     question_text
                 )
             )
-        
+            # k=3
             # retrieved_chunks = retrieved_chunks[:k]
             # retrieved_scores = retrieved_scores[:k]
 
@@ -143,192 +135,165 @@ def main():
 
     #  ---------------------------testing--------------------------------
             
-        # print("\nQuestion:",question_text)
-        # print("\nEVIDENCE MATCH DEBUG")
-    
-        # for point in question["evidence_points"]:
-    
-        #     normalized_point = normalize(point)
-    
-        #     print("\nEvidence point:")
-        #     print(point)
-    
-        #     found = False
-    
-        #     for rank, chunk in enumerate(retrieved_chunks, start=1):
-    
-        #         normalized_chunk = normalize(chunk)
-    
-        #         if normalized_point in normalized_chunk:
-        #             print("FOUND in retrieved chunk:", rank)
-        #             found = True
-    
-        #     if not found:
-        #         print("NOT FOUND")
-
-        # print("\nFINAL TOP 3:")
-        # for rank, chunk in enumerate(retrieved_chunks[:3], start=1):
-        #     print("\nRank:", rank)
-        #     print(chunk[:1000])
-        # print("-"*50)
-        # -------------------------------------------------------------
+       
+    # -------------------------------------------------------------------
         
     
 
-#         # ========================================================
-#         # EVALUATION
-#         # ========================================================
+        # ========================================================
+        # EVALUATION
+        # ========================================================
 
-#         found, total, coverage = evidence_coverage(
-#             retrieved_chunks,
-#             evidence_points
-#         )
-
-
-#         # ========================================================
-#         # LLM CONTEXT
-#         # ========================================================
-
-#         context = "\n".join(
-#             retrieved_chunks
-#         )
+        found, total, coverage = evidence_coverage(
+            retrieved_chunks,
+            evidence_points
+        )
 
 
-#         prompt = f"""
-#         Context: {context}
+        # ========================================================
+        # LLM CONTEXT
+        # ========================================================
 
-#         Question: {question_text}
-
-#         Answer the question using only the information provided in the context.
-#         Do not add information that is not present in the context.
-#         If the answer cannot be found in the context, say that the information is not available in the provided context.
-#         """
+        context = "\n".join(
+            retrieved_chunks
+        )
 
 
-#         # ========================================================
-#         # LLM GENERATION
-#         # ========================================================
+        prompt = f"""
+        Context: {context}
 
-#         response = ollama_query(prompt)
+        Question: {question_text}
+
+        Answer the question using only the information provided in the context.
+        Do not add information that is not present in the context.
+        If the answer cannot be found in the context, say that the information is not available in the provided context.
+        """
 
 
-#         # ========================================================
-#         # SAVE RESULT
-#         # ========================================================
+        # ========================================================
+        # LLM GENERATION
+        # ========================================================
 
-#         results.append({
+        response = ollama_query(prompt)
 
-#             "question": question_text,
 
-#             "ground_truth": question["answer"],
+        # ========================================================
+        # SAVE RESULT
+        # ========================================================
 
-#             "answer": response,
+        results.append({
 
-#             "retrieved_chunks": retrieved_chunks,
+            "question": question_text,
 
-#             "retrieved_scores": retrieved_scores,
+            "ground_truth": question["answer"],
 
-#             "evidence_found": found,
+            "answer": response,
 
-#             "evidence_total": total,
+            "retrieved_chunks": retrieved_chunks,
 
-#             "evidence_coverage": coverage
+            "retrieved_scores": retrieved_scores,
 
-#         })
-# # -----------------------------------testing-------------------------------------
-#         # if(coverage < 0.5):
-#         #     chunks = chunk_text(text)
-#         #     print("\nQUESTION:", question_text)
-#         #     print("Evidence Coverage:", coverage)
-# #         print("Evidence points:", evidence_points)
-# #         print("10 chunk Indices:", [chunks.index(chunk) for chunk in retrieved_chunks])
-# #         print("10 retrieved chunks:", retrieved_chunks)
-# #         print("10 chunk Scores:", retrieved_scores)
+            "evidence_found": found,
 
-# #         print("top1 chunk index:", chunks.index(retrieved_chunks[0]))
-# #         print("top1 chunk:", retrieved_chunks[0])
-# #         print("previous chunk index:", chunks.index(retrieved_chunks[0])-1)
-# #         print("previous chunk:", chunks[chunks.index(retrieved_chunks[0])-1])
-# #         print("next chunk index:", chunks.index(retrieved_chunks[0])+1)
-# #         print("next chunk:", chunks[chunks.index(retrieved_chunks[0])+1])
-# #         print("-" * 50)
+            "evidence_total": total,
 
-# # -------------------------------------------------------------------------------
+            "evidence_coverage": coverage
+
+        })
+# -----------------------------------testing-------------------------------------
+        # if(coverage < 0.5):
+            # print("\nQUESTION:", question_text)
+            # print("Evidence Coverage:", coverage)
+        #     chunks = chunk_text(text)
+#         print("Evidence points:", evidence_points)
+#         print("10 chunk Indices:", [chunks.index(chunk) for chunk in retrieved_chunks])
+#         print("10 retrieved chunks:", retrieved_chunks)
+#         print("10 chunk Scores:", retrieved_scores)
+
+#         print("top1 chunk index:", chunks.index(retrieved_chunks[0]))
+#         print("top1 chunk:", retrieved_chunks[0])
+#         print("previous chunk index:", chunks.index(retrieved_chunks[0])-1)
+#         print("previous chunk:", chunks[chunks.index(retrieved_chunks[0])-1])
+#         print("next chunk index:", chunks.index(retrieved_chunks[0])+1)
+#         print("next chunk:", chunks[chunks.index(retrieved_chunks[0])+1])
+#         print("-" * 50)
+
+# -------------------------------------------------------------------------------
 
     
 
-#     # ============================================================
-#     # 4. PRINT INDIVIDUAL RESULTS
-#     # ============================================================
+    # ============================================================
+    # 4. PRINT INDIVIDUAL RESULTS
+    # ============================================================
 
-#     # for result in results:
+    # for result in results:
 
-#     #     print(result["question"])
+    #     print(result["question"])
 
-#     #     print(
-#     #         f"Evidence coverage: "
-#     #         f"{result['evidence_coverage']:.2%}"
-#     #     )
+    #     print(
+    #         f"Evidence coverage: "
+    #         f"{result['evidence_coverage']:.2%}"
+    #     )
 
-#     #     print("-" * 50)
-
-
-#     # ============================================================
-#     # 5. AVERAGE EVIDENCE COVERAGE
-#     # ============================================================
-
-#     total_coverage = sum(
-#         result["evidence_coverage"]
-#         for result in results
-#     )
-
-#     average_coverage = (
-#         total_coverage / len(results)
-#     )
-
-#     print(
-#         f"\nMethod: {method}"
-#     )
-
-#     print(
-#         f"Average evidence coverage: "
-#         f"{average_coverage:.2%}"
-#     )
+    #     print("-" * 50)
 
 
-#     # ============================================================
-#     # 6. RETRIEVAL PASS RATE
-#     # ============================================================
+    # ============================================================
+    # 5. AVERAGE EVIDENCE COVERAGE
+    # ============================================================
 
-#     passed = sum(
+    total_coverage = sum(
+        result["evidence_coverage"]
+        for result in results
+    )
 
-#         1
+    average_coverage = (
+        total_coverage / len(results)
+    )
 
-#         for result in results
+    print(
+        f"\nMethod: {method}"
+    )
 
-#         if result["evidence_coverage"] >= 0.5
+    print(
+        f"Average evidence coverage: "
+        f"{average_coverage:.2%}"
+    )
 
-#     )
 
-#     pass_rate = passed / len(results)
+    # ============================================================
+    # 6. RETRIEVAL PASS RATE
+    # ============================================================
 
-#     print(
-#         f"Retrieval pass rate: "
-#         f"{pass_rate:.2%}"
-#     )
+    passed = sum(
 
-# # ------------------------------to print questions with evidence coverage less than 0.5 --------------------------
-#     # for result in results:
-#     #     if result["evidence_coverage"] < 1.0:
-#     #         print(result["question"])
+        1
+
+        for result in results
+
+        if result["evidence_coverage"] >= 0.5
+
+    )
+
+    pass_rate = passed / len(results)
+
+    print(
+        f"Retrieval pass rate: "
+        f"{pass_rate:.2%}"
+    )
+
+# ------------------------------to print questions with evidence coverage less than 0.5 --------------------------
+    # for result in results:
+    #     if result["evidence_coverage"] < 1.0:
+    #         print(result["question"])
     
-#     #         print(
-#     #             f"Evidence coverage: "
-#     #             f"{result['evidence_coverage']:.2%}"
-#     #         )
+    #         print(
+    #             f"Evidence coverage: "
+    #             f"{result['evidence_coverage']:.2%}"
+    #         )
     
-#     #         print("-" * 50)
-# # -----------------------------------------------------------------------------------------------------------------
+    #         print("-" * 50)
+# -----------------------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
     main()
