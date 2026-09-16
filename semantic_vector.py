@@ -4,7 +4,7 @@ from embedding import get_embeddings
 from retrieve import retrieve
 
 
-def semantic_vector_retrieve(text, question_text):
+def create_semantic_chunks(text):
 
     # Split document into sentences
     sentences = split_sentences(text)
@@ -21,6 +21,13 @@ def semantic_vector_retrieve(text, question_text):
         sentence_embeddings,
         threshold
     )
+
+    return chunks
+
+
+def semantic_vector_retrieve(text, question_text):
+
+    chunks = create_semantic_chunks(text)
 
     # Create embeddings for semantic chunks
     embeddings = get_embeddings(chunks)

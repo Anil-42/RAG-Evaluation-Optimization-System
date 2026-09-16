@@ -148,3 +148,66 @@ Evidence coverage: 50.00% - 0
     ]
   }
 ]
+
+
+
+Fixed vector :
+
+Recall@1
+Average evidence coverage: 41.85%
+Retrieval pass rate: 47.83%
+
+Recall@3
+Average evidence coverage: 73.55%
+Retrieval pass rate: 78.26%
+
+Recall@5
+Average evidence coverage: 73.55%
+Retrieval pass rate: 78.26%
+
+-----------------------------------------------------
+Hybrid :
+
+Recall@1
+Average evidence coverage: 57.43%
+Retrieval pass rate: 65.22%
+
+Recall@3
+Average evidence coverage: 82.25%
+Retrieval pass rate: 86.96%
+
+Recall@5
+Average evidence coverage: 87.68%
+Retrieval pass rate: 91.30%
+
+-----------------------------------------------------
+Hybrid + Reranking :
+
+Recall@1
+Average evidence coverage: 62.86%
+Retrieval pass rate: 69.57%
+
+Recall@3
+Average evidence coverage: 88.77%
+Retrieval pass rate: 91.30%
+
+Recall@5
+Average evidence coverage: 88.77%
+Retrieval pass rate: 91.30%
+
+-----------------------------------------------------
+Hybrid + Reranking + Neighbor-aware evaluation :
+
+Evidence Coverage@1
+Average evidence coverage: 88.04%
+Retrieval pass rate: 89.13%
+
+Evidence Coverage@3
+Average evidence coverage: 94.57%
+Retrieval pass rate: 95.65%
+
+Evidence Coverage@5
+Average evidence coverage: 94.57%
+Retrieval pass rate: 95.65%
+
+-----------------------------------------------------

@@ -38,35 +38,40 @@ def hybrid_rerank_retrieve(text, question_text):
 
 
     # --------------------------------------------
-    # Merge to 3 after reranking
+    # Merge top 3 after reranking
     # --------------------------------------------
 
-    # Get the original chunk indices of FINAL TOP 3
-    final_indices = [index for chunk, index, score in reranked]
+    # # Get the original chunk indices of FINAL TOP 3
+    # final_indices = [index for chunk, index, score in reranked]
 
-    # Now expand/merge their neighbors
-    merged_candidates = merge_neighbors(
-        final_indices,
-        chunks
-    )
+    # # Now expand/merge their neighbors
+    # merged_candidates = merge_neighbors(
+    #     final_indices,
+    #     chunks
+    # )
 
 
+    # final_chunks = [
+    #     merged_text
+    #     for start, end, merged_text in merged_candidates
+    # ]
+
+    # final_scores = [
+    #     score
+    #     for chunk, index, score in reranked
+    # ]
+
+# ----------------------------Hybrid Reranking----------------------------
     final_chunks = [
-        merged_text
-        for start, end, merged_text in merged_candidates
+        chunk
+        for chunk, index, sores in reranked
     ]
 
     final_scores = [
         score
         for chunk, index, score in reranked
     ]
-
-    # --------------------------testing----------------------------
-    # print("\nTop 3 reranked chunk indices:",hybrid_indices)
-    # print("\nMerged neighbor chunk final indices:",final_indices)
-    # print("\nMerged text:",final_chunks)
-    # print("-"*50)
-    # -------------------------------------------------------------
+# ------------------------------------------------------------------------
 
     return final_chunks, final_scores
 

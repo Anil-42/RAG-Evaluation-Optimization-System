@@ -5,12 +5,18 @@ from embedding import get_embeddings
 from retrieve import retrieve
 from bm25_scores import bm25_scores
 from normalize_scores import normalize_scores
+from semantic_vector import create_semantic_chunks
 
 
 def hybrid_retrieve_chunks(text, question_text):
 
+
+
     # Fixed-size chunking
-    chunks = chunk_text(text)
+    # chunks = chunk_text(text)
+
+    # Create semantic chunks
+    chunks = create_semantic_chunks(text)
 
     # Create embeddings
     embeddings = get_embeddings(chunks)
@@ -28,7 +34,18 @@ def hybrid_retrieve_chunks(text, question_text):
     # Vector scores
     # ------------------------------------------------
 
-    vector_score_values = retrieve(
+    # vector_score_values = retrieve(
+    #     question_text,
+    #     chunks,
+    #     embeddings
+    # )
+
+    # ------------------------------------------------
+    # Semantic scores
+    # ------------------------------------------------
+
+    # for semantic chunking
+    semantic_score_values = retrieve(
         question_text,
         chunks,
         embeddings
@@ -42,8 +59,14 @@ def hybrid_retrieve_chunks(text, question_text):
         bm25_score_values
     )
 
-    normalized_vector = normalize_scores(
-        vector_score_values
+    ## for vector chunking
+    # normalized_vector = normalize_scores(
+    #     vector_score_values
+    # )
+
+    # for semantic chunking
+    normalized_semantic = normalize_scores(
+        semantic_score_values
     )
 
     # ------------------------------------------------
@@ -52,11 +75,23 @@ def hybrid_retrieve_chunks(text, question_text):
 
     alpha = 0.7
 
+    ## for vector chunking
+    # hybrid_scores = [
+    #     alpha * vector_score + (1 - alpha) * bm25_score
+    #     for vector_score, bm25_score
+    #     in zip(
+    #         normalized_vector,
+    #         normalized_bm25
+    #     )
+    # ]
+
+    # for semantic chunking
     hybrid_scores = [
-        alpha * vector_score + (1 - alpha) * bm25_score
-        for vector_score, bm25_score
+        alpha * semantic_score
+        + (1 - alpha) * bm25_score
+        for semantic_score, bm25_score
         in zip(
-            normalized_vector,
+            normalized_semantic,
             normalized_bm25
         )
     ]

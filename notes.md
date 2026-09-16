@@ -296,3 +296,9 @@ Add immediate neighbors
 Evidence Coverage
 
 this produced 95% evidence coverage
+
+=============================================================================================================================
+
+Hybrid retrieval substantially improves evidence retrieval compared with vector-only retrieval, while cross-encoder reranking further improves the ordering of relevant chunks, particularly when only a small number of chunks are used. Neighbor-aware evaluation addresses evidence that naturally spans adjacent chunks without changing the retrieval ranking itself.
+
+=============================================================================================================================

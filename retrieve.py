@@ -11,7 +11,7 @@ def retrieve(question, chunks, embeddings):
     # ----------------change according to retrieval method-------------------
     
     # fixedsize retrieval
-    # k=min(5,len(chunks))
+    # k=min(3,len(chunks))
 
     # hybrid retrieval
     k=len(chunks)
@@ -27,7 +27,7 @@ def retrieve(question, chunks, embeddings):
     pairs = list(zip(indices[0].tolist(), values[0].tolist()))
     # 2. Sort the pairs based on the index (x[0]) to restore original order
     pairs.sort(key=lambda x: x[0])
-    # # --------------------------------------------------------------------
+    # --------------------------------------------------------------------
 
     # for fixedsize retrieval
     retrieved_chunks = []
@@ -44,8 +44,11 @@ def retrieve(question, chunks, embeddings):
     for index, score in pairs:
         retrieved_scores.append(score)
     # --------------------------------------------------------------------
+
     # for fixedsize and semantic retrieval
     # return retrieved_chunks, retrieved_scores
+
+
 
     # for hybrid retrieval
     return retrieved_scores

@@ -22,7 +22,6 @@ def main():
     method = "hybrid_rerank"  # Change this to select the retrieval method
 
     # Available methods:
-    #
     # "fixed_vector"
     # "semantic_vector"
     # "hybrid"
@@ -69,8 +68,7 @@ def main():
 
         evidence_points = question["evidence_points"]
 
-        print("\nQuestion:",question_text)
-        print("\nEvidence Points:",evidence_points)
+
 
         # ========================================================
         # RETRIEVAL METHOD
@@ -110,9 +108,9 @@ def main():
             # For pure hybrid experiment,
             # select top 3 before evaluation.
             
-            retrieved_chunks = retreved_chunks[:3]
+            retrieved_chunks = retreved_chunks[:5]
 
-            retrieved_scores = retreved_scores[:3]
+            retrieved_scores = retreved_scores[:5]
     
 
         elif method == "hybrid_rerank":
@@ -134,8 +132,7 @@ def main():
             )
 
     #  ---------------------------testing--------------------------------
-            
-       
+                    
     # -------------------------------------------------------------------
         
     
@@ -201,14 +198,19 @@ def main():
 
         })
 # -----------------------------------testing-------------------------------------
-        # if(coverage < 0.5):
-            # print("\nQUESTION:", question_text)
-            # print("Evidence Coverage:", coverage)
+        if(coverage < 0.5):
+            print("\nQUESTION:", question_text)
+            print("Evidence Coverage:", coverage)
         #     chunks = chunk_text(text)
-#         print("Evidence points:", evidence_points)
-#         print("10 chunk Indices:", [chunks.index(chunk) for chunk in retrieved_chunks])
-#         print("10 retrieved chunks:", retrieved_chunks)
-#         print("10 chunk Scores:", retrieved_scores)
+        #     chunk_indices = [chunks.index(chunk) for chunk in retrieved_chunks]
+        #     print("\nTop 3 chunk Indices:", chunk_indices)
+        #     for index in chunk_indices:
+        #         print("\nChunk ",index,":")
+        #         print(chunks[index])
+        #     print("\nEvidence points:", evidence_points)
+        #     print("-"*50)
+#           print("10 retrieved chunks:", retrieved_chunks)
+#           print("10 chunk Scores:", retrieved_scores)
 
 #         print("top1 chunk index:", chunks.index(retrieved_chunks[0]))
 #         print("top1 chunk:", retrieved_chunks[0])
