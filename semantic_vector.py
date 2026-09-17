@@ -38,5 +38,5 @@ def semantic_vector_retrieve(text, question_text):
         chunks,
         embeddings
     )
-
+    
     return retrieved_chunks, retrieved_scores

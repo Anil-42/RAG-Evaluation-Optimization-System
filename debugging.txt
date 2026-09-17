@@ -211,3 +211,29 @@ Average evidence coverage: 94.57%
 Retrieval pass rate: 95.65%
 
 -----------------------------------------------------
+
+
+
+Evaluating "hybrid + reranking" using Semantic chunks
+
+QUESTION: Who can work on a plain English project according to the handbook?
+Evidence Coverage: 0.0
+
+QUESTION: Why should writers consider how investors will read a document?
+Evidence Coverage: 0.0
+
+QUESTION: What is the first principle of good document organization?
+Evidence Coverage: 0.0
+
+QUESTION: What are the common problems found in disclosure documents?
+Evidence Coverage: 0.0
+
+QUESTION: Why should writers replace abstract terms with concrete terms?
+Evidence Coverage: 0.0
+
+QUESTION: Why should writers avoid creating new acronyms?
+Evidence Coverage: 0.0
+
+Method: hybrid_rerank
+Average evidence coverage: 84.42%
+Retrieval pass rate: 86.96%

@@ -18,6 +18,12 @@ def hybrid_retrieve_chunks(text, question_text):
     # Create semantic chunks
     chunks = create_semantic_chunks(text)
 
+
+    # -------------------------------------------------------
+
+    # -------------------------------------------------------
+
+
     # Create embeddings
     embeddings = get_embeddings(chunks)
 
@@ -119,7 +125,11 @@ def hybrid_retrieve_chunks(text, question_text):
     hybrid_indices = [
     int(i)
     for i in candidate_indices
-]
+    ]
+
+    # -----------------------------------------------------
+    # -----------------------------------------------------
+
 
 
     return hybrid_chunks, hybrid_score, hybrid_indices, chunks

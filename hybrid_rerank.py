@@ -7,8 +7,9 @@ def hybrid_rerank_retrieve(text, question_text):
 
     hybrid_chunks, hybrid_scores, hybrid_indices, chunks = hybrid_retrieve_chunks(
         text,
-        question_text
+        question_text,
     )
+
 # -------------------------------------------------------------
     # ---------------------------------------------------
     # Merging before reranking
@@ -36,6 +37,9 @@ def hybrid_rerank_retrieve(text, question_text):
         k=3
     )
 
+    # ------------------------------------------------------------------------
+
+    # ------------------------------------------------------------------------
 
     # --------------------------------------------
     # Merge top 3 after reranking
@@ -71,6 +75,8 @@ def hybrid_rerank_retrieve(text, question_text):
         score
         for chunk, index, score in reranked
     ]
+
+
 # ------------------------------------------------------------------------
 
     return final_chunks, final_scores
