@@ -302,3 +302,30 @@ this produced 95% evidence coverage
 Hybrid retrieval substantially improves evidence retrieval compared with vector-only retrieval, while cross-encoder reranking further improves the ordering of relevant chunks, particularly when only a small number of chunks are used. Neighbor-aware evaluation addresses evidence that naturally spans adjacent chunks without changing the retrieval ranking itself.
 
 =============================================================================================================================
+
+Testing the same 46 questions with "semantic chunking" instead of vector chunksing got similar result that is 91% evidence coverage.
+
+1. Hybrid retrieval is failing on 3 questions
+
+These are genuine candidate-retrieval failures:
+
+Who can work on a plain English project? → 0/3
+What is the first principle of good document organization? → 0/1
+What should writers do when a conditional statement contains multiple ifs and thens? → 1/2
+
+2. Reranking is losing evidence on 5 questions
+
+These are the important ones:
+
+## Question Hybrid Reranked Lost
+
+Investors will read a document 1/1 0/1 Yes
+Common problems in disclosure documents 9/9 0/9 Yes — huge
+Active voice + strong verbs 3/3 2/3 Yes
+Abstract → concrete terms 2/2 0/2 Yes
+Creating new acronyms 2/2 0/2 Yes
+
+After evaluating a lot we say that,
+The reranker is not consistently bad. It is making a different judgment about which chunks are relevant.
+
+    And because your evaluation metric is evidence coverage, sometimes that judgment agrees with your benchmark and sometimes it doesn't.

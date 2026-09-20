@@ -19,8 +19,8 @@ def main():
     # SELECT EXPERIMENT
     # ============================================================
 
-    method = "hybrid_rerank"  # Change this to select the retrieval method
-
+    method = "semantic_vector"  # Change this to select the retrieval method
+    
     # Available methods:
     # "fixed_vector"
     # "semantic_vector"
@@ -28,7 +28,7 @@ def main():
     # "hybrid_rerank"
 
     # Number of top chunks to retrieve for hybrid_rerank method
-    k=3
+    # k=3
 
     # ============================================================
     # 1. DOCUMENT EXTRACTION
@@ -56,6 +56,11 @@ def main():
     # ============================================================
     # 3. RAG EVALUATION LOOP
     # ============================================================
+   
+    reranking_improved = 0
+    reranking_hurt = 0
+    reranking_same = 0
+ 
 
     for question in questions:
 
@@ -92,7 +97,7 @@ def main():
 
         elif method == "hybrid":
 
-            retreved_chunks, retreved_scores = (
+            retreved_chunks, retreved_scores, hybrid_indices, chunks = (
                 hybrid_retrieve_chunks(
                     text,
                     question_text
@@ -104,23 +109,118 @@ def main():
             # For pure hybrid experiment,
             # select top 3 before evaluation.
             
-            retrieved_chunks = retreved_chunks[:5]
+            retrieved_chunks = retreved_chunks[:3]
 
-            retrieved_scores = retreved_scores[:5]
-    
+            retrieved_scores = retreved_scores[:3]
+
 
         elif method == "hybrid_rerank":
 
-            retrieved_chunks, retrieved_scores = (
+            retrieved_chunks, retrieved_scores, hybrid_indices, reranked_indices = (
                 hybrid_rerank_retrieve(
                     text,
                     question_text,
-                    
+                    evidence_points
                 )
             )
-            # k=3
-            # retrieved_chunks = retrieved_chunks[:k]
-            # retrieved_scores = retrieved_scores[:k]
+
+            
+
+# ---------------------------------------------------------------------------------------------------------
+            # chunks = create_semantic_chunks(text)
+            # print("\nQUESTION:", question_text)
+            # print("Hybrid Top-10:", hybrid_indices)
+
+            # for index in hybrid_indices:
+            #     print(f"\nHybrid Chunk {index}:")
+            #     print(chunks[index])
+
+            # print("Reranked Top-3:", reranked_indices)
+            # for index in reranked_indices:
+            #     print(f"\nChunk {index}:")
+            #     print(chunks[index])
+
+
+            # hybrid_found = 0
+            # reranked_found = 0
+
+            # for evidence in evidence_points:
+
+            #     normalized_evidence = normalize(evidence)
+
+                # hybrid_rank=None
+                # reranked_rank=None
+                # #Find hybrid rank
+                # for rank, index in enumerate(hybrid_indices, start=1):
+                #     if normalized_evidence in normalize(chunks[index]):
+                #         hybrid_rank=rank
+                #         break
+
+                # #Find reranked rank
+                # for rank, index in enumerate(reranked_indices, start=1):
+                #     if normalized_evidence in normalize(chunks[index]):
+                #         reranked_rank=rank
+                #         break
+
+                
+
+                # found_in_hybrid = any(
+                #     normalized_evidence in normalize(chunks[index])
+                #     for index in hybrid_indices
+                # )
+
+                # found_in_reranked = any(
+                #     normalized_evidence in normalize(chunks[index])
+                #     for index in reranked_indices
+                # )
+
+                # if not found_in_reranked:
+                    # print("\nEvidence:", evidence)
+                    # print("  Hybrid:", "FOUND" if found_in_hybrid else "NOT FOUND")
+                    # print("  Reranked:", "FOUND" if found_in_reranked else "NOT FOUND")
+
+            #     if found_in_hybrid:
+            #         hybrid_found += 1
+
+            #     if found_in_reranked:
+            #         reranked_found += 1
+
+            # if reranked_found>hybrid_found:
+            #     reranking_improved+=1
+            # if reranked_found<hybrid_found:
+            #     reranking_hurt+=1
+            # else:
+            #     reranking_same+=1 
+
+
+            # total_evidence = len(evidence_points)
+
+            # print(
+            #     f"DEBUG: hybrid={hybrid_found}/{total_evidence}, "
+            #     f"reranked={reranked_found}/{total_evidence}"
+            # )
+            
+            # if reranked_found < total_evidence:
+            #     reranking_failed_questions += 1
+
+            # if hybrid_found < total_evidence:
+            #     hybrid_failed_questions += 1
+
+            # if hybrid_found < total_evidence:
+
+            #     print("Diagnosis: Hybrid retrieval missed evidence")
+
+            # elif reranked_found < hybrid_found:
+
+            #     print("Diagnosis: Reranking lost evidence")
+
+            # else:
+
+            #     print("Diagnosis: No evidence lost during reranking")
+            
+    
+
+# ---------------------------------------------------------------------------------------------------------
 
         else:
 
@@ -128,10 +228,6 @@ def main():
                 "Unknown retrieval method"
             )
 
-    #  ---------------------------testing--------------------------------
-
-    # -------------------------------------------------------------------
-        
     
 
         # ========================================================
@@ -236,7 +332,9 @@ def main():
 
     #     print("-" * 50)
 
-
+    # print("Reranking improved:", reranking_improved)
+    # print("Reranking hurt:", reranking_hurt)
+    # print("Reranking unchanged:", reranking_same,"\n")
     # ============================================================
     # 5. AVERAGE EVIDENCE COVERAGE
     # ============================================================
@@ -265,13 +363,9 @@ def main():
     # ============================================================
 
     passed = sum(
-
         1
-
         for result in results
-
         if result["evidence_coverage"] >= 0.5
-
     )
 
     pass_rate = passed / len(results)
