@@ -19,7 +19,7 @@ def main():
     # SELECT EXPERIMENT
     # ============================================================
 
-    method = "semantic_vector"  # Change this to select the retrieval method
+    method = "hybrid"  # Change this to select the retrieval method
     
     # Available methods:
     # "fixed_vector"
@@ -38,6 +38,7 @@ def main():
 
     text = extract_text(pdf_path)
 
+
     # ============================================================
     # 2. LOAD EVALUATION DATASET
     # ============================================================
@@ -52,6 +53,8 @@ def main():
 
 
     results = []
+    alpha = 0.4
+
 
     # ============================================================
     # 3. RAG EVALUATION LOOP
@@ -68,7 +71,6 @@ def main():
 
         evidence_points = question["evidence_points"]
 
-        
 
 
         # ========================================================
@@ -100,7 +102,9 @@ def main():
             retreved_chunks, retreved_scores, hybrid_indices, chunks = (
                 hybrid_retrieve_chunks(
                     text,
-                    question_text
+                    question_text,
+                    evidence_points,
+                    alpha
                 )
             )
 
@@ -112,6 +116,49 @@ def main():
             retrieved_chunks = retreved_chunks[:3]
 
             retrieved_scores = retreved_scores[:3]
+
+            # if len(retrieved_chunks) < 3:
+            #     pass
+
+            # else:
+            #     normalized_top3 = " ".join(
+            #         normalize(chunk)
+            #         for chunk in retrieved_chunks
+            #     )
+
+            #     for point in evidence_points:
+
+            #         normalized_point = normalize(point)
+
+            #         if normalized_point not in normalized_top3:
+
+            #             print("\n--------------------------------")
+            #             print("Question:", question_text)
+            #             print("Missing evidence:", point)
+
+            #             # Check whether the evidence exists
+            #             # anywhere in the semantic chunks
+            #             found_index = None
+
+            #             for index, chunk in enumerate(chunks):
+            #                 if normalized_point in normalize(chunk):
+            #                     found_index = index
+            #                     break
+
+            #             if found_index is None:
+            #                 print("Evidence NOT found in semantic chunks.")
+            #                 continue
+
+            #             print("Original semantic chunk:", found_index)
+
+            #             # Find its position inside the Hybrid Top-10
+            #             if found_index in hybrid_indices:
+            #                 hybrid_rank = hybrid_indices.index(found_index) + 1
+            #                 print("Hybrid rank:", hybrid_rank)
+            #             else:
+            #                 print("Hybrid rank: NOT IN TOP-10")
+
+            #             print("--------------------------------")
 
 
         elif method == "hybrid_rerank":
@@ -125,102 +172,6 @@ def main():
             )
 
             
-
-# ---------------------------------------------------------------------------------------------------------
-            # chunks = create_semantic_chunks(text)
-            # print("\nQUESTION:", question_text)
-            # print("Hybrid Top-10:", hybrid_indices)
-
-            # for index in hybrid_indices:
-            #     print(f"\nHybrid Chunk {index}:")
-            #     print(chunks[index])
-
-            # print("Reranked Top-3:", reranked_indices)
-            # for index in reranked_indices:
-            #     print(f"\nChunk {index}:")
-            #     print(chunks[index])
-
-
-            # hybrid_found = 0
-            # reranked_found = 0
-
-            # for evidence in evidence_points:
-
-            #     normalized_evidence = normalize(evidence)
-
-                # hybrid_rank=None
-                # reranked_rank=None
-                # #Find hybrid rank
-                # for rank, index in enumerate(hybrid_indices, start=1):
-                #     if normalized_evidence in normalize(chunks[index]):
-                #         hybrid_rank=rank
-                #         break
-
-                # #Find reranked rank
-                # for rank, index in enumerate(reranked_indices, start=1):
-                #     if normalized_evidence in normalize(chunks[index]):
-                #         reranked_rank=rank
-                #         break
-
-                
-
-                # found_in_hybrid = any(
-                #     normalized_evidence in normalize(chunks[index])
-                #     for index in hybrid_indices
-                # )
-
-                # found_in_reranked = any(
-                #     normalized_evidence in normalize(chunks[index])
-                #     for index in reranked_indices
-                # )
-
-                # if not found_in_reranked:
-                    # print("\nEvidence:", evidence)
-                    # print("  Hybrid:", "FOUND" if found_in_hybrid else "NOT FOUND")
-                    # print("  Reranked:", "FOUND" if found_in_reranked else "NOT FOUND")
-
-            #     if found_in_hybrid:
-            #         hybrid_found += 1
-
-            #     if found_in_reranked:
-            #         reranked_found += 1
-
-            # if reranked_found>hybrid_found:
-            #     reranking_improved+=1
-            # if reranked_found<hybrid_found:
-            #     reranking_hurt+=1
-            # else:
-            #     reranking_same+=1 
-
-
-            # total_evidence = len(evidence_points)
-
-            # print(
-            #     f"DEBUG: hybrid={hybrid_found}/{total_evidence}, "
-            #     f"reranked={reranked_found}/{total_evidence}"
-            # )
-            
-            # if reranked_found < total_evidence:
-            #     reranking_failed_questions += 1
-
-            # if hybrid_found < total_evidence:
-            #     hybrid_failed_questions += 1
-
-            # if hybrid_found < total_evidence:
-
-            #     print("Diagnosis: Hybrid retrieval missed evidence")
-
-            # elif reranked_found < hybrid_found:
-
-            #     print("Diagnosis: Reranking lost evidence")
-
-            # else:
-
-            #     print("Diagnosis: No evidence lost during reranking")
-            
-    
-
-# ---------------------------------------------------------------------------------------------------------
 
         else:
 
@@ -238,6 +189,56 @@ def main():
             retrieved_chunks,
             evidence_points
         )
+
+    # -------------------------------------------------------------------------------------------------
+        # if coverage < 1.0:
+
+        #     print("Question:", question_text)
+        #     print("Evidence points:", evidence_points)
+        #     print("Top-3 chunks:", retrieved_chunks)
+
+        #     normalized_chunks = " ".join(
+        #         normalize(t) for t in retrieved_chunks
+        #     )
+
+        #     for point in evidence_points:
+
+        #         # Check whether this evidence point is missing
+        #         if normalize(point) not in normalized_chunks:
+
+        #             print("Missing Evidence point:", point)
+
+        #             # Search for the missing evidence in all Hybrid candidates
+        #             for rank, (index, chunk) in enumerate(
+        #                 zip(hybrid_indices, retreved_chunks),
+        #                 start=1
+        #             ):
+
+        #                 if normalize(point) in normalize(chunk):
+
+        #                     print(
+        #                         "Hybrid rank of the chunk containing "
+        #                         "this missing evidence:",
+        #                         rank
+        #                     )
+
+        #                     print("Chunk index:", index)
+
+        #                     break
+
+        #             else:
+        #                 for index, chunk in enumerate(chunks):
+
+        #                     if normalize(point) in normalize(chunk):
+
+        #                         print("Found in original document chunk:", index)
+        #                         break
+        #                 else:
+        #                     print("Evidence not found in original document chunks.")
+
+        #     print("-" * 50)
+    
+    # -------------------------------------------------------------------------------------------------
 
 
         # ========================================================
@@ -290,31 +291,6 @@ def main():
             "evidence_coverage": coverage
 
         })
-# -----------------------------------testing-------------------------------------   
-        # if(coverage < 0.5):
-            # print("\nQUESTION:", question_text)
-            # print("Evidence Coverage:", coverage)
-            # chunks = chunk_text(text)
-            # chunk_indices = [chunks.index(chunk) for chunk in retrieved_chunks]
-            # print("\nTop 3 chunk Indices:", chunk_indices)
-            # print("\nEvidence points:", evidence_points)
-            # for index in chunk_indices:
-            #     print("\nChunk ",index,":")
-            #     print(chunks[index])
-            # print("-"*50)
-#           print("10 retrieved chunks:", retrieved_chunks)
-#           print("10 chunk Scores:", retrieved_scores)
-
-#         print("top1 chunk index:", chunks.index(retrieved_chunks[0]))
-#         print("top1 chunk:", retrieved_chunks[0])
-#         print("previous chunk index:", chunks.index(retrieved_chunks[0])-1)
-#         print("previous chunk:", chunks[chunks.index(retrieved_chunks[0])-1])
-#         print("next chunk index:", chunks.index(retrieved_chunks[0])+1)
-#         print("next chunk:", chunks[chunks.index(retrieved_chunks[0])+1])
-#         print("-" * 50)
-
-# -------------------------------------------------------------------------------
-
     
 
     # ============================================================
@@ -335,6 +311,7 @@ def main():
     # print("Reranking improved:", reranking_improved)
     # print("Reranking hurt:", reranking_hurt)
     # print("Reranking unchanged:", reranking_same,"\n")
+
     # ============================================================
     # 5. AVERAGE EVIDENCE COVERAGE
     # ============================================================

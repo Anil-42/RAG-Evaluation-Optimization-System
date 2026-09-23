@@ -7,8 +7,10 @@ from bm25_scores import bm25_scores
 from normalize_scores import normalize_scores
 from semantic_vector import create_semantic_chunks
 
+from normalize import normalize
 
-def hybrid_retrieve_chunks(text, question_text):
+
+def hybrid_retrieve_chunks(text, question_text, evidence_points=None, alpha=0.7):
 
 
 
@@ -70,7 +72,7 @@ def hybrid_retrieve_chunks(text, question_text):
     #     vector_score_values
     # )
 
-    # for semantic chunking
+    # for semantic chunksing
     normalized_semantic = normalize_scores(
         semantic_score_values
     )
@@ -79,7 +81,6 @@ def hybrid_retrieve_chunks(text, question_text):
     # Hybrid scoring
     # ------------------------------------------------
 
-    alpha = 0.7
 
     ## for vector chunking
     # hybrid_scores = [
@@ -102,6 +103,8 @@ def hybrid_retrieve_chunks(text, question_text):
         )
     ]
 
+    
+    
     # ------------------------------------------------
     # Select top 10 candidates
     # ------------------------------------------------
@@ -111,6 +114,9 @@ def hybrid_retrieve_chunks(text, question_text):
     candidate_indices = np.argsort(
         hybrid_scores
     )[-candidate_k:][::-1]
+
+
+
 
     hybrid_chunks = [
         chunks[i]
@@ -126,11 +132,6 @@ def hybrid_retrieve_chunks(text, question_text):
     int(i)
     for i in candidate_indices
     ]
-
-    # -----------------------------------------------------
-    # -----------------------------------------------------
-
-
 
     return hybrid_chunks, hybrid_score, hybrid_indices, chunks
     # return hybrid_chunks, hybrid_score

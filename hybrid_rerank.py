@@ -5,7 +5,7 @@ from neighbor_merge import merge_neighbors
 from evaluation import evidence_coverage
 
 
-def hybrid_rerank_retrieve(text, question_text, evidence_points):
+def hybrid_rerank_retrieve(text, question_text, evidence_points=None, ):
 
     hybrid_chunks, hybrid_scores, hybrid_indices, chunks = hybrid_retrieve_chunks(
         text,

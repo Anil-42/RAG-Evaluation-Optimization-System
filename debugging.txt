@@ -335,72 +335,48 @@ Reranking improved: 0
 Reranking hurt: 5
 Reranking unchanged: 41 
 
+
+
+
+Semantic + hybrid + reranking:
+1. Complete results
+Method	            @1 Coverage	  @1 Pass	  @3 Coverage	  @3 Pass	  @5 Coverage	  @5 Pass
+Fixed Vector	      41.85%	      47.83%	  69.20%	      73.91%	  73.55%	      78.26%
+Semantic Vector	    54.35%	      56.52%	  67.39%	      69.57%	  76.45%	      78.26%
+Hybrid	            62.32%	      65.22%	  85.14%	      86.96%	  89.49%	      91.30%
+Hybrid + Reranking	68.84%	      71.74%	  84.42%	      86.96%	  89.49%	      91.30%
+
+
+The reranker isn't optimizing your exact evaluation metric.
+
+It is trying to determine:
+"Which chunk is most relevant to this question?"
+
+Your evaluation is asking:
+"How much of the required evidence did the retrieved chunks contain?"
+
+Those aren't necessarily the same thing.
+For example, you found that the Hybrid system retrieved a chunk containing all nine evidence points for one question, but the cross-encoder assigned that chunk a relatively poor score and removed it.
+
+That's an excellent concrete example to include in your eventual project report.
+
+
+alpha=0.3 :
+Method: hybrid
+Average evidence coverage: 86.23%
+Retrieval pass rate: 89.13%
+
+alpha=0.5 :
 Method: hybrid
 Average evidence coverage: 85.14%
 Retrieval pass rate: 86.96%
 
-Method: hybrid_rerank
-Average evidence coverage: 84.42%
+alpha=0.7 :
+Method: hybrid
+Average evidence coverage: 85.14%
 Retrieval pass rate: 86.96%
 
-
-[
-  {
-    "question": "Why should writers consider how investors will read a document?",
-    "answer": "Writers should consider whether investors will read the document straight through or skip around to sections that interest them.",
-    "source": "a plain english handbook",
-    "evidence": "How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?",
-    "evidence_points": [
-      "How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?"
-    ]
-  },
-
-  {
-    "question": "What are the common problems found in disclosure documents?",
-    "answer": "Common problems include long sentences, passive voice, weak verbs, superfluous words, legal and financial jargon, numerous defined terms, abstract words, unnecessary details, and unreadable design and layout.",
-    "source": "a plain english handbook",
-    "evidence": "Common problems • Long sentences • Passive voice • Weak verbs • Superfluous words • Legal and financial jargon • Numerous defined terms • Abstract words • Unnecessary details • Unreadable design and layout",
-    "evidence_points": [
-      "Long sentences",
-      "Passive voice",
-      "Weak verbs",
-      "Superfluous words",
-      "Legal and financial jargon",
-      "Numerous defined terms",
-      "Abstract words",
-      "Unnecessary details",
-      "Unreadable design and layout"
-    ]
-  },
-  {
-    "question": "Why does the handbook recommend using active voice with strong verbs?",
-    "answer": "Active voice with strong verbs makes sentences shorter and easier to understand, while reducing unnecessary words and confusion.",
-    "source": "a plain english handbook",
-    "evidence": "The quickest fix lies in using the active voice with strong verbs. Strong verbs are guaranteed to liven up and tighten any sentence. When a verb carries more meaning, you can dispense with many of the words used to bolster weak verbs.",
-    "evidence_points": [
-      "The quickest fix lies in using the active voice with strong verbs.",
-      "Strong verbs are guaranteed to liven up and tighten any sentence.",
-      "When a verb carries more meaning, you can dispense with many of the words used to bolster weak verbs."
-    ]
-  },
-  {
-    "question": "Why should writers replace abstract terms with concrete terms?",
-    "answer": "Concrete terms help readers form clearer mental images and therefore make concepts and situations easier to understand.",
-    "source": "a plain english handbook",
-    "evidence": "And yet, it’s far easier to comprehend a concept or a situation when your mind can form images. You can make complex information more understandable by giving your readers an example using one investor.",
-    "evidence_points": [
-      "And yet, it’s far easier to comprehend a concept or a situation when your mind can form images.",
-      "You can make complex information more understandable by giving your readers an example using one investor."
-    ]
-  },
-  {
-    "question": "Why should writers avoid creating new acronyms?",
-    "answer": "New acronyms force readers to memorize a new vocabulary while they are already trying to understand complicated concepts.",
-    "source": "a plain english handbook",
-    "evidence": "Don’t create new jargon that’s unique to your document in the form of acronyms or other words. It’s asking too much of your readers to memorize a new vocabulary while they are trying to understand complicated concepts.",
-    "evidence_points": [
-      "Don’t create new jargon that’s unique to your document in the form of acronyms or other words.",
-      "It’s asking too much of your readers to memorize a new vocabulary while they are trying to understand complicated concepts."
-    ]
-  }
-]
+alpha=0.9 :
+Method: hybrid
+Average evidence coverage: 76.09%
+Retrieval pass rate: 78.26%
