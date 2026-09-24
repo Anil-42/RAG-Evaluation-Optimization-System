@@ -329,3 +329,45 @@ After evaluating a lot we say that,
 The reranker is not consistently bad. It is making a different judgment about which chunks are relevant.
 
     And because your evaluation metric is evidence coverage, sometimes that judgment agrees with your benchmark and sometimes it doesn't.
+
+we can say that The cross-encoder often identifies relevant chunks but ranks evidence-bearing chunks too low for a Top-3 cutoff.
+as evaluation of,
+k=1 -> 0
+k=3 -> 53.33
+k=5,7,10 -> 100
+
+therefore we can conclude that the cross-encoder ranks chunks low for top-3 cutoff
+
+k=10 result reaching 100% on the five diagnostic questions makes sense because your candidate pool itself contains the required evidence.
+
+Reranker diagnosis: On the five manually investigated failure cases, increasing reranker output k from 3 to 10 recovered evidence that was already present in the Hybrid Top-10 candidate pool. This suggests that the current reranker problem is substantially a ranking/cutoff problem, rather than purely a candidate-retrieval problem.
+
+Your current best pipeline
+
+Based on everything you've tested so far:
+
+                 PDF
+                  ↓
+            Text Extraction
+                  ↓
+           Semantic Chunking
+                  ↓
+        ┌─────────┴─────────┐
+        ↓                   ↓
+
+Vector Search BM25
+↓ ↓
+└─────────┬─────────┘
+↓
+Hybrid Retrieval
+α = 0.2
+↓
+Top 10 Candidates
+↓
+Cross-Encoder Reranker
+↓
+Top 7 Chunks
+↓
+LLM / Answer
+
+"On the 46-question evaluation benchmark, k=7 was the smallest tested reranking cutoff that achieved the maximum observed performance of 93.84% evidence coverage and 95.65% retrieval pass rate. Increasing k from 7 to 10 produced no additional improvement."

@@ -127,28 +127,6 @@ Evidence coverage: 50.00% - 0
 
 
 
-[
-{
-    "question": "Why should writers consider how investors will read a document?",
-    "answer": "Writers should consider whether investors will read the document straight through or skip around to sections that interest them.",
-    "source": "a plain english handbook",
-    "evidence": "How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?",
-    "evidence_points": [
-      "How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?"
-    ]
-  },
-    {
-    "question": "Why should writers replace abstract terms with concrete terms?",
-    "answer": "Concrete terms help readers form clearer mental images and therefore make concepts and situations easier to understand.",
-    "source": "a plain english handbook",
-    "evidence": "And yet, it’s far easier to comprehend a concept or a situation when your mind can form images. You can make complex information more understandable by giving your readers an example using one investor.",
-    "evidence_points": [
-      "And yet, it’s far easier to comprehend a concept or a situation when your mind can form images.",
-      "You can make complex information more understandable by giving your readers an example using one investor."
-    ]
-  }
-]
-
 
 
 Fixed vector :
@@ -360,10 +338,24 @@ For example, you found that the Hybrid system retrieved a chunk containing all n
 
 That's an excellent concrete example to include in your eventual project report.
 
+alpha=0.1 :
+Method: hybrid
+Average evidence coverage: 83.33%
+Retrieval pass rate: 86.96%
+
+alpha=0.2 :
+Method: hybrid
+Average evidence coverage: 88.41%
+Retrieval pass rate: 91.30%
 
 alpha=0.3 :
 Method: hybrid
 Average evidence coverage: 86.23%
+Retrieval pass rate: 89.13%
+
+alpha=0.4 :
+Method: hybrid
+Average evidence coverage: 87.32%
 Retrieval pass rate: 89.13%
 
 alpha=0.5 :
@@ -380,3 +372,92 @@ alpha=0.9 :
 Method: hybrid
 Average evidence coverage: 76.09%
 Retrieval pass rate: 78.26%
+
+
+
+[
+  {
+    "question": "What should writers determine about the financial sophistication of investors?",
+    "answer": "Writers should gauge the financial sophistication of their investors so they can write understandable documents.",
+    "source": "a plain english handbook",
+    "evidence": "To write understandable documents, you need to gauge the financial sophistication of your investors.",
+    "evidence_points": [
+      "To write understandable documents, you need to gauge the financial sophistication of your investors."
+    ]
+  },
+
+  {
+    "question": "What should writers consider about investors' familiarity with financial terminology?",
+    "answer": "Writers should consider how familiar investors are with investments and financial terminology.",
+    "source": "a plain english handbook",
+    "evidence": "How familiar are they with investments and financial terminology?",
+    "evidence_points": [
+      "How familiar are they with investments and financial terminology?"
+    ]
+  },
+  {
+    "question": "What are the common problems found in disclosure documents?",
+    "answer": "Common problems include long sentences, passive voice, weak verbs, superfluous words, legal and financial jargon, numerous defined terms, abstract words, unnecessary details, and unreadable design and layout.",
+    "source": "a plain english handbook",
+    "evidence": "Common problems • Long sentences • Passive voice • Weak verbs • Superfluous words • Legal and financial jargon • Numerous defined terms • Abstract words • Unnecessary details • Unreadable design and layout",
+    "evidence_points": [
+      "Long sentences",
+      "Passive voice",
+      "Weak verbs",
+      "Superfluous words",
+      "Legal and financial jargon",
+      "Numerous defined terms",
+      "Abstract words",
+      "Unnecessary details",
+      "Unreadable design and layout"
+    ]
+  },
+  {
+    "question": "Why does the handbook recommend using active voice with strong verbs?",
+    "answer": "Active voice with strong verbs makes sentences shorter and easier to understand, while reducing unnecessary words and confusion.",
+    "source": "a plain english handbook",
+    "evidence": "The quickest fix lies in using the active voice with strong verbs. Strong verbs are guaranteed to liven up and tighten any sentence. When a verb carries more meaning, you can dispense with many of the words used to bolster weak verbs.",
+    "evidence_points": [
+      "The quickest fix lies in using the active voice with strong verbs.",
+      "Strong verbs are guaranteed to liven up and tighten any sentence.",
+      "When a verb carries more meaning, you can dispense with many of the words used to bolster weak verbs."
+    ]
+  },
+
+  {
+    "question": "Why should writers avoid creating new acronyms?",
+    "answer": "New acronyms force readers to memorize a new vocabulary while they are already trying to understand complicated concepts.",
+    "source": "a plain english handbook",
+    "evidence": "Don’t create new jargon that’s unique to your document in the form of acronyms or other words. It’s asking too much of your readers to memorize a new vocabulary while they are trying to understand complicated concepts.",
+    "evidence_points": [
+      "Don’t create new jargon that’s unique to your document in the form of acronyms or other words.",
+      "It’s asking too much of your readers to memorize a new vocabulary while they are trying to understand complicated concepts."
+    ]
+  }
+]
+
+
+k=1
+Method: hybrid_rerank
+Average evidence coverage: 68.84%
+Retrieval pass rate: 71.74%
+
+k=3
+Method: hybrid_rerank
+Average evidence coverage: 84.42%
+Retrieval pass rate: 86.96%
+
+k=5
+Method: hybrid_rerank
+Average evidence coverage: 89.49%
+Retrieval pass rate: 91.30%
+
+k=7
+Method: hybrid_rerank
+Average evidence coverage: 93.84%
+Retrieval pass rate: 95.65%
+
+k=10
+Method: hybrid_rerank
+Average evidence coverage: 93.84%
+Retrieval pass rate: 95.65%

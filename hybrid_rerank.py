@@ -5,11 +5,13 @@ from neighbor_merge import merge_neighbors
 from evaluation import evidence_coverage
 
 
-def hybrid_rerank_retrieve(text, question_text, evidence_points=None, ):
+def hybrid_rerank_retrieve(text, question_text, evidence_points=None, alpha=0.2):
 
     hybrid_chunks, hybrid_scores, hybrid_indices, chunks = hybrid_retrieve_chunks(
         text,
         question_text,
+        evidence_points, 
+        alpha
     )
 
 
@@ -20,14 +22,13 @@ def hybrid_rerank_retrieve(text, question_text, evidence_points=None, ):
         question_text,
         hybrid_chunks,
         hybrid_indices,
-        k=3
+        k=1
     )
 
 
     # --------------------------------------------
     # Merge top 3 after reranking
     # --------------------------------------------
-
     # # Get the original chunk indices of FINAL TOP 3
     # final_indices = [index for chunk, index, score in reranked]
 
@@ -64,10 +65,8 @@ def hybrid_rerank_retrieve(text, question_text, evidence_points=None, ):
         for chunk, index, score in reranked
     ]
 
-# ------------------------------------------------------------------------
 
 
-
-    return final_chunks, final_scores, hybrid_indices, final_indices
+    return final_chunks, final_scores, hybrid_indices, final_indices, chunks
 
 

@@ -19,7 +19,7 @@ def main():
     # SELECT EXPERIMENT
     # ============================================================
 
-    method = "hybrid"  # Change this to select the retrieval method
+    method = "hybrid_rerank"  # Change this to select the retrieval method
     
     # Available methods:
     # "fixed_vector"
@@ -53,16 +53,16 @@ def main():
 
 
     results = []
-    alpha = 0.4
+    alpha = 0.7
 
 
     # ============================================================
     # 3. RAG EVALUATION LOOP
     # ============================================================
    
-    reranking_improved = 0
-    reranking_hurt = 0
-    reranking_same = 0
+    # reranking_improved = 0
+    # reranking_hurt = 0
+    # reranking_same = 0
  
 
     for question in questions:
@@ -163,14 +163,14 @@ def main():
 
         elif method == "hybrid_rerank":
 
-            retrieved_chunks, retrieved_scores, hybrid_indices, reranked_indices = (
+            retrieved_chunks, retrieved_scores, hybrid_indices, reranked_indices, chunks = (
                 hybrid_rerank_retrieve(
                     text,
                     question_text,
-                    evidence_points
+                    evidence_points,
+                    alpha
                 )
             )
-
             
 
         else:

@@ -10,7 +10,7 @@ from semantic_vector import create_semantic_chunks
 from normalize import normalize
 
 
-def hybrid_retrieve_chunks(text, question_text, evidence_points=None, alpha=0.7):
+def hybrid_retrieve_chunks(text, question_text, evidence_points=None, alpha=0.2):
 
 
 
