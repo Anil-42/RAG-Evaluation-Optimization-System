@@ -11,7 +11,7 @@ def retrieve(question, chunks, embeddings):
     # ----------------change according to retrieval method-------------------
 
     # fixedsize retrieval
-    # k=min(5,len(chunks))
+    # k=min(7,len(chunks))
     
     # hybrid retrieval
     k=len(chunks)
@@ -47,7 +47,6 @@ def retrieve(question, chunks, embeddings):
 
     # for fixed size and semantic retrieval
     # return retrieved_chunks, retrieved_scores
-
 
 
     # for hybrid retrieval

@@ -22,11 +22,11 @@ def hybrid_rerank_retrieve(text, question_text, evidence_points=None, alpha=0.2)
         k=7
     )
 
+    # --------------------------------------------
+    # Merge top 7 after reranking
+    # --------------------------------------------
 
-    # --------------------------------------------
-    # Merge top 3 after reranking
-    # --------------------------------------------
-    # Get the original chunk indices of FINAL TOP 3
+    # Get the original chunk indices of FINAL TOP 7
     final_indices = [index for chunk, index, score in reranked]
 
     # Now expand/merge their neighbors
@@ -34,7 +34,6 @@ def hybrid_rerank_retrieve(text, question_text, evidence_points=None, alpha=0.2)
         final_indices,
         chunks
     )
-
 
     final_chunks = [
         merged_text

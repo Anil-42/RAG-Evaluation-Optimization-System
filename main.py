@@ -19,7 +19,7 @@ def main():
     # ============================================================
 
     method = "hybrid_rerank"  # Change this to select the retrieval method
-    
+
     # Available methods:
     # "fixed_vector"
     # "semantic_vector"
@@ -98,7 +98,7 @@ def main():
 
         elif method == "hybrid":
 
-            retreved_chunks, retreved_scores, hybrid_indices, chunks = (
+            hybrid_chunks, hybrid_scores, hybrid_indices, chunks = (
                 hybrid_retrieve_chunks(
                     text,
                     question_text,
@@ -110,11 +110,11 @@ def main():
             # Hybrid returns top 10 candidates.
             #
             # For pure hybrid experiment,
-            # select top 3 before evaluation.
+            # select top 7 before evaluation.
             
-            retrieved_chunks = retreved_chunks[:3]
+            retrieved_chunks = hybrid_chunks[:7]
 
-            retrieved_scores = retreved_scores[:3]
+            retrieved_scores = hybrid_scores[:7]
 
            
 
@@ -149,18 +149,18 @@ def main():
 
 
 # ----------------------------------------------------------------
-        if coverage < 1.0:
-            print("\n" + "=" * 60)
-            print("FAILED / PARTIAL RETRIEVAL")
-            print("=" * 60)
-            print("Question:", question_text)
-            print("Evidence found:", found)
-            print("Evidence total:", total)
-            print("Coverage:", coverage)
+        # if coverage < 1.0:
+        #     print("\n" + "=" * 60)
+        #     print("FAILED / PARTIAL RETRIEVAL")
+        #     print("=" * 60)
+        #     print("Question:", question_text)
+        #     print("Evidence found:", found)
+        #     print("Evidence total:", total)
+        #     print("Coverage:", coverage)
 
-            print("\nEvidence points:")
-            for point in evidence_points:
-                print("-", point)
+        #     print("\nEvidence points:")
+        #     for point in evidence_points:
+        #         print("-", point)
 # ----------------------------------------------------------------
 
 
@@ -214,7 +214,7 @@ def main():
             "evidence_coverage": coverage
 
         })
-    
+
 
     print_evaluation_summary(results, method)
 

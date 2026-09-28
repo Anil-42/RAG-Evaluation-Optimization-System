@@ -355,20 +355,20 @@ Based on everything you've tested so far:
         ┌─────────┴─────────┐
         ↓                   ↓
 
-Vector Search BM25
-↓ ↓
-└─────────┬─────────┘
-↓
-Hybrid Retrieval
-α = 0.2
-↓
-Top 10 Candidates
-↓
-Cross-Encoder Reranker
-↓
-Top 7 Chunks
-↓
-LLM / Answer
+    Vector Search BM25
+    ↓ ↓
+    └─────────┬─────────┘
+    ↓
+    Hybrid Retrieval
+    α = 0.2
+    ↓
+    Top 10 Candidates
+    ↓
+    Cross-Encoder Reranker
+    ↓
+    Top 7 Chunks
+    ↓
+    LLM / Answer
 
 "On the 46-question evaluation benchmark, k=7 was the smallest tested reranking cutoff that achieved the maximum observed performance of 93.84% evidence coverage and 95.65% retrieval pass rate. Increasing k from 7 to 10 produced no additional improvement."
 
@@ -390,6 +390,7 @@ Evidence points:
 - Or you may do it on your own.
 - In that case, rest assured that one person can do it alone.
 
+# candidate_k to 10:
 ============================================================
 EVALUATION RESULTS
 ============================================================
@@ -404,11 +405,92 @@ so now lets test it by increasing candidate_k from 10 to 20.
 
 # after increasing candidate_k to 20:
 
-# EVALUATION RESULTS
-
+============================================================
+EVALUATION RESULTS
+============================================================
 Method: hybrid_rerank
 Questions evaluated: 46
 Average evidence cover: 100.00%
 Retrieval pass rate: 100.00%
 Full evidence retrieval: 100.00%
 ============================================================
+
+
+winning configuration
+
+        Semantic Chunking
+                ↓
+        Semantic Search + BM25
+                ↓
+        Hybrid α = 0.2
+                ↓
+        candidate_k = 20
+                ↓
+        Cross-Encoder Reranker
+                ↓
+        final k = 7
+                ↓
+        Neighbor merging
+                ↓
+        Evidence evaluation
+
+Benchmark
+---------
+46 questions
+100% average evidence coverage
+100% retrieval pass rate
+100% full evidence retrieval
+
+Final comparison of the four retrieval strategies
+----------------------------------------------------------------------------------------------------
+Method	            | Final k | α   | Candidate k | Evidence Coverage |	Pass Rate |	Full Retrieval |
+Fixed Vector	    | 7	      | —   |    —        |     80.07%	      |   84.78%  |	   73.91%      |
+Semantic Vector	    | 7	      | —   |    —        |     82.97%	      |   84.78%  |	   80.43%      |
+Hybrid	            | 7	      | 0.2 |	10        |     91.67%	      |   93.48%  |    89.13%      |
+Hybrid + Reranking	| 7	      | 0.2 |	20        | 	91.67%	      |   93.48%  |    89.13%      |
+----------------------------------------------------------------------------------------------------
+This is your official four-method comparison.
+
+Hybrid retrieval substantially improved retrieval performance over individual vector-based approaches. Reranking was evaluated as an additional optimization stage, and neighbor-aware context reconstruction subsequently resolved the remaining retrieval failures, achieving 100% evidence retrieval on the 46-question benchmark.
+
+            Fixed Vector
+            80.07% coverage
+                    ↓
+            Semantic Vector
+            82.97%
+                    ↓
+            Hybrid
+            91.67%
+                    ↓
+            Hybrid + Reranking
+            91.67%
+                    ↓
+            Neighbor-aware optimization
+            100.00%
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+right now we've proven:
+"Did we retrieve the required evidence?" → Yes, 100%.
+
+But we haven't yet proven:
+"Did the LLM produce the correct answer from that evidence?"
+
+
+        Retrieved context
+            ↓
+            LLM
+            ↓
+        Generated answer
+            ↓
+        Is the answer actually correct?
+
+above is the next real evaluation layer.
+
+We'll check things such as:
+
+Does the LLM answer the question?
+Does it stay within the retrieved context?
+Does it hallucinate?
+Does it contain the required information?
+Does it unnecessarily add information?
