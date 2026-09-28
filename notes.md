@@ -371,3 +371,33 @@ Top 7 Chunks
 LLM / Answer
 
 "On the 46-question evaluation benchmark, k=7 was the smallest tested reranking cutoff that achieved the maximum observed performance of 93.84% evidence coverage and 95.65% retrieval pass rate. Increasing k from 7 to 10 produced no additional improvement."
+
+after neighbor merging only one question failed.
+it failed as non of its evidence point chunks were retrieved.
+but these evidence are present in the original document
+
+============================================================
+FAILED / PARTIAL RETRIEVAL
+============================================================
+Question: Who can work on a plain English project according to the handbook?
+Evidence found: 0
+Evidence total: 3
+Coverage: 0.0
+
+Evidence points:
+
+- Many of you routinely select a team to think and talk about how to write a document from scratch or rewrite an existing document.
+- Or you may do it on your own.
+- In that case, rest assured that one person can do it alone.
+
+============================================================
+EVALUATION RESULTS
+============================================================
+Method: hybrid_rerank
+Questions evaluated: 46
+Average evidence cover: 97.83%
+Retrieval pass rate: 97.83%
+Full evidence retrieval: 97.83%
+============================================================
+
+so now lets test it by increasing candidate_k from 10 to 20.

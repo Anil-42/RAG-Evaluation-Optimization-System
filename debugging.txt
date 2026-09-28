@@ -461,3 +461,1064 @@ k=10
 Method: hybrid_rerank
 Average evidence coverage: 93.84%
 Retrieval pass rate: 95.65%
+
+
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Using plain English assures the orderly and clear presentation of complex information so that investors have the best possible chance of understanding it.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Plain English means analyzing and deciding what information investors need to make informed decisions, before words, sentences, or paragraphs are considered.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.9318
+Hybrid rank: 1
+Hybrid score: 0.9795
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: A plain English document uses words economically and at a level the audience can understand.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.9193
+Hybrid rank: 1
+Hybrid score: 0.9758
+Status: IN HYBRID TOP-10
+
+Evidence: Its sentence structure is tight.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.9193
+Hybrid rank: 1
+Hybrid score: 0.9758
+Status: IN HYBRID TOP-10
+
+Evidence: Its tone is welcoming and direct.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.9193
+Hybrid rank: 1
+Hybrid score: 0.9758
+Status: IN HYBRID TOP-10
+
+Evidence: Its design is visually appealing.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.9193
+Hybrid rank: 1
+Hybrid score: 0.9758
+Status: IN HYBRID TOP-10
+
+Evidence: A plain English document is easy to read and looks like it’s meant to be read.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.9193
+Hybrid rank: 1
+Hybrid score: 0.9758
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: This handbook gives you practical tips on how to create plain English documents.
+Original chunk index: 16
+Semantic rank: 8
+Semantic score: 0.8274
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8792
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: As with all the advice in this handbook, feel free to tailor these tips to your schedule, your document, and your budget.
+Original chunk index: 18
+Semantic rank: 2
+Semantic score: 0.9205
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9443
+Status: IN HYBRID TOP-10
+
+Evidence: Not all of the tips will apply to everyone or to every document.
+Original chunk index: 18
+Semantic rank: 2
+Semantic score: 0.9205
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9443
+Status: IN HYBRID TOP-10
+
+Evidence: Pick and choose the ones that make sense for you.
+Original chunk index: 18
+Semantic rank: 2
+Semantic score: 0.9205
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9443
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: It does not mean deleting complex information to make the document easier to understand.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: For investors to make informed decisions, disclosure documents must impart complex information.
+Original chunk index: 16
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Many of you routinely select a team to think and talk about how to write a document from scratch or rewrite an existing document.
+Original chunk index: 21
+Semantic rank: 29
+Semantic score: 0.6069
+BM25 rank: 27
+BM25 score: 0.5184
+Hybrid rank: 24
+Hybrid score: 0.5803
+Failure: HYBRID_RETRIEVAL
+Reason: Both Semantic and BM25 ranked this evidence outside Top-10.
+
+Evidence: Or you may do it on your own.
+Original chunk index: 21
+Semantic rank: 29
+Semantic score: 0.6069
+BM25 rank: 27
+BM25 score: 0.5184
+Hybrid rank: 24
+Hybrid score: 0.5803
+Failure: HYBRID_RETRIEVAL
+Reason: Both Semantic and BM25 ranked this evidence outside Top-10.
+
+Evidence: In that case, rest assured that one person can do it alone.
+Original chunk index: 21
+Semantic rank: 29
+Semantic score: 0.6069
+BM25 rank: 27
+BM25 score: 0.5184
+Hybrid rank: 24
+Hybrid score: 0.5803
+Failure: HYBRID_RETRIEVAL
+Reason: Both Semantic and BM25 ranked this evidence outside Top-10.
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: A team leader who has the authority to make decisions that keep the project moving forward and bring it to a successful conclusion.
+Original chunk index: 23
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: A lead writer who ensures the document uses a logical structure and simple, clear language.
+Original chunk index: 23
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: If more than one person is drafting sections of the document, the lead writer makes sure the final draft has a consistent tone and the individual parts form a coherent whole.
+Original chunk index: 23
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: An investor relations expert who knows firsthand the financial sophistication of your investors.
+Original chunk index: 24
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Investor relations people know which questions investors typically ask and where past disclosure documents have failed to make information clear.
+Original chunk index: 24
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Knowing your audience is the most important step in assuring that your document is understandable to your current or prospective investors.
+Original chunk index: 26
+Semantic rank: 7
+Semantic score: 0.7512
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 2
+Hybrid score: 0.8259
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: To write understandable documents, you need to gauge the financial sophistication of your investors.
+Original chunk index: 26
+Semantic rank: 11
+Semantic score: 0.7618
+BM25 rank: 2
+BM25 score: 0.8899
+Hybrid rank: 4
+Hybrid score: 0.8003
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: What are their demographics—age, income, level of education, and job experience?
+Original chunk index: 26
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: How familiar are they with investments and financial terminology?
+Original chunk index: 27
+Semantic rank: 20
+Semantic score: 0.8157
+BM25 rank: 2
+BM25 score: 0.9460
+Hybrid rank: 5
+Hybrid score: 0.8548
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: How will they read the document for the first time? Will they read it straight through or skip around to the sections that interest them?
+Original chunk index: 27
+Semantic rank: 5
+Semantic score: 0.8719
+BM25 rank: 13
+BM25 score: 0.5330
+Hybrid rank: 6
+Hybrid score: 0.7703
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Read the entire document once without making any notes or comments on the text.
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.7982
+Hybrid rank: 1
+Hybrid score: 0.9395
+Status: IN HYBRID TOP-10
+
+Evidence: This should give you a general understanding of the information covered in the document and make your next read more productive.
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 3
+BM25 score: 0.7982
+Hybrid rank: 1
+Hybrid score: 0.9395
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: When you read it the second time, make notes on what information is covered and any questions you have.
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Your notes will also help you to assess if information flows through your document in a logical order.
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Will the investors understand the language?
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Does the document highlight information that is important to investors?
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Is any important information missing?
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Does the document include information that is not legally required and will not help investors make informed decisions?
+Original chunk index: 29
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: “Because it’s always been there” is not reason enough to keep it in your draft.
+Original chunk index: 30
+Semantic rank: 4
+Semantic score: 0.7703
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 2
+Hybrid score: 0.8392
+Status: IN HYBRID TOP-10
+
+Evidence: If you’ve done your legal research and no one knows why the information is important or required, consider taking it out.
+Original chunk index: 31
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 11
+BM25 score: 0.5178
+Hybrid rank: 1
+Hybrid score: 0.8553
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Reading the same material two or three times can bore and even trouble readers.
+Original chunk index: 31
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Most readers skip over paragraphs if they think they’ve read them before.
+Original chunk index: 31
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: If you cut down on repetitious paragraphs or sentences, you’ll not only earn the gratitude of your reader, you’ll reduce printing and mailing costs.
+Original chunk index: 31
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: A cover page should be an introduction, an inviting entryway into your document, giving investors some key facts about your offering, but not telling everything all at once.
+Original chunk index: 32
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 2
+BM25 score: 0.8954
+Hybrid rank: 2
+Hybrid score: 0.9686
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: A summary should orient the reader, highlighting the most important points that are presented in greater detail in the prospectus.
+Original chunk index: 34
+Semantic rank: 2
+Semantic score: 0.9466
+BM25 rank: 4
+BM25 score: 0.8402
+Hybrid rank: 1
+Hybrid score: 0.9147
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Overwhelmed with memorizing a new and unnatural vocabulary, and bothered by constantly having to flip back and hunt for the first time a defined term’s definition appears, many an investor will not stick with the document.
+Original chunk index: 34
+Semantic rank: 2
+Semantic score: 0.8245
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 2
+Hybrid score: 0.8771
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: First, present the big picture before the details.
+Original chunk index: 35
+Semantic rank: 62
+Semantic score: 0.6171
+BM25 rank: 3
+BM25 score: 0.8433
+Hybrid rank: 19
+Hybrid score: 0.6849
+Failure: HYBRID_RETRIEVAL
+Reason: Semantic retrieval missed it, but BM25 found it.
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Second, use descriptive headers and subheaders to break your document up into manageable sections.
+Original chunk index: 37
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: If you present the information in bite-sized pieces, it’s easier to digest.
+Original chunk index: 37
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Make sure your headings tell the reader what the upcoming sections will cover.
+Original chunk index: 38
+Semantic rank: 28
+Semantic score: 0.6225
+BM25 rank: 42
+BM25 score: 0.1834
+Hybrid rank: 25
+Hybrid score: 0.4908
+Failure: HYBRID_RETRIEVAL
+Reason: Both Semantic and BM25 ranked this evidence outside Top-10.
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Third, always group related information together.
+Original chunk index: 38
+Semantic rank: 11
+Semantic score: 0.6633
+BM25 rank: 2
+BM25 score: 0.8968
+Hybrid rank: 3
+Hybrid score: 0.7334
+Status: IN HYBRID TOP-10
+
+Evidence: This helps you identify and eliminate repetitious information.
+Original chunk index: 38
+Semantic rank: 11
+Semantic score: 0.6633
+BM25 rank: 2
+BM25 score: 0.8968
+Hybrid rank: 3
+Hybrid score: 0.7334
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: If you are writing for financially unsophisticated investors, your document’s overall organization may take an educational approach.
+Original chunk index: 38
+Semantic rank: 3
+Semantic score: 0.9627
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9739
+Status: IN HYBRID TOP-10
+
+Evidence: You may need to explain industry terms or concepts where they first appear.
+Original chunk index: 38
+Semantic rank: 3
+Semantic score: 0.9627
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9739
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Long sentences
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Passive voice
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Weak verbs
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Superfluous words
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Legal and financial jargon
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Numerous defined terms
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Abstract words
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Unnecessary details
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+Evidence: Unreadable design and layout
+Original chunk index: 39
+Semantic rank: 8
+Semantic score: 0.8354
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.8848
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: The quickest fix lies in using the active voice with strong verbs.
+Original chunk index: 41
+Semantic rank: 4
+Semantic score: 0.8217
+BM25 rank: 2
+BM25 score: 0.9100
+Hybrid rank: 3
+Hybrid score: 0.8482
+Status: IN HYBRID TOP-10
+
+Evidence: Strong verbs are guaranteed to liven up and tighten any sentence.
+Original chunk index: 41
+Semantic rank: 4
+Semantic score: 0.8217
+BM25 rank: 2
+BM25 score: 0.9100
+Hybrid rank: 3
+Hybrid score: 0.8482
+Status: IN HYBRID TOP-10
+
+Evidence: When a verb carries more meaning, you can dispense with many of the words used to bolster weak verbs.
+Original chunk index: 42
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 4
+BM25 score: 0.6683
+Hybrid rank: 2
+Hybrid score: 0.9005
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: In the active voice, the subject of the sentence, the investor, performs the action, buying the stock.
+Original chunk index: 43
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 2
+BM25 score: 0.8511
+Hybrid rank: 1
+Hybrid score: 0.9553
+Status: IN HYBRID TOP-10
+
+Evidence: In the passive voice the subject, the stock, is acted upon.
+Original chunk index: 43
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 2
+BM25 score: 0.8511
+Hybrid rank: 1
+Hybrid score: 0.9553
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Readers understand sentences in the active voice more quickly and easily because it follows how we think and process information.
+Original chunk index: 44
+Semantic rank: 3
+Semantic score: 0.9257
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9480
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: The passive voice may make sense when the person or thing performing the action is of secondary importance to another subject that should play the starring role in sentence.
+Original chunk index: 50
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Use the passive voice only when you have a very good reason for doing so.
+Original chunk index: 50
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: When in doubt, choose the active voice.
+Original chunk index: 50
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: In these sentences, the strong verb lies hidden in a nominalization, a noun derived from a verb that usually ends in -tion.
+Original chunk index: 51
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Find the noun and try to make it the main verb of the sentence.
+Original chunk index: 51
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: First, personal pronouns aid your reader’s comprehension because they clarify what applies to your reader and what applies to you.
+Original chunk index: 54
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 4
+BM25 score: 0.3708
+Hybrid rank: 2
+Hybrid score: 0.8112
+Status: IN HYBRID TOP-10
+
+Evidence: Second, they allow you to “speak” directly to your reader, creating an appealing tone that will keep your reader reading.
+Original chunk index: 54
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 4
+BM25 score: 0.3708
+Hybrid rank: 2
+Hybrid score: 0.8112
+Status: IN HYBRID TOP-10
+
+Evidence: Third, they help you to avoid abstractions and to use more concrete and everyday language.
+Original chunk index: 54
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 4
+BM25 score: 0.3708
+Hybrid rank: 2
+Hybrid score: 0.8112
+Status: IN HYBRID TOP-10
+
+Evidence: Fourth, they keep your sentences short.
+Original chunk index: 54
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 4
+BM25 score: 0.3708
+Hybrid rank: 2
+Hybrid score: 0.8112
+Status: IN HYBRID TOP-10
+
+Evidence: Fifth, first- and second-person pronouns aren’t gender-specific, allowing you to avoid the “he or she” dilemma.
+Original chunk index: 54
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 4
+BM25 score: 0.3708
+Hybrid rank: 2
+Hybrid score: 0.8112
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: And yet, it’s far easier to comprehend a concept or a situation when your mind can form images.
+Original chunk index: 56
+Semantic rank: 6
+Semantic score: 0.7509
+BM25 rank: 11
+BM25 score: 0.4058
+Hybrid rank: 6
+Hybrid score: 0.6474
+Status: IN HYBRID TOP-10
+
+Evidence: You can make complex information more understandable by giving your readers an example using one investor.
+Original chunk index: 56
+Semantic rank: 6
+Semantic score: 0.7509
+BM25 rank: 11
+BM25 score: 0.4058
+Hybrid rank: 6
+Hybrid score: 0.6474
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: You can make complex information more understandable by giving your readers an example using one investor.
+Original chunk index: 56
+Semantic rank: 2
+Semantic score: 0.9945
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9962
+Status: IN HYBRID TOP-10
+
+Evidence: This technique explains why “question and answer” formats often succeed when a narrative, abstract discussion fails.
+Original chunk index: 56
+Semantic rank: 2
+Semantic score: 0.9945
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 0.9962
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Words are superfluous when they can be replaced with fewer words that mean the same thing.
+Original chunk index: 61
+Semantic rank: 6
+Semantic score: 0.9155
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 2
+Hybrid score: 0.9408
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Another source of superfluous words is “shotgunning”: letting loose a blast of words hoping at least one conveys your intended meaning.
+Original chunk index: 61
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Positive sentences are shorter and easier to understand than their negative counterparts.
+Original chunk index: 65
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: The longer and more complex a sentence, the harder it is for readers to understand any single portion of it.
+Original chunk index: 67
+Semantic rank: 4
+Semantic score: 0.7226
+BM25 rank: 2
+BM25 score: 0.9942
+Hybrid rank: 3
+Hybrid score: 0.8041
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Ruthlessly eliminate jargon and legalese.
+Original chunk index: 74
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Instead, use short, common words to get your points across.
+Original chunk index: 74
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: In those instances where there is no plain English alternative, explain what the term means when you first use it.
+Original chunk index: 74
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Don’t create new jargon that’s unique to your document in the form of acronyms or other words.
+Original chunk index: 74
+Semantic rank: 4
+Semantic score: 0.7296
+BM25 rank: 8
+BM25 score: 0.5308
+Hybrid rank: 3
+Hybrid score: 0.6700
+Status: IN HYBRID TOP-10
+
+Evidence: It’s asking too much of your readers to memorize a new vocabulary while they are trying to understand complicated concepts.
+Original chunk index: 74
+Semantic rank: 4
+Semantic score: 0.7296
+BM25 rank: 8
+BM25 score: 0.5308
+Hybrid rank: 3
+Hybrid score: 0.6700
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: The natural word order of English speakers is subject-verb-object.
+Original chunk index: 80
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: Your sentences will be clearer if you follow this order as closely as possible.
+Original chunk index: 80
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: When there is more than one if and more than one then, you’ll probably need to break it down into more than one sentence, taking care to specify which ifs apply to which thens.
+Original chunk index: 83
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+Evidence: If the information is still unclear, consider presenting the information in a table.
+Original chunk index: 84
+Semantic rank: 17
+Semantic score: 0.3754
+BM25 rank: 74
+BM25 score: 0.1240
+Hybrid rank: 23
+Hybrid score: 0.3000
+Failure: HYBRID_RETRIEVAL
+Reason: Both Semantic and BM25 ranked this evidence outside Top-10.
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Parallelism simply means ensuring a list or series of items is presented using parallel parts of speech, such as nouns or verbs.
+Original chunk index: 84
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 1
+BM25 score: 1.0000
+Hybrid rank: 1
+Hybrid score: 1.0000
+Status: IN HYBRID TOP-10
+
+========== RETRIEVAL RANK DIAGNOSTIC ==========
+
+Evidence: Whenever you use “respectively,” you force your reader to go back and match up what belongs to what.
+Original chunk index: 89
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 6
+BM25 score: 0.7050
+Hybrid rank: 2
+Hybrid score: 0.9115
+Status: IN HYBRID TOP-10
+
+Evidence: You may be saving words by using “respectively,” but your reader has to use more time and read your words twice to understand what you’ve written.
+Original chunk index: 89
+Semantic rank: 1
+Semantic score: 1.0000
+BM25 rank: 6
+BM25 score: 0.7050
+Hybrid rank: 2
+Hybrid score: 0.9115
+Status: IN HYBRID TOP-10
+
+
+============================================================
+EVALUATION RESULTS
+============================================================
+Method:                  hybrid_rerank
+Questions evaluated:     46
+Average evidence cover:  91.67%
+Retrieval pass rate:     93.48%
+Full evidence retrieval: 89.13%
+============================================================
