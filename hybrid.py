@@ -106,7 +106,7 @@ def hybrid_retrieve_chunks(text, question_text, evidence_points=None, alpha=0.2)
     # Select top 10 candidates
     # ------------------------------------------------
 
-    candidate_k = 10
+    candidate_k = 20
 
     candidate_indices = np.argsort(
         hybrid_scores

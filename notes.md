@@ -401,3 +401,14 @@ Full evidence retrieval: 97.83%
 ============================================================
 
 so now lets test it by increasing candidate_k from 10 to 20.
+
+# after increasing candidate_k to 20:
+
+# EVALUATION RESULTS
+
+Method: hybrid_rerank
+Questions evaluated: 46
+Average evidence cover: 100.00%
+Retrieval pass rate: 100.00%
+Full evidence retrieval: 100.00%
+============================================================
