@@ -695,6 +695,7 @@ Full evidence retrieval: 100.00%
 
 
 
+manual evaluation:
 
 Question 1:
 What does an investor relations expert contribute to a plain English team?
@@ -767,7 +768,7 @@ faithfulness: 3/3
 completeness: 3/3
 
 
-,
+
   {
     "question": "What are the characteristics of a plain English document?",
     "ground_truth": "A plain English document uses words economically and at a level the audience can understand. Its sentence structure is tight, its tone is welcoming and direct, its design is visually appealing, and it is easy to read.",
@@ -959,3 +960,15 @@ completeness: 3/3
     "evidence_total": 2,
     "evidence_coverage": 1.0
   }
+
+
+
+
+
+
+
+
+
+
+
+

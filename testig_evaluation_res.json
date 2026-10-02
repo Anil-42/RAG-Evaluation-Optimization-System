@@ -1,9 +1,72 @@
 [
     {
         "Question": "What does an investor relations expert contribute to a plain English team?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and includes all important required information from the Ground Truth."
+    },
+    {
+        "Question": "What are the characteristics of a plain English document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and includes all important required information."
+    },
+    {
+        "Question": "What does plain English mean?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It accurately expresses the required meaning of the Ground Truth. The answer is concise and does not omit substantial required information."
+    },
+    {
+        "Question": "Why should writers use short sentences?",
         "Correctness": 2,
         "Faithfulness": 3,
         "Completeness": 1,
-        "Reason": "The Generated Answer correctly answers the question but contains an important incorrect part while still providing a meaningful partial answer."
+        "Reason": "The Generated Answer correctly answers the question but is incomplete. It substantially complies with the plain English writing principles but misses substantial required information."
+    },
+    {
+        "Question": "What is one way to explain an abstract financial concept?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "Why are positive sentences recommended over negative sentences?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims in the Generated Answer are supported by the Retrieved Context. The Generated Answer contains the important information required by the Ground Truth."
+    },
+    {
+        "Question": "What is the purpose of using plain English in disclosure documents?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The main answer is covered, and all important points from the Ground Truth are included."
+    },
+    {
+        "Question": "What are the common problems found in disclosure documents?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The main answer is covered, and all important points from the Ground Truth are included."
+    },
+    {
+        "Question": "Why is knowing the audience important when writing a disclosure document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful as it does not contain any unsupported claims. It is fully complete as it includes all the important required information from the Ground Truth."
+    },
+    {
+        "Question": "What should writers do during the second reading of a document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful and complete, as it accurately conveys the information and includes all the important required information from the Ground Truth."
     }
 ]

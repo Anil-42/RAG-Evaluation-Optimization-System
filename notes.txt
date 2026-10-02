@@ -618,3 +618,61 @@ Think of it like this:
 Because you are asking for JSON format, you want temperature=0 so the AI doesn't get creative and accidentally break the code structure.
 
 "**The evaluator is reasonably consistent on normal cases, but struggles with an answer that is partially correct while simultaneously making a false overall conclusion."
+
+In our generation analysis where we evaluate using CORRECTNESS, FAITHFULNESS, COMPLETENESS after evaluating and optimizing the prompt we still observe some 5 questions failure.
+RETRIEVAL EVALUATION
+────────────────────────────
+Evidence Coverage       100%
+Retrieval Pass Rate      100%
+Full Evidence Retrieval 100%
+
+
+GENERATION EVALUATION
+────────────────────────────
+Correctness              94.93%
+Faithfulness             97.83%
+Completeness             92.75%
+
+This gives you an interesting result:
+-------------------------------------
+"Retrieval is essentially perfect according to your evidence-coverage benchmark, but generation is not perfect."
+
+That means we should investigate:
+---------------------------------
+"If the required evidence was successfully retrieved, why did the LLM sometimes fail to produce the expected answer?"
+
+
+ --> When the context contains the answer, the LLM sometimes says that the answer is not available anyway. this is generation failure.
+
+  --Retrieval failure → evidence never reaches LLM
+
+  --Generation failure → evidence reaches LLM, but LLM fails to use it correctly
+
+
+    Your current project state is:
+
+    ------------------------------------------------------------------------------------------------------------------------
+    1.Retrieval pipeline — frozen
+        -Fixed Vector
+        -Semantic Vector
+        -Hybrid
+        -Hybrid + Reranking
+        -Neighbor-aware optimization separately tested
+
+    2.Retrieval result
+        -Hybrid substantially improved over the vector approaches.
+        -Neighbor merging reached 100% evidence coverage / 100% retrieval pass / 100% full retrieval.
+        -We will not claim reranking caused that improvement.
+
+    3.Generation evaluation — completed
+        -46 questions
+        -Correctness: 94.93%
+        -Faithfulness: 97.83%
+        -Completeness: 92.75%
+        -These are LLM-judge metrics, not ground-truth human accuracy.
+
+    4.Manual inspection
+        -Q25, Q42, Q44 are genuine generation failures.
+        -Q30 is mostly correct but incomplete.
+        -The important finding is that the evidence was retrieved, but the generator sometimes failed to use it.
+    ------------------------------------------------------------------------------------------------------------------------

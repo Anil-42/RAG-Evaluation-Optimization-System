@@ -39,7 +39,7 @@ def send():
         # print("="*100)
         # --------------------------------------------------------------------------------
 
-    with open("testig_evaluation_res.json", "w", encoding="utf-8") as file:
+    with open("evaluation_result.json", "w", encoding="utf-8") as file:
             json.dump(evaluate_result, file, indent=4, ensure_ascii=False)
 
 
@@ -97,20 +97,28 @@ def evaluate_answer(question, ground_truth, retrieved_context, generated_answer)
 
     IMPORTANT RULES FOR CORRECTNESS:
 
-    - Judge the Generated Answer as a whole, not individual statements in isolation.
-    - Correctness measures whether the Generated Answer actually answers the Question correctly.
-    - The Generated Answer does not need to use the same wording as the Ground Truth.
-    - Do not require exact wording or word-for-word matching.
-    - Do not lower Correctness merely because the answer is shorter or less detailed than the Ground Truth. Missing information should primarily affect Completeness.
-    - Additional information does not make an answer incorrect if it is factually correct and supported by the Retrieved Context.
-    - However, a correct individual statement does not make the overall answer correct if the answer reaches an incorrect conclusion or fails to answer the question.
-    - If the Generated Answer states that the requested information is unavailable, verify this claim against the Retrieved Context.
-    - If the Retrieved Context contains the information needed to answer the Question, then an unavailability claim is false.
-    - If a false unavailability claim is the overall conclusion of the Generated Answer and the answer therefore fails to provide the requested answer, assign Correctness = 0, even if the answer contains some correct partial information.
-    - Correctness = 2 should be used when the answer does answer the question correctly overall but contains a minor factual error or imprecision.
-    - Correctness = 1 should be used when the answer attempts to answer the question but contains an important incorrect part while still providing a meaningful partial answer.
-    - Correctness = 0 should be used when the overall answer is incorrect, does not answer the question, contradicts the required answer, or incorrectly claims that the information is unavailable when the information is available.
-   
+    - Judge what the Generated Answer actually says.
+    - If the information stated in the Generated Answer is correct, do not lower
+    Correctness merely because the answer is shorter or less detailed than the Ground Truth.
+    - Missing required information should primarily affect Completeness, not Correctness.
+    - If the Generated Answer correctly expresses the required meaning of the Ground Truth,
+    it can receive Correctness = 3 even if it uses different wording.
+    - Do not require the Generated Answer to reproduce the Ground Truth word-for-word.
+    - Do not require every detail of the Ground Truth if those details are not necessary
+    to correctly answer the question.
+    - The Ground Truth may be concise and may not contain every valid detail available
+    in the Retrieved Context.
+    - Additional information does not make an answer incorrect if that information is
+    factually correct and supported by the Retrieved Context.
+    - If the Generated Answer says that the information is unavailable, check whether
+    the required answer is actually available in the Retrieved Context and Ground Truth.
+    If it is available and the Generated Answer therefore fails to answer the question,
+    treat this as an incorrect answer.
+    - Do not lower Correctness simply because an important detail is missing if the
+    information that IS stated is correct. That missing detail should be reflected
+    primarily in Completeness.
+
+
     ==================================================
     2. FAITHFULNESS
     ==================================================
@@ -193,10 +201,6 @@ def evaluate_answer(question, ground_truth, retrieved_context, generated_answer)
     If the answer provides none of the required information, Completeness should
     normally be 0. If it provides some relevant required information but misses
     substantial required information, use 1.
-    - If the Generated Answer mentions some individual points from the Ground Truth
-    but fails to provide the requested answer as a whole, do not automatically
-    consider it complete. Evaluate whether the important required points are
-    actually presented as an answer to the question.
 
 
     ==================================================
@@ -269,9 +273,8 @@ def evaluate_answer(question, ground_truth, retrieved_context, generated_answer)
             {"role": "user", "content": prompt}
         ],
         format="json",
-        options={
-            "temperature": 0
-        }
+        options={"temperature": 0}
+        
     )
 
     return json.loads(response["message"]["content"])

@@ -1,0 +1,324 @@
+[
+    {
+        "Question": "What is the purpose of using plain English in disclosure documents?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. Most claims are supported by the Retrieved Context. The main answer is covered, and substantial required information is included."
+    },
+    {
+        "Question": "What does plain English mean?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It accurately expresses the required meaning of the Ground Truth. The answer is concise and does not omit substantial required information."
+    },
+    {
+        "Question": "What are the characteristics of a plain English document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and complete in terms of including the important required information from the Ground Truth."
+    },
+    {
+        "Question": "What is the purpose of the handbook?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It provides a clear and concise explanation of the purpose of the handbook and the importance of creating plain English documents. The answer is faithful to the Retrieved Context, as it accurately reflects the information provided in the Ground Truth. The answer is also complete, as it covers all the important points required by the Ground Truth."
+    },
+    {
+        "Question": "Why does the handbook allow readers to choose which tips to use?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. Most claims are supported by the Retrieved Context. The main answer is covered, and all important points from the Ground Truth are included."
+    },
+    {
+        "Question": "What does the handbook say about removing complex information?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It accurately expresses the required meaning of the Ground Truth. The answer is concise and does not omit substantial required information."
+    },
+    {
+        "Question": "Who can work on a plain English project according to the handbook?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It accurately expresses the required meaning of the Ground Truth. The answer provides all the important required information from the Ground Truth."
+    },
+    {
+        "Question": "What is the role of the team leader in a plain English project?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "What is the role of the lead writer?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    },
+    {
+        "Question": "What does an investor relations expert contribute to a plain English team?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and includes all important required information from the Ground Truth."
+    },
+    {
+        "Question": "Why is knowing the audience important when writing a disclosure document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful as it does not contain any unsupported claims. The answer is also fully complete as it includes all the important required information from the Ground Truth."
+    },
+    {
+        "Question": "What should writers determine about the financial sophistication of investors?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful as it makes supported claims, and mostly complete as it covers the important required information from the Ground Truth."
+    },
+    {
+        "Question": "What demographic information can be used to create an investor profile?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful as it makes supported claims. It is fully complete as it covers all important points from the Ground Truth."
+    },
+    {
+        "Question": "What should writers consider about investors' familiarity with financial terminology?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All claims it makes are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "Why should writers consider how investors will read a document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It accurately expresses the required meaning of the Ground Truth. The answer is concise and does not omit essential information."
+    },
+    {
+        "Question": "What should a writer do during the first reading of an existing document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    },
+    {
+        "Question": "What should writers do during the second reading of a document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful and complete, as it accurately conveys the information and includes all the important required information from the Ground Truth."
+    },
+    {
+        "Question": "What questions should writers ask when reviewing the information in a document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful, as it makes supported claims. It is fully complete, as it covers all important points from the Ground Truth."
+    },
+    {
+        "Question": "Why should writers question information that has always been included in a document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and includes all important required information from the Ground Truth."
+    },
+    {
+        "Question": "Why should redundant information be eliminated?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    },
+    {
+        "Question": "What should a cover page provide to investors?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and includes all important required information from the Ground Truth."
+    },
+    {
+        "Question": "What is the purpose of a summary in a disclosure document?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    },
+    {
+        "Question": "Why should defined terms be used sparingly?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and complete in terms of required information."
+    },
+    {
+        "Question": "What is the first principle of good document organization?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    },
+    {
+        "Question": "Why should documents use descriptive headers and subheaders?",
+        "Correctness": 1,
+        "Faithfulness": 3,
+        "Completeness": 0,
+        "Reason": "The Generated Answer does not correctly answer the question. The information stated in the Generated Answer is not correct, and it does not contain the important information required by the Ground Truth. The answer is partially correct but incomplete."
+    },
+    {
+        "Question": "Why should related information be grouped together?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful, as it does not contain any unsupported claims. It is fully complete, as it includes all the important required information from the Ground Truth."
+    },
+    {
+        "Question": "How should a document be organized for financially unsophisticated investors?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It explains industry terms or concepts where they first appear and presents a straightforward and easy-to-understand organization."
+    },
+    {
+        "Question": "What are the common problems found in disclosure documents?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The main answer is covered, and all important points from the Ground Truth are included."
+    },
+    {
+        "Question": "Why does the handbook recommend using active voice with strong verbs?",
+        "Correctness": 2,
+        "Faithfulness": 3,
+        "Completeness": 1,
+        "Reason": "The Generated Answer correctly states the main point of the Ground Truth, but it is incomplete and does not provide substantial required information. The answer is mostly faithful because it supports the main claim, but it is partially faithful because it does not cover all the required information. The answer is partially complete because it includes some of the required information, but it is missing substantial required information."
+    },
+    {
+        "Question": "How does active voice differ from passive voice?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly states the difference between active and passive voice, and all claims are supported by the Retrieved Context."
+    },
+    {
+        "Question": "Why are active-voice sentences easier for readers to understand?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "Should the passive voice always be avoided?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "What is a hidden verb?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims made in the Generated Answer are supported by the Retrieved Context. The Generated Answer contains the important information required by the Ground Truth."
+    },
+    {
+        "Question": "How do personal pronouns improve writing clarity?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. Most claims are supported by the Retrieved Context. The main answer is covered, and all important points from the Ground Truth are included."
+    },
+    {
+        "Question": "Why should writers replace abstract terms with concrete terms?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "What is one way to explain an abstract financial concept?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All claims it makes are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "What does the handbook mean by omitting superfluous words?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. Most claims are supported by the Retrieved Context. The main answer is covered, and no substantial required information is missing."
+    },
+    {
+        "Question": "What is shotgunning in writing?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All claims it makes are supported by the Retrieved Context. The answer provides all important required information from the Ground Truth."
+    },
+    {
+        "Question": "Why are positive sentences recommended over negative sentences?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims in the Generated Answer are supported by the Retrieved Context. The Generated Answer contains the important information required by the Ground Truth."
+    },
+    {
+        "Question": "Why should writers use short sentences?",
+        "Correctness": 2,
+        "Faithfulness": 3,
+        "Completeness": 1,
+        "Reason": "The Generated Answer correctly answers the question but is incomplete. It substantially complies with the plain English writing principles but misses substantial required information."
+    },
+    {
+        "Question": "What should writers do when replacing jargon and legalese?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is mostly faithful, as it supports all claims made. It is fully complete, as it includes all important required information from the Ground Truth."
+    },
+    {
+        "Question": "Why should writers avoid creating new acronyms?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. It is faithful to the Retrieved Context and includes all important required information from the Ground Truth."
+    },
+    {
+        "Question": "What is the recommended word order for clear English sentences?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    },
+    {
+        "Question": "What should writers do when a conditional statement contains multiple ifs and thens?",
+        "Correctness": 0,
+        "Faithfulness": 0,
+        "Completeness": 0,
+        "Reason": "The Generated Answer does not correctly answer the question and is largely unsupported by the Retrieved Context."
+    },
+    {
+        "Question": "What is parallelism in sentence structure?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error. All substantive claims are supported by the Retrieved Context. The answer includes all important points from the Ground Truth."
+    },
+    {
+        "Question": "Why should writers avoid using the word 'respectively'?",
+        "Correctness": 3,
+        "Faithfulness": 3,
+        "Completeness": 3,
+        "Reason": "The Generated Answer correctly answers the question and contains no substantive error."
+    }
+]
