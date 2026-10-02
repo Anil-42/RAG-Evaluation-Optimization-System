@@ -4,20 +4,15 @@ Baseline RAG observations:
 
 2.  Top-K retrieval can include weakly relevant or unrelated chunks.
 
-3.  Vector retrieval can completely miss the chunk containing
-    the answer.
+3.  Vector retrieval can completely miss the chunk containing the answer.
 
-4.  Similarity score does not always indicate exact relevance
-    to the question.
+4.  Similarity score does not always indicate exact relevance to the question.
 
-5.  The LLM can produce a grounded answer when relevant context
-    is available.
+5.  The LLM can produce a grounded answer when relevant context is available.
 
-6.  The LLM can correctly refuse to answer when the retrieved
-    context doesn't contain the required information.
+6.  The LLM can correctly refuse to answer when the retrieved context doesn't contain the required information.
 
-7.  Even when relevant context is retrieved, the LLM may not
-    use all relevant information optimally.
+7.  Even when relevant context is retrieved, the LLM may not use all relevant information optimally.
 
 ---
 
@@ -299,7 +294,10 @@ this produced 95% evidence coverage
 
 =============================================================================================================================
 
-Hybrid retrieval substantially improves evidence retrieval compared with vector-only retrieval, while cross-encoder reranking further improves the ordering of relevant chunks, particularly when only a small number of chunks are used. Neighbor-aware evaluation addresses evidence that naturally spans adjacent chunks without changing the retrieval ranking itself.
+Hybrid retrieval substantially improves evidence retrieval compared with vector-only retrieval,
+while cross-encoder reranking further improves the ordering of relevant chunks, particularly when only a small number
+of chunks are used. Neighbor-aware evaluation addresses evidence that naturally spans adjacent chunks without changing the 
+retrieval ranking itself.
 
 =============================================================================================================================
 
@@ -469,6 +467,11 @@ Hybrid retrieval substantially improved retrieval performance over individual ve
             100.00%
 
 ---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+
+        =============================
+        ANSWER GENERATION EVALUATION:
+        =============================
 
 right now we've proven:
 "Did we retrieve the required evidence?" → Yes, 100%.
@@ -494,3 +497,124 @@ Does it stay within the retrieved context?
 Does it hallucinate?
 Does it contain the required information?
 Does it unnecessarily add information?
+
+
+Let's build a simple answer evaluator with three metrics:
+
+Correctness — Does the answer actually answer the question correctly?
+Faithfulness — Is everything the LLM says supported by the retrieved context?
+Completeness — Does it cover the important information in the ground truth?
+
+"check Ground Truth"
+     ↓
+Correctness + Completeness
+
+"check Retrieved Context"
+     ↓
+Faithfulness
+
+
+
+"I measured whether retrieval found the required evidence, and separately measured whether the LLM generated a correct,
+supported, and sufficiently complete answer."
+
+for this question:
+    Question: What does an investor relations expert contribute to a plain English team?
+
+    Ground truth:
+        An investor relations expert knows the financial sophistication of investors, the questions investors typically ask,
+        and where previous disclosure documents failed to make information clear.
+
+    Generated answer:
+        “The context does not provide information on what an investor relations expert contributes to a plain English team. 
+        It only mentions that an investor relations expert ‘knows firsthand the financial sophistication of your investors’ 
+        and can help with questions such as ‘What investment concepts can you safely assume they understand?’”
+
+        ----------------------------------
+        |  Metric		| Correct score |
+        ----------------------------------
+        | Correctness	|	0/3         | it incorrectly says the information isn't available.
+        | Faithfulness   |	3/3         | the information it does state comes from the context.
+        | Completeness   |	1/3         | it doesn't include all the important information.
+        ----------------------------------
+
+From this we can say that,
+    "Retrieval = 100% successful, but generation quality = imperfect."
+
+There are several possible approaches for improving generation:
+---------------------------------------------------------------
+    1. Improve the prompt - "We can make the generation instruction more precise."
+    2. Context organization - "Instead of blindly giving the LLM 7 chunks, we could structure the context more clearly."
+    3. Answer generation with evidence awareness - "We could instruct the model to construct its answer from the relevant evidence rather than treating the entire context equally."
+    4. Change the LLM - "You're currently using Llama 3.2 locally through Ollama. We could test another model later and compare."
+    5. Generate → verify → revise - "This is a more advanced approach, Revise if unsupported/incomplete, but it adds another LLM step and therefore complexity, latency, and another potential failure point."
+
+
+    Recommended for our first RAG Project:
+                    
+        CURRENT:    Hybrid + Reranking + Neighbor Optimization
+                                    ↓
+                        Retrieval = 100%
+                                    ↓
+                                Generation Audit
+                                    ↓
+                        Identify failure patterns
+                                    ↓
+                            Prompt Optimization
+                                    ↓
+                            Evaluate again
+                                    ↓
+                        Did generation quality improve?
+                                ↙             ↘
+                            YES                 NO
+                            ↓                   ↓
+                        Keep it          Diagnose next cause
+
+
+
+We need to find correctness, faithfulness, completeness 0-3 for each question for that we can use an LLM-as-a-judge approach.
+
+    Question
+    Ground Truth
+    Retrieved Context
+    Generated Answer
+            ↓
+        LLM Judge
+            ↓
+    Correctness / Faithfulness / Completeness
+
+We should tell the LLM judge:
+
+"Do not penalize an answer merely because it contains information that is not in the ground truth.
+ Evaluate whether that additional information is correct and supported by the retrieved context."
+
+
+ final project can legitimately report that:
+
+"Retrieval achieved 100% evidence coverage after neighbor-aware optimization."
+"Generation was then evaluated independently using Correctness, Faithfulness, and Completeness."
+"Some generation failures occurred even when retrieval successfully provided the required evidence."
+
+"------------------------important------------------------
+"response = ollama.chat(
+        model="llama3.2",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        format="json",
+        options={
+            "temperature": 0
+        }
+    )
+
+    temperature=0 means "zero creativity."
+
+It forces the AI to be 100% predictable and strict.
+
+Think of it like this:
+• Temperature = 0: The AI acts like a strict math teacher. Every time you ask it the same question, it gives you the exact same answer. It never guesses or tries to be creative.
+• Temperature = 1: The AI acts like a creative writer. It will give you different, more unexpected answers every time you ask.
+
+Because you are asking for JSON format, you want temperature=0 so the AI doesn't get creative and accidentally break the code structure.
+
+"**The evaluator is reasonably consistent on normal cases, but struggles with an answer that is partially correct while simultaneously making a false overall conclusion."

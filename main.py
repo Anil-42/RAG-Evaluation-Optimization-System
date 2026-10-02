@@ -205,7 +205,7 @@ def main():
 
             "retrieved_chunks": retrieved_chunks,
 
-            "retrieved_scores": retrieved_scores,
+            "retrieved_scores": [float(score) for score in retrieved_scores],
 
             "evidence_found": found,
 
@@ -215,9 +215,16 @@ def main():
 
         })
 
-
     print_evaluation_summary(results, method)
 
+
+
+    # Optional: Save results to disk
+    with open("result.json", "w", encoding="utf-8") as file:
+        json.dump(results, file, indent=4, ensure_ascii=False)
+
+
+    
 
 if __name__ == "__main__":
     main()

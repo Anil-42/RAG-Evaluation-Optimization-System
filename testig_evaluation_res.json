@@ -1,0 +1,9 @@
+[
+    {
+        "Question": "What does an investor relations expert contribute to a plain English team?",
+        "Correctness": 2,
+        "Faithfulness": 3,
+        "Completeness": 1,
+        "Reason": "The Generated Answer correctly answers the question but contains an important incorrect part while still providing a meaningful partial answer."
+    }
+]
