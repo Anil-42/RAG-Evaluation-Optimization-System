@@ -1,14 +1,14 @@
 import json
-from evaluation import print_evaluation_summary
-from extract_text import extract_text
-from ollama_test import ollama_query
+from src.evaluation.evaluation import print_evaluation_summary
+from src.extraction.extract_text import extract_text
+from src.generation.generator import ollama_query
 
-from evidence_coverage import evidence_coverage
+from src.evaluation.evidence_coverage import evidence_coverage
 
-from fixed_vector import fixed_vector_retrieve
-from semantic_vector import semantic_vector_retrieve
-from hybrid import hybrid_retrieve_chunks
-from hybrid_rerank import hybrid_rerank_retrieve
+from src.retrieval.fixed_vector import fixed_vector_retrieve
+from src.retrieval.semantic_vector import semantic_vector_retrieve
+from src.retrieval.hybrid import hybrid_retrieve_chunks
+from src.retrieval.hybrid_rerank import hybrid_rerank_retrieve
 
 
 
@@ -147,21 +147,6 @@ def main():
             evidence_points
         )
 
-
-# ----------------------------------------------------------------
-        # if coverage < 1.0:
-        #     print("\n" + "=" * 60)
-        #     print("FAILED / PARTIAL RETRIEVAL")
-        #     print("=" * 60)
-        #     print("Question:", question_text)
-        #     print("Evidence found:", found)
-        #     print("Evidence total:", total)
-        #     print("Coverage:", coverage)
-
-        #     print("\nEvidence points:")
-        #     for point in evidence_points:
-        #         print("-", point)
-# ----------------------------------------------------------------
 
 
         # ========================================================

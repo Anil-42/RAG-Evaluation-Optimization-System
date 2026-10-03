@@ -676,3 +676,26 @@ That means we should investigate:
         -Q30 is mostly correct but incomplete.
         -The important finding is that the evidence was retrieved, but the generator sometimes failed to use it.
     ------------------------------------------------------------------------------------------------------------------------
+
+    So the important conclusion is:
+    -------------------------------
+Hybrid retrieval improved candidate selection, while neighbor-aware context reconstruction solved the remaining chunk-boundary retrieval failures.
+
+
+
+
+
+CREATING .gitignore:
+--------------------
+
+"A .gitignore file is a plain text file used in a Git repository to tell Git which files and directories to ignore"
+
+How the Syntax Works
+
+The file relies on pattern-matching rules listed line by line:
+    • #: Used for writing comments.
+    • *.log: The asterisk * acts as a wildcard, meaning this rule will ignore any file ending in .log.
+    • build/: A trailing slash tells Git to ignore an entire directory and everything inside it.
+    • !important.log: An exclamation mark ! negates a rule, allowing you to force-include a file that would otherwise be ignored
+
+    If .venv or __pycache__ was already committed/tracked before we created .gitignore, adding them to .gitignore won't automatically remove them from Git's tracking.

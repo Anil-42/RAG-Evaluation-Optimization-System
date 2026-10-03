@@ -26,18 +26,6 @@ def send():
             "Reason": evaluated_data["reason"]
         })
 
-        # ------------------------------printing------------------------------------------
-        # print("QUESTION:", result["question"])
-        # print("GROUND TRUTH:", result["ground_truth"])
-        # print("GENERATED ANSWER:", result["answer"])
-        # print("CONTEXT:", result["retrieved_chunks"])
-        # print("-"*50)
-        # print("\nCorrectness:", evaluated_data["correctness"])
-        # print("Faithfulness:", evaluated_data["faithfulness"])
-        # print("Completeness:", evaluated_data["completeness"])
-        # print("Reason:", evaluated_data["reason"])
-        # print("="*100)
-        # --------------------------------------------------------------------------------
 
     with open("evaluation_result.json", "w", encoding="utf-8") as file:
             json.dump(evaluate_result, file, indent=4, ensure_ascii=False)
