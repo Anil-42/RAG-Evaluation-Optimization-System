@@ -1,8 +1,8 @@
-from hybrid import hybrid_retrieve_chunks
-from reranker import rerank
-from neighbor_merge import merge_neighbors
+from src.retrieval.hybrid import hybrid_retrieve_chunks
+from src.retrieval.reranker import rerank
+from src.retrieval.neighbor_merge import merge_neighbors
 
-from evidence_coverage import evidence_coverage
+from evaluation.evidence_coverage import evidence_coverage
 
 
 def hybrid_rerank_retrieve(text, question_text, evidence_points=None, alpha=0.2):
@@ -60,7 +60,7 @@ def hybrid_rerank_retrieve(text, question_text, evidence_points=None, alpha=0.2)
     #     index
     #     for chunk, index, score in reranked
     # ]
-
+# -------------------------------------------------------------------------
 
 
     return final_chunks, final_scores, hybrid_chunks, hybrid_indices, chunks

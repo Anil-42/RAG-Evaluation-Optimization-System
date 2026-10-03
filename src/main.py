@@ -1,14 +1,20 @@
 import json
-from src.evaluation.evaluation import print_evaluation_summary
-from src.extraction.extract_text import extract_text
-from src.generation.generator import ollama_query
+import sys
+from pathlib import Path
 
-from src.evaluation.evidence_coverage import evidence_coverage
+# Add project root (d:\other\rag-project) to Python's path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.retrieval.fixed_vector import fixed_vector_retrieve
-from src.retrieval.semantic_vector import semantic_vector_retrieve
-from src.retrieval.hybrid import hybrid_retrieve_chunks
-from src.retrieval.hybrid_rerank import hybrid_rerank_retrieve
+from evaluation.evaluation import print_evaluation_summary
+from evaluation.evidence_coverage import evidence_coverage
+
+from extraction.extract_text import extract_text
+from generation.generator import ollama_query
+
+from retrieval.fixed_vector import fixed_vector_retrieve
+from retrieval.semantic_vector import semantic_vector_retrieve
+from retrieval.hybrid import hybrid_retrieve_chunks
+from retrieval.hybrid_rerank import hybrid_rerank_retrieve
 
 
 
@@ -40,10 +46,14 @@ def main():
 
     # ============================================================
     # 2. LOAD EVALUATION DATASET
-    # ============================================================
+    # ===========================================================
+
+    # This creates an absolute path to evaluation/questions.json
+    questions_path = Path(__file__).resolve().parent.parent / "evaluation" / "questions.json"
+
 
     with open(
-        "questions.json",
+        questions_path,
         "r",
         encoding="utf-8"
     ) as file:
@@ -205,7 +215,9 @@ def main():
 
 
     # Optional: Save results to disk
-    with open("result.json", "w", encoding="utf-8") as file:
+    results_path = Path(__file__).resolve().parent.parent / "results" / "result.json"
+
+    with open(results_path, "w", encoding="utf-8") as file:
         json.dump(results, file, indent=4, ensure_ascii=False)
 
 

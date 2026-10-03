@@ -1,6 +1,6 @@
-from chunking import chunk_text
-from embedding import get_embeddings
-from retrieve import retrieve
+from src.chunking.chunking import chunk_text
+from src.retrieval.embedding import get_embeddings
+from src.retrieval.retrieve import retrieve
 
 
 def fixed_vector_retrieve(text, question_text):

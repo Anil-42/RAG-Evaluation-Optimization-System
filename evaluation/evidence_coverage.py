@@ -1,4 +1,4 @@
-from normalize import normalize
+from src.retrieval.normalize import normalize
 
 def evidence_coverage(retrieved_chunks,evidence_points):
     normalized_chunks = " ".join(normalize(t) for t in retrieved_chunks)

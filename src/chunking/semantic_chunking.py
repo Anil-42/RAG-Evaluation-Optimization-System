@@ -1,7 +1,7 @@
-import re;
+import re
 import numpy as np
-from embedding import  get_embeddings
-from embedding import get_similarities
+from src.retrieval.embedding import get_embeddings
+from src.retrieval.embedding import get_similarities    
 
 def split_sentences(text):
     # Split by sentence-ending punctuation followed by whitespace

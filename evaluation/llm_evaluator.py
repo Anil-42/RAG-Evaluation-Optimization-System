@@ -1,13 +1,17 @@
 import json
+from pathlib import Path
 
 import ollama
 
+
 def send():
+    result_path = Path(__file__).resolve().parent.parent / "results" / "result.json"
+
     with open(
-                "result.json",
-                "r",
-                encoding="utf-8"
-            ) as file:
+        result_path,
+        "r",
+        encoding="utf-8"
+    ) as file:
         
         results = json.load(file)
     evaluate_result=[]
@@ -27,7 +31,17 @@ def send():
         })
 
 
-    with open("evaluation_result.json", "w", encoding="utf-8") as file:
+    evaluation_result_path = (
+        Path(__file__).resolve().parent.parent
+        / "results"
+        / "evaluation_result.json"
+    )
+
+    with open(
+        evaluation_result_path,
+        "w",
+        encoding="utf-8"
+    ) as file:
             json.dump(evaluate_result, file, indent=4, ensure_ascii=False)
 
 

@@ -1,5 +1,5 @@
 import torch
-from embedding import get_embeddings,get_similarities;
+from .embedding import get_embeddings, get_similarities
 
 def retrieve(question, chunks, embeddings):
 

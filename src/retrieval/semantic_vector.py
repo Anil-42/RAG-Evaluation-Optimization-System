@@ -1,7 +1,7 @@
-from semantic_chunking import split_sentences
-from semantic_chunking import semantic_chunking
-from embedding import get_embeddings
-from retrieve import retrieve
+from src.chunking.semantic_chunking import split_sentences
+from src.chunking.semantic_chunking import semantic_chunking
+from src.retrieval.embedding import get_embeddings
+from src.retrieval.retrieve import retrieve
 
 
 def create_semantic_chunks(text):

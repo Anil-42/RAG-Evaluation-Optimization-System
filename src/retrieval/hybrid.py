@@ -1,13 +1,13 @@
 import numpy as np
 
-from chunking import chunk_text
-from embedding import get_embeddings
-from retrieve import retrieve
-from bm25_scores import bm25_scores
-from normalize_scores import normalize_scores
-from semantic_vector import create_semantic_chunks
+from src.chunking.chunking import chunk_text
+from src.retrieval.embedding import get_embeddings
+from src.retrieval.retrieve import retrieve
+from src.retrieval.bm25_scores import bm25_scores
+from src.retrieval.normalize_scores import normalize_scores
+from src.retrieval.semantic_vector import create_semantic_chunks
 
-from normalize import normalize
+from src.retrieval.normalize import normalize
 
 
 def hybrid_retrieve_chunks(text, question_text, evidence_points=None, alpha=0.2):
