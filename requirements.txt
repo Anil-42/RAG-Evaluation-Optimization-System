@@ -1,0 +1,6 @@
+ollama==0.6.2
+numpy==2.5.2
+pymupdf==1.28.2
+rank-bm25==0.2.2
+sentence-transformers==5.7.0
+torch==2.13.0
